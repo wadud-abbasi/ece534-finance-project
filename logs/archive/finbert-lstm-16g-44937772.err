@@ -1,0 +1,72 @@
+Unloading the cpe module is insufficient to restore the system defaults.
+Please run 'source
+/opt/cray/pe/cpe/24.07/restore_lmod_system_defaults.[csh|sh]'. 
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+    import torch
+    import torch
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+    import torch
+    import torch
+    import torch
+    import torch
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+    import torch
+    import torch
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/train.py", line 16, in <module>
+    import torch
+    import torch
+    import torch
+ModuleNotFoundError: No module named 'torch'
+    import torch
+    import torch
+ModuleNotFoundError: No module named 'torch'
+    import torch
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+    import torch
+ModuleNotFoundError: No module named 'torch'
+    import torch
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+srun: error: nid008321: tasks 12-15: Exited with exit code 1
+srun: Terminating StepId=44937772.0
+srun: error: nid008320: tasks 8-11: Exited with exit code 1
+srun: error: nid008317: tasks 4-7: Exited with exit code 1
+srun: error: nid008316: tasks 0-3: Exited with exit code 1

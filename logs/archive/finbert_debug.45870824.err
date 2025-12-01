@@ -1,0 +1,86 @@
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 46, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 46, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 46, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 46, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py", line 27, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py", line 27, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py", line 27, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py", line 27, in <module>
+    from . import dependency_versions_check
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from . import dependency_versions_check
+    from . import dependency_versions_check
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from . import dependency_versions_check
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+    from .utils.versions import require_version, require_version_core
+    from .utils.versions import require_version, require_version_core
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/__init__.py", line 24, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/__init__.py", line 24, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/__init__.py", line 24, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/__init__.py", line 24, in <module>
+    from .auto_docstring import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+    from .auto_docstring import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+    from .auto_docstring import (
+    from .auto_docstring import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+    from .generic import ModelOutput
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/generic.py", line 34, in <module>
+    from .generic import ModelOutput
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/generic.py", line 34, in <module>
+    from .generic import ModelOutput
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/generic.py", line 34, in <module>
+    from .generic import ModelOutput
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/generic.py", line 34, in <module>
+    from .import_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 233, in <module>
+    from .import_utils import (
+    from .import_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 233, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 233, in <module>
+    from .import_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 233, in <module>
+    _torchvision_available, _torchvision_version = _is_package_available("torchvision", return_version=True)
+    _torchvision_available, _torchvision_version = _is_package_available("torchvision", return_version=True)
+    _torchvision_available, _torchvision_version = _is_package_available("torchvision", return_version=True)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 47, in _is_package_available
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 47, in _is_package_available
+    _torchvision_available, _torchvision_version = _is_package_available("torchvision", return_version=True)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 47, in _is_package_available
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 47, in _is_package_available
+    package_exists = importlib.util.find_spec(pkg_name) is not None
+    package_exists = importlib.util.find_spec(pkg_name) is not None
+    package_exists = importlib.util.find_spec(pkg_name) is not None
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib.util>", line 111, in find_spec
+ValueError: torchvision.__spec__ is not set
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib.util>", line 111, in find_spec
+ValueError: torchvision.__spec__ is not set
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib.util>", line 111, in find_spec
+ValueError: torchvision.__spec__ is not set
+    package_exists = importlib.util.find_spec(pkg_name) is not None
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib.util>", line 111, in find_spec
+ValueError: torchvision.__spec__ is not set
+srun: error: nid001733: tasks 0-3: Exited with exit code 1
+srun: Terminating StepId=45870824.0

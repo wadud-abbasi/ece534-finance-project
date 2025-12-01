@@ -1,0 +1,10 @@
+/global/u2/w/wa176/ece534-finance-project/fine_tune.py:150: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  headlines_df = pd.read_csv(headlines_csv)
+/global/u2/w/wa176/ece534-finance-project/fine_tune.py:150: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  headlines_df = pd.read_csv(headlines_csv)
+/global/u2/w/wa176/ece534-finance-project/fine_tune.py:150: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  headlines_df = pd.read_csv(headlines_csv)
+/global/u2/w/wa176/ece534-finance-project/fine_tune.py:150: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  headlines_df = pd.read_csv(headlines_csv)
+slurmstepd: error: *** STEP 45870905.0 ON nid008581 CANCELLED AT 2025-12-01T07:46:00 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 45870905 ON nid008581 CANCELLED AT 2025-12-01T07:46:00 DUE TO TIME LIMIT ***

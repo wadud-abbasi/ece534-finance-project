@@ -1,0 +1,807 @@
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+    from transformers import (
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+    from transformers import (
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+    from .integrations import (
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    raise e
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return importlib.import_module("." + module_name, self.__name__)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    from .. import PreTrainedModel, TrainingArguments
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    from .loss.loss_utils import LOSS_MAPPING
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    return importlib.import_module("." + module_name, self.__name__)
+    from .loss.loss_utils import LOSS_MAPPING
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+    from .loss.loss_utils import LOSS_MAPPING
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+    from transformers.image_transforms import center_to_corners_format
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from transformers.image_transforms import center_to_corners_format
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .image_utils import (
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .loss_for_object_detection import (
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .loss_for_object_detection import (
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from transformers.image_transforms import center_to_corners_format
+    from torchvision.transforms import InterpolationMode
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from transformers.image_transforms import center_to_corners_format
+    from torchvision.transforms import InterpolationMode
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from .image_utils import (
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss_d_fine import DFineForObjectDetectionLoss
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_d_fine.py", line 21, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from .loss_for_object_detection import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/loss/loss_for_object_detection.py", line 32, in <module>
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from transformers.image_transforms import center_to_corners_format
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from transformers.image_transforms import center_to_corners_format
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_transforms.py", line 22, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from .image_utils import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/image_utils.py", line 60, in <module>
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+    from torchvision.transforms import InterpolationMode
+ImportError: cannot import name 'InterpolationMode' from 'torchvision.transforms' (/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/torchvision/transforms/__init__.py)
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/fine_tune.py", line 25, in <module>
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from transformers import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/trainer.py", line 42, in <module>
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .integrations import (
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    module = self._get_module(self._class_to_module[name])
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/integrations/integration_utils.py", line 44, in <module>
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+    from .. import PreTrainedModel, TrainingArguments
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2302, in __getattr__
+srun: error: nid008696: tasks 4-7: Exited with exit code 1
+srun: Terminating StepId=45870021.0
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2332, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    raise e
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2330, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+    return importlib.import_module("." + module_name, self.__name__)
+slurmstepd: error: *** STEP 45870021.0 ON nid008264 CANCELLED AT 2025-12-01T06:43:09 ***
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/w/wa176/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/modeling_utils.py", line 70, in <module>
+srun: error: nid008697: tasks 8-11: Exited with exit code 1
+srun: error: nid008700: tasks 12-15: Terminated
+srun: error: nid008264: tasks 0-3: Terminated
+srun: Force Terminated StepId=45870021.0
