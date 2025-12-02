@@ -27,7 +27,7 @@ for file in csv_files:
 
 combined_df = pd.concat(all_data, ignore_index=True)
 print("Combined DataFrame head:")
-display(combined_df.head())
+#display(combined_df.head())
 
 combined_df['date'] = pd.to_datetime(combined_df['date'], errors='coerce')
 numeric_cols = ['open', 'high', 'low', 'close', 'adj_close', 'volume']
@@ -36,11 +36,11 @@ for col in numeric_cols:
 
 combined_df = combined_df.drop_duplicates().dropna(subset=['date', 'ticker'])
 print("After cleaning:")
-display(combined_df.head())
+#display(combined_df.head())
 
 combined_df = combined_df.sort_values(['ticker', 'date'])
 print("Final sorted DataFrame head:")
-display(combined_df.head())
+#display(combined_df.head())
 
 combined_df.to_csv(f"{base_dir}FNSPID/processed_stock_prices.csv", index=False)
 
@@ -52,11 +52,11 @@ run wget https://huggingface.co/datasets/Zihan1004/FNSPID/resolve/main/Stock_new
 news_file = f"{base_dir}FNSPID/Stock_news/nasdaq_exteral_data.csv"
 news_df = pd.read_csv(news_file)
 print("Initial headline data:")
-display(news_df.head())
+#display(news_df.head())
 
 news_df['date'] = pd.to_datetime(news_df['Date'], errors='coerce')
 print("Converted date column:")
-display(news_df[['date', 'Article_title', 'Stock_symbol']].head())
+#display(news_df[['date', 'Article_title', 'Stock_symbol']].head())
 
 output_df = news_df[['Date', 'Article_title', 'Stock_symbol']]
 output_df.to_csv(f"{base_dir}FNSPID/processed_headlines_subset.csv", index=False)
@@ -69,7 +69,7 @@ print("\nSample 10 tickers:", combined_df['ticker'].unique()[:10])
 
 # Missing Value Check
 print("Missing values per column:")
-display(combined_df.isnull().sum())
+#display(combined_df.isnull().sum())
 
 # News Headlines: Basic Info
 print("Number of unique stock symbols in headlines:", output_df['Stock_symbol'].nunique())
@@ -78,18 +78,18 @@ print("Total headlines:", output_df.shape[0])
 
 # Most frequent headline topics
 print("Most common keywords in headlines:")
-display(output_df['Article_title'].str.split().explode().value_counts().head(20))
+#display(output_df['Article_title'].str.split().explode().value_counts().head(20))
 
 # Price summary by ticker
 price_stats = combined_df.groupby('ticker')[['open', 'close', 'adj_close', 'volume']].agg(['mean', 'std', 'min', 'max'])
-display(price_stats.head())
+#display(price_stats.head())
 
 # Daily return stats for one ticker
 some_ticker = combined_df['ticker'].unique()[0]
 ticker_df = combined_df[combined_df['ticker'] == some_ticker].sort_values('date')
 ticker_df['daily_return'] = ticker_df['close'].pct_change()
 print(f"Stats for {some_ticker}:")
-display(ticker_df[['date', 'close', 'daily_return']].head())
+#display(ticker_df[['date', 'close', 'daily_return']].head())
 
 # Join subset headlines with prices, for analysis
 tmp_headlines = output_df.copy()
@@ -112,18 +112,18 @@ tmp_joined = pd.merge(
 )
 
 print("Headlines matched to closing prices (sample):")
-display(tmp_joined[['Date', 'Stock_symbol', 'Article_title', 'close']].head(20))
+#display(tmp_joined[['Date', 'Stock_symbol', 'Article_title', 'close']].head(20))
 
 # Number of headlines per year
 output_df['year'] = pd.to_datetime(output_df['Date']).dt.year
 headline_count_by_year = output_df.groupby('year').size()
 print("Headline count per year:")
-display(headline_count_by_year)
+#display(headline_count_by_year)
 
 # Top stocks by headline volume
 top_stock_symbols = output_df['Stock_symbol'].value_counts().head(20)
 print("Top 20 stocks by headline count:")
-display(top_stock_symbols)
+#display(top_stock_symbols)
 
 # Distribution of headlines per ticker
 output_df['Stock_symbol'].value_counts().head(20).plot(kind='bar')
