@@ -8,7 +8,9 @@ FNSPID STOCK PRICE PREPROCESSING
 run wget https://huggingface.co/datasets/Zihan1004/FNSPID/resolve/main/Stock_price/full_history.zip in the Data/FNSPID/Stock_price folder, then extract to get raw data (too big to keep)
 """
 
-price_folder = "/global/cfs/cdirs/m4431/sp2160/FNSPID/Stock_price/full_history"
+base_dir = "/global/cfs/cdirs/m4431/sp2160/Data/"
+
+price_folder = f"{base_dir}FNSPID/Stock_price/full_history"
 csv_files = glob(os.path.join(price_folder, "*.csv"))
 
 print("Number of files found:", len(csv_files))
@@ -40,14 +42,14 @@ combined_df = combined_df.sort_values(['ticker', 'date'])
 print("Final sorted DataFrame head:")
 display(combined_df.head())
 
-combined_df.to_csv("FNSPID/processed_stock_prices.csv", index=False)
+combined_df.to_csv(f"{base_dir}FNSPID/processed_stock_prices.csv", index=False)
 
 """
 FNSPID NEWS HEADLINE PREPROCESSING
 run wget https://huggingface.co/datasets/Zihan1004/FNSPID/resolve/main/Stock_news/nasdaq_exteral_data.csv in the Data/FNSPID/Stock_news folder to get raw data (too big to keep)
 """
 
-news_file = "FNSPID/Stock_news/nasdaq_exteral_data.csv"
+news_file = f"{base_dir}FNSPID/Stock_news/nasdaq_exteral_data.csv"
 news_df = pd.read_csv(news_file)
 print("Initial headline data:")
 display(news_df.head())
@@ -57,7 +59,7 @@ print("Converted date column:")
 display(news_df[['date', 'Article_title', 'Stock_symbol']].head())
 
 output_df = news_df[['Date', 'Article_title', 'Stock_symbol']]
-output_df.to_csv("FNSPID/processed_headlines_subset.csv", index=False)
+output_df.to_csv(f"{base_dir}FNSPID/processed_headlines_subset.csv", index=False)
 
 # Stock Prices: Basic Info
 print("Number of tickers:", combined_df['ticker'].nunique())
