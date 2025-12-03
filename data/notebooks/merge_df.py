@@ -10,6 +10,7 @@ import argparse
 import os
 import time
 from typing import Tuple
+from joblib import Parallel, delayed
 
 import numpy as np
 import pandas as pd
@@ -64,29 +65,45 @@ def build_labeled_dataset(
     prices_df: pd.DataFrame,
     horizon_trading_days: int = 1,
     stable_threshold: float = 0.005,
+    n_jobs: int = 1,
 ) -> pd.DataFrame:
     """
     Join news headlines with price-direction labels per ticker.
 
     For each headline, use the last trading day STRICTLY BEFORE its date
     and take that day's label (future move over `horizon_trading_days`).
+
+    This version parallelizes over symbols with joblib.
     """
 
-    # Parse datetimes
+    # Parse datetimes once
     headlines_df["Date"] = pd.to_datetime(
         headlines_df["Date"].astype(str).str.replace(" UTC", ""),
         errors="coerce",
     )
     prices_df["date"] = pd.to_datetime(prices_df["date"], errors="coerce")
 
-    all_records = []
+    # Group once instead of refiltering in the loop
+    headline_groups = headlines_df.groupby("Stock_symbol")
+    price_groups = prices_df.groupby("ticker")
 
-    for sym in sorted(headlines_df["Stock_symbol"].dropna().unique()):
-        hsym = headlines_df[headlines_df["Stock_symbol"] == sym].copy()
-        psym = prices_df[prices_df["ticker"] == sym].copy()
+    # Only process symbols that exist in BOTH headlines and prices
+    headline_syms = set(headline_groups.groups.keys())
+    price_syms = set(price_groups.groups.keys())
+    symbols = sorted(headline_syms & price_syms)
+
+    if not symbols:
+        return pd.DataFrame(columns=list(headlines_df.columns) + ["label", "ret"])
+
+    print(f"Found {len(symbols)} symbols with both headlines and prices.", flush=True)
+
+    # Function to process one symbol (same logic you had inside the loop)
+    def process_symbol(sym: str) -> pd.DataFrame | None:
+        hsym = headline_groups.get_group(sym).copy()
+        psym = price_groups.get_group(sym).copy()
 
         if psym.empty:
-            continue
+            return None
 
         label_df = build_label_df(
             psym,
@@ -95,7 +112,7 @@ def build_labeled_dataset(
         )
         label_df = label_df.sort_values("date").reset_index(drop=True)
         if label_df.empty:
-            continue
+            return None
 
         label_dates = label_df["date"].dt.normalize().values
         headline_dates = hsym["Date"].dt.normalize().values
@@ -104,7 +121,7 @@ def build_labeled_dataset(
         idx = np.searchsorted(label_dates, headline_dates, side="left") - 1
         valid_mask = idx >= 0
         if not valid_mask.any():
-            continue
+            return None
 
         hsym_valid = hsym.loc[valid_mask].copy()
         mapped_idx = idx[valid_mask]
@@ -112,15 +129,24 @@ def build_labeled_dataset(
         hsym_valid["label"] = label_df["label"].values[mapped_idx]
         hsym_valid["ret"] = label_df["ret"].values[mapped_idx]
 
-        all_records.append(hsym_valid)
+        return hsym_valid
 
-    if not all_records:
-        return pd.DataFrame(
-            columns=list(headlines_df.columns) + ["label", "ret"]
-        )
+    # Parallel over symbols
+    print(f"Starting parallel processing with n_jobs={n_jobs} ...", flush=True)
 
-    ds = pd.concat(all_records, ignore_index=True)
+    results = Parallel(n_jobs=n_jobs, backend="threading")(
+        delayed(process_symbol)(sym)
+        for sym in symbols
+    )
+
+    # Filter out Nones and concat
+    non_empty = [r for r in results if r is not None]
+    if not non_empty:
+        return pd.DataFrame(columns=list(headlines_df.columns) + ["label", "ret"])
+
+    ds = pd.concat(non_empty, ignore_index=True)
     return ds
+
 
 
 # ---------------------------------------------------------------------
@@ -147,11 +173,13 @@ def main(args):
     print("Building labeled dataset...", flush=True)
     t1 = time.time()
     df = build_labeled_dataset(
-        headlines_df,
-        prices_df,
-        horizon_trading_days=args.horizon_days,
-        stable_threshold=args.stable_threshold,
+    headlines_df,
+    prices_df,
+    horizon_trading_days=args.horizon_days,
+    stable_threshold=args.stable_threshold,
+    n_jobs=args.n_jobs,
     )
+
     t2 = time.time()
     print(f"Labeled dataset shape before cleanup: {df.shape}")
     print(f"Labeling + join took {t2 - t1:.1f} seconds", flush=True)
@@ -198,6 +226,12 @@ if __name__ == "__main__":
         type=str,
         required=True,
         help="Path to prices CSV (e.g., processed_stock_prices.csv).",
+    )
+    parser.add_argument(
+    "--n_jobs",
+    type=int,
+    default=1,
+    help="Number of parallel jobs for symbol-level processing (joblib).",
     )
     parser.add_argument(
         "--output_path",
