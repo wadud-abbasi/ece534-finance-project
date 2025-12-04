@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A <your_account>
+#SBATCH -A m4431_g
 #SBATCH -C gpu
 #SBATCH -q regular
 #SBATCH -N 2
@@ -11,10 +11,7 @@
 #SBATCH -o logs/finbert_hybrid_%j.out
 #SBATCH -e logs/finbert_hybrid_%j.err
 
-module load pytorch/2.3.0  # or your preferred module
-# or your own env:
-# module load python
-# conda activate nersc-python
+module load python/3.12
 
 export OMP_NUM_THREADS=8
 
