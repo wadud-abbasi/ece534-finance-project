@@ -1,0 +1,6 @@
+module load python
+python -m venv .venv
+source .venv/bin/activate
+pip install transformers torch pandas numpy pyarrow
+cd scripts
+sbatch finetune.sh
