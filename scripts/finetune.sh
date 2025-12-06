@@ -11,14 +11,19 @@
 #SBATCH -e ../logs/finbert_finetune.%j.err
 
 module load python
-source .venv/bin/activate
+# Activate venv from project root (script runs from scripts/ directory)
+source ../.venv/bin/activate || {
+    echo "ERROR: Virtual environment not found at ../.venv/bin/activate" >&2
+    echo "Please create it with: python -m venv .venv" >&2
+    exit 1
+}
 
 srun python ../fine_tune.py \
     --data_path ../data/data/labeled_headlines.parquet \
     --text_column Article_title \
     --label_column label \
     --date_column Date \
-    --model_name ProsusAI/finbert \
+    --model_name /global/homes/a/amanp23/Finbert \
     --output_dir ../outputs/finbert_labeled_output \
     --batch_size 16 \
     --epochs 3 \
