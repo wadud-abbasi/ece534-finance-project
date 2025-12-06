@@ -13,19 +13,32 @@ from dataset import StockNewsDataset
 from model import HybridFinBERTModel
 
 
+# ---------------------------------------------------------------------
+# DDP helpers
+# ---------------------------------------------------------------------
 def setup_ddp():
+    """
+    Initialize torch.distributed using env variables set by torchrun / srun.
+    """
     dist.init_process_group(backend="nccl")
     rank = dist.get_rank()
     world_size = dist.get_world_size()
+
+    # LOCAL_RANK is set by torchrun; on Perlmutter with srun+torchrun this is correct
     local_rank = int(os.environ.get("LOCAL_RANK", 0))
     torch.cuda.set_device(local_rank)
+
     return rank, world_size, local_rank
 
 
 def cleanup_ddp():
-    dist.destroy_process_group()
+    if dist.is_initialized():
+        dist.destroy_process_group()
 
 
+# ---------------------------------------------------------------------
+# Argparse
+# ---------------------------------------------------------------------
 def parse_args():
     ap = argparse.ArgumentParser()
 
@@ -49,10 +62,17 @@ def parse_args():
     ap.add_argument("--output_dir", type=str, default="./checkpoints")
     ap.add_argument("--log_every", type=int, default=50)
 
+    # debug flag to kill dataloader multiprocessing if needed
+    ap.add_argument("--num_workers", type=int, default=4,
+                    help="DataLoader num_workers (set to 0 if you see hangs)")
+
     args = ap.parse_args()
     return args
 
 
+# ---------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------
 def main():
     args = parse_args()
     rank, world_size, local_rank = setup_ddp()
@@ -63,10 +83,11 @@ def main():
         print(f"[Rank 0] Using world_size={world_size}")
         print(f"[Rank 0] Saving checkpoints to {args.output_dir}")
 
-    # --- Dataset & DataLoader ---
+    # ---------------- Dataset & DataLoader ----------------
     if rank == 0:
         print("[Rank 0] Loading dataset...")
 
+    # Important: dataset __init__ MUST be cheap; see notes below
     dataset = StockNewsDataset(
         labeled_path=args.labeled_path,
         prices_path=args.prices_path,
@@ -75,6 +96,10 @@ def main():
         max_length=args.max_length,
         min_abs_ret=args.min_abs_ret,
     )
+
+    # Sanity check that we actually got past __init__
+    if rank == 0:
+        print(f"[Rank 0] Dataset loaded, len={len(dataset)}")
 
     sampler = DistributedSampler(
         dataset,
@@ -88,11 +113,12 @@ def main():
         dataset,
         batch_size=args.batch_size,
         sampler=sampler,
-        num_workers=4,
+        num_workers=args.num_workers,
         pin_memory=True,
+        persistent_workers=(args.num_workers > 0),
     )
 
-    # --- Model, optimizer, scaler ---
+    # ---------------- Model, optimizer, scaler ----------------
     if rank == 0:
         print("[Rank 0] Building model...")
 
@@ -102,7 +128,13 @@ def main():
         freeze_finbert=args.freeze_finbert,
     )
     model.to(device)
-    model = DDP(model, device_ids=[local_rank], output_device=local_rank, find_unused_parameters=False)
+
+    model = DDP(
+        model,
+        device_ids=[local_rank],
+        output_device=local_rank,
+        find_unused_parameters=False,
+    )
 
     optimizer = torch.optim.AdamW(
         filter(lambda p: p.requires_grad, model.parameters()),
@@ -111,7 +143,7 @@ def main():
     )
     scaler = torch.cuda.amp.GradScaler()
 
-    # --- Training loop ---
+    # ---------------- Training loop ----------------
     global_step = 0
     for epoch in range(args.epochs):
         sampler.set_epoch(epoch)
@@ -129,9 +161,11 @@ def main():
             optimizer.zero_grad(set_to_none=True)
 
             with torch.cuda.amp.autocast():
-                preds = model(input_ids=input_ids,
-                              attention_mask=attention_mask,
-                              price_seq=price_seq)
+                preds = model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    price_seq=price_seq,
+                )
                 loss = torch.nn.functional.mse_loss(preds, target)
 
             scaler.scale(loss).backward()
@@ -141,7 +175,6 @@ def main():
             global_step += 1
 
             if rank == 0 and global_step % args.log_every == 0:
-                # basic metrics on this mini-batch
                 with torch.no_grad():
                     mae = (preds - target).abs().mean().item()
                 print(
@@ -151,7 +184,7 @@ def main():
                     f"batch_size={target.size(0)}"
                 )
 
-        # --- Save checkpoint at end of each epoch (rank 0 only) ---
+        # -------- Save checkpoint (rank 0 only) --------
         if rank == 0:
             ckpt_path = os.path.join(
                 args.output_dir,
