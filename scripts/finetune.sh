@@ -18,6 +18,12 @@ source ../.venv/bin/activate || {
     exit 1
 }
 
+# Set up distributed training environment variables
+export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+export MASTER_PORT=29500
+export NCCL_DEBUG=INFO
+export NCCL_IB_DISABLE=0
+
 srun python ../fine_tune.py \
     --data_path ../data/data/labeled_headlines.parquet \
     --text_column Article_title \
@@ -25,8 +31,9 @@ srun python ../fine_tune.py \
     --date_column Date \
     --model_name /global/homes/a/amanp23/Finbert \
     --output_dir ../outputs/finbert_labeled_output \
+    --patience 0 \
     --batch_size 16 \
-    --epochs 3 \
-    --lr 2e-5 \
-    --weight_decay 0.01 \
+    --epochs 10 \
+    --lr 5e-6 \
+    --weight_decay 0.1 \
     --gradient_checkpointing

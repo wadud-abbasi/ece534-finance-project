@@ -1,0 +1,4 @@
+/var/spool/slurmd/job45997964/slurm_script: line 14: .venv/bin/activate: No such file or directory
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 45997964.0 ON nid002552 CANCELLED AT 2025-12-04T00:35:50 ***
+slurmstepd: error: *** JOB 45997964 ON nid002552 CANCELLED AT 2025-12-04T00:35:50 ***

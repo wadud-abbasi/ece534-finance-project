@@ -1,0 +1,3 @@
+https://fred.stlouisfed.org/series/DJIA --> press "Max" --> download as .csv and move into Data/Indexes folder
+https://fred.stlouisfed.org/series/NASDAQCOM --> press "Max" --> download as .csv and move into Data/Indexes folder
+https://fred.stlouisfed.org/series/SP500 --> press "Max" --> download as .csv and move into Data/Indexes folder

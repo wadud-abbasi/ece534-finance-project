@@ -6,3 +6,5 @@ data/Indexes/*
 
 data/data/*
 !data/data/.gitkeep
+
+.venv/

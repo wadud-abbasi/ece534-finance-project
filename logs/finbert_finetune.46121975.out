@@ -1,0 +1,1158 @@
+Rank 1: Initialized process group - world_size=16, local_rank=1, device=cuda:1, master_addr=nid001381:29500
+Rank 2: Initialized process group - world_size=16, local_rank=2, device=cuda:2, master_addr=nid001381:29500
+Rank 3: Initialized process group - world_size=16, local_rank=3, device=cuda:3, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 12: Initialized process group - world_size=16, local_rank=0, device=cuda:0, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 7: Initialized process group - world_size=16, local_rank=3, device=cuda:3, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 4: Initialized process group - world_size=16, local_rank=0, device=cuda:0, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 13: Initialized process group - world_size=16, local_rank=1, device=cuda:1, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 14: Initialized process group - world_size=16, local_rank=2, device=cuda:2, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 5: Initialized process group - world_size=16, local_rank=1, device=cuda:1, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 6: Initialized process group - world_size=16, local_rank=2, device=cuda:2, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 10: Initialized process group - world_size=16, local_rank=2, device=cuda:2, master_addr=nid001381:29500
+Rank 8: Initialized process group - world_size=16, local_rank=0, device=cuda:0, master_addr=nid001381:29500
+Rank 9: Initialized process group - world_size=16, local_rank=1, device=cuda:1, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 11: Initialized process group - world_size=16, local_rank=3, device=cuda:3, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 15: Initialized process group - world_size=16, local_rank=3, device=cuda:3, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Rank 0: Initialized process group - world_size=16, local_rank=0, device=cuda:0, master_addr=nid001381:29500
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Train size: 680039  |  Val size: 170009
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from '/global/homes/a/amanp23/Finbert'
+Rank 12: Using device: cuda:0
+Rank 14: Using device: cuda:2
+Rank 15: Using device: cuda:3
+Rank 1: Using device: cuda:1
+Rank 13: Using device: cuda:1
+Rank 3: Using device: cuda:3
+Rank 0: Using device: cuda:0
+Rank 2: Using device: cuda:2
+Rank 10: Using device: cuda:2
+Rank 9: Using device: cuda:1
+Rank 8: Using device: cuda:0
+Rank 11: Using device: cuda:3
+Rank 4: Using device: cuda:0
+Rank 6: Using device: cuda:2
+Rank 7: Using device: cuda:3
+Rank 5: Using device: cuda:1
+nid001381:1394389:1394389 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394389:1394389 [0] NCCL INFO Bootstrap: Using hsn0:10.249.6.154<0>
+nid001381:1394389:1394389 [0] NCCL INFO cudaDriverVersion 12040
+nid001381:1394389:1394389 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001381:1394389:1394389 [0] NCCL INFO Comm config Blocking set to 1
+nid001381:1394389:1394884 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001381:1394389:1394884 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001381:1394389:1394884 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394389:1394884 [0] NCCL INFO NET/IB : No device found.
+nid001381:1394389:1394884 [0] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.154<0>
+nid001381:1394389:1394884 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394389:1394884 [0] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.154<0> [1]hsn0:chn:128.55.65.230<0> [2]hsn1:10.249.6.153<0> [3]hsn2:10.249.26.72<0> [4]hsn3:10.249.24.72<0>
+nid001381:1394389:1394884 [0] NCCL INFO Initialized NET plugin Socket
+nid001381:1394389:1394884 [0] NCCL INFO Assigned NET plugin Socket to comm
+nid001381:1394389:1394884 [0] NCCL INFO Using network Socket
+nid001381:1394389:1394884 [0] NCCL INFO ncclCommInitRankConfig comm 0x562d20c73700 rank 0 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001381:1394389:1394884 [0] NCCL INFO RAS client listening socket at ::1<28028>
+nid001381:1394389:1394884 [0] NCCL INFO Bootstrap timings total 0.204232 (create 0.000023, send 0.000091, recv 0.000330, ring 0.203121, delay 0.000002)
+nid001381:1394389:1394884 [0] NCCL INFO Setting affinity for GPU 0 to 48-63,112-127
+nid001381:1394389:1394884 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+nid001381:1394389:1394884 [0] NCCL INFO comm 0x562d20c73700 rank 0 nRanks 16 nNodes 4 localRanks 4 localRank 0 MNNVL 0
+nid001381:1394389:1394884 [0] NCCL INFO Channel 00/08 :  0  3  2  1  5  6  7  4  8 11 10  9 13 14 15 12
+nid001381:1394389:1394884 [0] NCCL INFO Channel 01/08 :  0  4  7  6  5  9 10 11  8 12 15 14 13  1  2  3
+nid001381:1394389:1394884 [0] NCCL INFO Channel 02/08 :  0  1  3  7  4  5  6 10  8  9 11 15 12 13 14  2
+nid001381:1394389:1394884 [0] NCCL INFO Channel 03/08 :  0  1  2  6  4  5  7 11  8  9 10 14 12 13 15  3
+nid001381:1394389:1394884 [0] NCCL INFO Channel 04/08 :  0  3  2  1  5  6  7  4  8 11 10  9 13 14 15 12
+nid001381:1394389:1394884 [0] NCCL INFO Channel 05/08 :  0  4  7  6  5  9 10 11  8 12 15 14 13  1  2  3
+nid001381:1394389:1394884 [0] NCCL INFO Channel 06/08 :  0  1  3  7  4  5  6 10  8  9 11 15 12 13 14  2
+nid001381:1394389:1394884 [0] NCCL INFO Channel 07/08 :  0  1  2  6  4  5  7 11  8  9 10 14 12 13 15  3
+nid001381:1394389:1394884 [0] NCCL INFO Trees [0] 3/8/-1->0->-1 [1] 2/-1/-1->0->1 [2] 1/-1/-1->0->2 [3] -1/-1/-1->0->3 [4] 3/-1/-1->0->4 [5] 2/-1/-1->0->1 [6] 1/-1/-1->0->2 [7] -1/-1/-1->0->3
+nid001381:1394389:1394884 [0] NCCL INFO P2P Chunksize set to 131072
+nid001381:1394389:1394884 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001381:1394389:1394884 [0] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0
+nid001381:1394389:1394892 [0] NCCL INFO [Proxy Service] Device 0 CPU core 124
+nid001381:1394389:1394894 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 50
+nid001381:1394389:1394884 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001381:1394389:1394884 [0] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001381:1394389:1394884 [0] NCCL INFO CC Off, workFifoBytes 1048576
+nid001381:1394389:1394884 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001381:1394389:1394884 [0] NCCL INFO ncclCommInitRankConfig comm 0x562d20c73700 rank 0 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001388:1288193:1288193 [0] NCCL INFO cudaDriverVersion 12040
+nid001388:1288193:1288193 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288193:1288193 [0] NCCL INFO Bootstrap: Using hsn0:10.249.6.173<0>
+nid001388:1288193:1288193 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001388:1288193:1288193 [0] NCCL INFO Comm config Blocking set to 1
+nid001388:1288193:1288682 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001388:1288193:1288682 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001388:1288193:1288682 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288193:1288682 [0] NCCL INFO NET/IB : No device found.
+nid001388:1288193:1288682 [0] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.173<0>
+nid001388:1288193:1288682 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288193:1288682 [0] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.173<0> [1]hsn0:chn:128.55.69.33<0> [2]hsn1:10.249.6.174<0> [3]hsn2:10.249.26.74<0> [4]hsn3:10.249.24.74<0>
+nid001388:1288193:1288682 [0] NCCL INFO Initialized NET plugin Socket
+nid001388:1288193:1288682 [0] NCCL INFO Assigned NET plugin Socket to comm
+nid001388:1288193:1288682 [0] NCCL INFO Using network Socket
+nid001388:1288193:1288682 [0] NCCL INFO ncclCommInitRankConfig comm 0x55b5d6a5a5f0 rank 12 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001388:1288193:1288682 [0] NCCL INFO RAS client listening socket at ::1<28028>
+nid001388:1288193:1288682 [0] NCCL INFO Bootstrap timings total 0.216641 (create 0.000033, send 0.000225, recv 0.000560, ring 0.065767, delay 0.000002)
+nid001388:1288193:1288682 [0] NCCL INFO Setting affinity for GPU 0 to 48-63,112-127
+nid001388:1288193:1288682 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+nid001388:1288193:1288682 [0] NCCL INFO comm 0x55b5d6a5a5f0 rank 12 nRanks 16 nNodes 4 localRanks 4 localRank 0 MNNVL 0
+nid001388:1288193:1288682 [0] NCCL INFO Trees [0] 15/-1/-1->12->8 [1] 14/-1/-1->12->13 [2] 13/-1/-1->12->14 [3] -1/-1/-1->12->15 [4] 15/4/-1->12->-1 [5] 14/-1/-1->12->13 [6] 13/-1/-1->12->14 [7] -1/-1/-1->12->15
+nid001388:1288193:1288682 [0] NCCL INFO P2P Chunksize set to 131072
+nid001388:1288193:1288682 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001388:1288193:1288689 [0] NCCL INFO [Proxy Service] Device 0 CPU core 126
+nid001388:1288193:1288690 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 50
+nid001388:1288193:1288682 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001388:1288193:1288682 [0] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001388:1288193:1288682 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001385:1139569:1139569 [1] NCCL INFO cudaDriverVersion 12040
+nid001385:1139569:1139569 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139569:1139569 [1] NCCL INFO Bootstrap: Using hsn0:10.249.6.203<0>
+nid001385:1139569:1139569 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001385:1139569:1139569 [1] NCCL INFO Comm config Blocking set to 1
+nid001385:1139569:1140045 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001385:1139569:1140045 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001385:1139569:1140045 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139569:1140045 [1] NCCL INFO NET/IB : No device found.
+nid001385:1139569:1140045 [1] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.203<0>
+nid001385:1139569:1140045 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288193:1288682 [0] NCCL INFO ncclCommInitRankConfig comm 0x55b5d6a5a5f0 rank 12 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001388:1288193:1288682 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 12 nranks 16 total 0.69 (kernels 0.17, alloc 0.11, bootstrap 0.22, allgathers 0.04, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001388:1288193:1288697 [0] NCCL INFO Channel 02/0 : 12[0] -> 13[1] via P2P/CUMEM/read
+nid001388:1288193:1288697 [0] NCCL INFO Channel 03/0 : 12[0] -> 13[1] via P2P/CUMEM/read
+nid001388:1288193:1288697 [0] NCCL INFO Channel 06/0 : 12[0] -> 13[1] via P2P/CUMEM/read
+nid001388:1288193:1288697 [0] NCCL INFO Channel 07/0 : 12[0] -> 13[1] via P2P/CUMEM/read
+nid001388:1288193:1288697 [0] NCCL INFO Channel 01/0 : 12[0] -> 15[3] via P2P/CUMEM/read
+nid001388:1288193:1288697 [0] NCCL INFO Channel 05/0 : 12[0] -> 15[3] via P2P/CUMEM/read
+nid001388:1288193:1288700 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 125
+nid001385:1139569:1140045 [1] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.203<0> [1]hsn0:chn:128.55.67.105<0> [2]hsn1:10.249.6.204<0> [3]hsn2:10.249.26.97<0> [4]hsn3:10.249.24.97<0>
+nid001385:1139569:1140045 [1] NCCL INFO Initialized NET plugin Socket
+nid001385:1139569:1140045 [1] NCCL INFO Assigned NET plugin Socket to comm
+nid001385:1139569:1140045 [1] NCCL INFO Using network Socket
+nid001385:1139569:1140045 [1] NCCL INFO ncclCommInitRankConfig comm 0x558cc136f5e0 rank 9 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001385:1139569:1140045 [1] NCCL INFO RAS client listening socket at ::1<28028>
+nid001385:1139569:1140045 [1] NCCL INFO Bootstrap timings total 0.067022 (create 0.000027, send 0.000199, recv 0.005580, ring 0.059625, delay 0.000002)
+nid001385:1139569:1140045 [1] NCCL INFO Setting affinity for GPU 1 to 32-47,96-111
+nid001385:1139569:1140045 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+nid001381:1394394:1394394 [3] NCCL INFO cudaDriverVersion 12040
+nid001381:1394394:1394394 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394394:1394394 [3] NCCL INFO Bootstrap: Using hsn0:10.249.6.154<0>
+nid001381:1394394:1394394 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001381:1394394:1394394 [3] NCCL INFO Comm config Blocking set to 1
+nid001381:1394394:1394887 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001381:1394394:1394887 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001381:1394394:1394887 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394394:1394887 [3] NCCL INFO NET/IB : No device found.
+nid001381:1394394:1394887 [3] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.154<0>
+nid001381:1394394:1394887 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288193:1288697 [0] NCCL INFO Channel 01/0 : 8[0] -> 12[0] [receive] via NET/Socket/4
+nid001388:1288193:1288697 [0] NCCL INFO Channel 05/0 : 8[0] -> 12[0] [receive] via NET/Socket/4
+nid001385:1139569:1140045 [1] NCCL INFO comm 0x558cc136f5e0 rank 9 nRanks 16 nNodes 4 localRanks 4 localRank 1 MNNVL 0
+nid001385:1139569:1140045 [1] NCCL INFO Trees [0] -1/-1/-1->9->10 [1] 8/7/-1->9->11 [2] 11/-1/-1->9->8 [3] 10/13/-1->9->1 [4] -1/-1/-1->9->10 [5] 8/-1/-1->9->11 [6] 11/-1/-1->9->8 [7] 10/-1/-1->9->6
+nid001385:1139569:1140045 [1] NCCL INFO P2P Chunksize set to 131072
+nid001385:1139569:1140045 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001385:1139569:1140053 [1] NCCL INFO [Proxy Service] Device 1 CPU core 42
+nid001385:1139569:1140054 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 33
+nid001385:1139569:1140045 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001385:1139569:1140045 [1] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001385:1139569:1140045 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001381:1394394:1394887 [3] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.154<0> [1]hsn0:chn:128.55.65.230<0> [2]hsn1:10.249.6.153<0> [3]hsn2:10.249.26.72<0> [4]hsn3:10.249.24.72<0>
+nid001381:1394394:1394887 [3] NCCL INFO Initialized NET plugin Socket
+nid001381:1394394:1394887 [3] NCCL INFO Assigned NET plugin Socket to comm
+nid001381:1394394:1394887 [3] NCCL INFO Using network Socket
+nid001381:1394394:1394887 [3] NCCL INFO ncclCommInitRankConfig comm 0x5635cb9becc0 rank 3 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001381:1394394:1394887 [3] NCCL INFO RAS client listening socket at ::1<28028>
+nid001381:1394394:1394887 [3] NCCL INFO Bootstrap timings total 0.209366 (create 0.000024, send 0.000102, recv 0.201576, ring 0.007049, delay 0.000002)
+nid001381:1394394:1394887 [3] NCCL INFO Setting affinity for GPU 3 to 0-15,64-79
+nid001381:1394394:1394887 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+nid001388:1288194:1288194 [1] NCCL INFO cudaDriverVersion 12040
+nid001388:1288194:1288194 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288194:1288194 [1] NCCL INFO Bootstrap: Using hsn0:10.249.6.173<0>
+nid001388:1288194:1288194 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001388:1288194:1288194 [1] NCCL INFO Comm config Blocking set to 1
+nid001388:1288194:1288679 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001388:1288194:1288679 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001388:1288194:1288679 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288194:1288679 [1] NCCL INFO NET/IB : No device found.
+nid001388:1288194:1288679 [1] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.173<0>
+nid001388:1288194:1288679 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139569:1140045 [1] NCCL INFO ncclCommInitRankConfig comm 0x558cc136f5e0 rank 9 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001385:1139569:1140045 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 9 nranks 16 total 0.55 (kernels 0.15, alloc 0.14, bootstrap 0.07, allgathers 0.04, topo 0.11, graphs 0.01, connections 0.01, rest 0.02)
+nid001385:1139569:1140062 [1] NCCL INFO Channel 01/0 : 9[1] -> 10[2] via P2P/CUMEM/read
+nid001385:1139569:1140062 [1] NCCL INFO Channel 03/0 : 9[1] -> 10[2] via P2P/CUMEM/read
+nid001385:1139569:1140062 [1] NCCL INFO Channel 05/0 : 9[1] -> 10[2] via P2P/CUMEM/read
+nid001385:1139569:1140062 [1] NCCL INFO Channel 07/0 : 9[1] -> 10[2] via P2P/CUMEM/read
+nid001385:1139569:1140062 [1] NCCL INFO Channel 02/0 : 9[1] -> 11[3] via P2P/CUMEM/read
+nid001385:1139569:1140062 [1] NCCL INFO Channel 06/0 : 9[1] -> 11[3] via P2P/CUMEM/read
+nid001385:1139569:1140065 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 110
+nid001381:1394394:1394887 [3] NCCL INFO comm 0x5635cb9becc0 rank 3 nRanks 16 nNodes 4 localRanks 4 localRank 3 MNNVL 0
+nid001381:1394394:1394887 [3] NCCL INFO Trees [0] 2/-1/-1->3->0 [1] 1/11/-1->3->-1 [2] -1/-1/-1->3->1 [3] 0/-1/-1->3->2 [4] 2/-1/-1->3->0 [5] 1/-1/-1->3->7 [6] -1/-1/-1->3->1 [7] 0/-1/-1->3->2
+nid001381:1394394:1394887 [3] NCCL INFO P2P Chunksize set to 131072
+nid001381:1394394:1394887 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001381:1394394:1394895 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 65
+nid001381:1394394:1394893 [3] NCCL INFO [Proxy Service] Device 3 CPU core 79
+nid001381:1394394:1394887 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001381:1394394:1394887 [3] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001381:1394394:1394887 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001388:1288194:1288679 [1] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.173<0> [1]hsn0:chn:128.55.69.33<0> [2]hsn1:10.249.6.174<0> [3]hsn2:10.249.26.74<0> [4]hsn3:10.249.24.74<0>
+nid001388:1288194:1288679 [1] NCCL INFO Initialized NET plugin Socket
+nid001388:1288194:1288679 [1] NCCL INFO Assigned NET plugin Socket to comm
+nid001388:1288194:1288679 [1] NCCL INFO Using network Socket
+nid001388:1288194:1288679 [1] NCCL INFO ncclCommInitRankConfig comm 0x5645ff396ae0 rank 13 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001388:1288194:1288679 [1] NCCL INFO RAS client listening socket at ::1<28028>
+nid001388:1288194:1288679 [1] NCCL INFO Bootstrap timings total 0.216679 (create 0.000028, send 0.000215, recv 0.000356, ring 0.214330, delay 0.000002)
+nid001388:1288194:1288679 [1] NCCL INFO Setting affinity for GPU 1 to 32-47,96-111
+nid001388:1288194:1288679 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+nid001385:1139569:1140062 [1] NCCL INFO Channel 01/0 : 5[1] -> 9[1] [receive] via NET/Socket/3
+nid001385:1139569:1140062 [1] NCCL INFO Channel 05/0 : 5[1] -> 9[1] [receive] via NET/Socket/3
+nid001381:1394394:1394887 [3] NCCL INFO ncclCommInitRankConfig comm 0x5635cb9becc0 rank 3 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001381:1394394:1394887 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 16 total 0.72 (kernels 0.21, alloc 0.10, bootstrap 0.21, allgathers 0.00, topo 0.15, graphs 0.01, connections 0.01, rest 0.02)
+nid001381:1394394:1394906 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 11
+nid001381:1394394:1394903 [3] NCCL INFO Channel 03/0 : 15[3] -> 3[3] [receive] via NET/Socket/0
+nid001381:1394394:1394903 [3] NCCL INFO Channel 07/0 : 15[3] -> 3[3] [receive] via NET/Socket/0
+nid001381:1394394:1394903 [3] NCCL INFO Channel 02/0 : 3[3] -> 7[3] [send] via NET/Socket/0
+nid001381:1394394:1394903 [3] NCCL INFO Channel 06/0 : 3[3] -> 7[3] [send] via NET/Socket/0
+nid001381:1394394:1394903 [3] NCCL INFO Channel 01/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+nid001381:1394394:1394903 [3] NCCL INFO Channel 03/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+nid001388:1288194:1288679 [1] NCCL INFO comm 0x5645ff396ae0 rank 13 nRanks 16 nNodes 4 localRanks 4 localRank 1 MNNVL 0
+nid001388:1288194:1288679 [1] NCCL INFO Trees [0] -1/-1/-1->13->14 [1] 12/-1/-1->13->15 [2] 15/-1/-1->13->12 [3] 14/-1/-1->13->9 [4] -1/-1/-1->13->14 [5] 12/-1/-1->13->15 [6] 15/-1/-1->13->12 [7] 14/5/-1->13->-1
+nid001388:1288194:1288679 [1] NCCL INFO P2P Chunksize set to 131072
+nid001388:1288194:1288679 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001388:1288194:1288693 [1] NCCL INFO [Proxy Service] Device 1 CPU core 46
+nid001388:1288194:1288694 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 33
+nid001388:1288194:1288679 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001388:1288194:1288679 [1] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001388:1288194:1288679 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001385:1139568:1139568 [0] NCCL INFO cudaDriverVersion 12040
+nid001385:1139568:1139568 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139568:1139568 [0] NCCL INFO Bootstrap: Using hsn0:10.249.6.203<0>
+nid001385:1139568:1139568 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001385:1139568:1139568 [0] NCCL INFO Comm config Blocking set to 1
+nid001385:1139568:1140046 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001385:1139568:1140046 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001385:1139568:1140046 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139568:1140046 [0] NCCL INFO NET/IB : No device found.
+nid001385:1139568:1140046 [0] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.203<0>
+nid001385:1139568:1140046 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394394:1394903 [3] NCCL INFO Channel 05/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+nid001381:1394394:1394903 [3] NCCL INFO Channel 07/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+nid001381:1394394:1394903 [3] NCCL INFO Channel 00/0 : 3[3] -> 2[2] via P2P/CUMEM/read
+nid001388:1288194:1288679 [1] NCCL INFO ncclCommInitRankConfig comm 0x5645ff396ae0 rank 13 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001388:1288194:1288679 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 13 nranks 16 total 0.70 (kernels 0.21, alloc 0.08, bootstrap 0.22, allgathers 0.04, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001388:1288194:1288698 [1] NCCL INFO Channel 00/0 : 13[1] -> 14[2] via P2P/CUMEM/read
+nid001388:1288194:1288698 [1] NCCL INFO Channel 02/0 : 13[1] -> 14[2] via P2P/CUMEM/read
+nid001388:1288194:1288698 [1] NCCL INFO Channel 04/0 : 13[1] -> 14[2] via P2P/CUMEM/read
+nid001388:1288194:1288698 [1] NCCL INFO Channel 06/0 : 13[1] -> 14[2] via P2P/CUMEM/read
+nid001388:1288194:1288698 [1] NCCL INFO Channel 03/0 : 13[1] -> 15[3] via P2P/CUMEM/read
+nid001388:1288194:1288698 [1] NCCL INFO Channel 07/0 : 13[1] -> 15[3] via P2P/CUMEM/read
+nid001388:1288194:1288702 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 45
+nid001385:1139568:1140046 [0] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.203<0> [1]hsn0:chn:128.55.67.105<0> [2]hsn1:10.249.6.204<0> [3]hsn2:10.249.26.97<0> [4]hsn3:10.249.24.97<0>
+nid001385:1139568:1140046 [0] NCCL INFO Initialized NET plugin Socket
+nid001385:1139568:1140046 [0] NCCL INFO Assigned NET plugin Socket to comm
+nid001385:1139568:1140046 [0] NCCL INFO Using network Socket
+nid001385:1139568:1140046 [0] NCCL INFO ncclCommInitRankConfig comm 0x55bb1510a5b0 rank 8 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001385:1139568:1140046 [0] NCCL INFO RAS client listening socket at ::1<28028>
+nid001385:1139568:1140046 [0] NCCL INFO Bootstrap timings total 0.061900 (create 0.000029, send 0.000169, recv 0.000293, ring 0.007221, delay 0.000002)
+nid001385:1139568:1140046 [0] NCCL INFO Setting affinity for GPU 0 to 48-63,112-127
+nid001385:1139568:1140046 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+nid001381:1394393:1394393 [2] NCCL INFO cudaDriverVersion 12040
+nid001381:1394393:1394393 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394393:1394393 [2] NCCL INFO Bootstrap: Using hsn0:10.249.6.154<0>
+nid001381:1394393:1394393 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001381:1394393:1394393 [2] NCCL INFO Comm config Blocking set to 1
+nid001381:1394393:1394885 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001381:1394393:1394885 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001381:1394393:1394885 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394393:1394885 [2] NCCL INFO NET/IB : No device found.
+nid001381:1394393:1394885 [2] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.154<0>
+nid001381:1394393:1394885 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288194:1288698 [1] NCCL INFO Channel 00/0 : 9[1] -> 13[1] [receive] via NET/Socket/3
+nid001388:1288194:1288698 [1] NCCL INFO Channel 04/0 : 9[1] -> 13[1] [receive] via NET/Socket/3
+nid001385:1139568:1140046 [0] NCCL INFO comm 0x55bb1510a5b0 rank 8 nRanks 16 nNodes 4 localRanks 4 localRank 0 MNNVL 0
+nid001385:1139568:1140046 [0] NCCL INFO Trees [0] 11/12/-1->8->0 [1] 10/-1/-1->8->9 [2] 9/6/-1->8->10 [3] -1/-1/-1->8->11 [4] 11/-1/-1->8->7 [5] 10/-1/-1->8->9 [6] 9/-1/-1->8->10 [7] -1/-1/-1->8->11
+nid001385:1139568:1140046 [0] NCCL INFO P2P Chunksize set to 131072
+nid001385:1139568:1140046 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001385:1139568:1140057 [0] NCCL INFO [Proxy Service] Device 0 CPU core 122
+nid001385:1139568:1140058 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 50
+nid001385:1139568:1140046 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001385:1139568:1140046 [0] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001385:1139568:1140046 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001381:1394393:1394885 [2] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.154<0> [1]hsn0:chn:128.55.65.230<0> [2]hsn1:10.249.6.153<0> [3]hsn2:10.249.26.72<0> [4]hsn3:10.249.24.72<0>
+nid001381:1394393:1394885 [2] NCCL INFO Initialized NET plugin Socket
+nid001381:1394393:1394885 [2] NCCL INFO Assigned NET plugin Socket to comm
+nid001381:1394393:1394885 [2] NCCL INFO Using network Socket
+nid001381:1394393:1394885 [2] NCCL INFO ncclCommInitRankConfig comm 0x55dc80999840 rank 2 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001381:1394393:1394885 [2] NCCL INFO RAS client listening socket at ::1<28028>
+nid001381:1394393:1394885 [2] NCCL INFO Bootstrap timings total 0.209949 (create 0.000023, send 0.000091, recv 0.000698, ring 0.207550, delay 0.000002)
+nid001381:1394393:1394885 [2] NCCL INFO Setting affinity for GPU 2 to 16-31,80-95
+nid001381:1394393:1394885 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+nid001388:1288198:1288198 [3] NCCL INFO cudaDriverVersion 12040
+nid001388:1288198:1288198 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288198:1288198 [3] NCCL INFO Bootstrap: Using hsn0:10.249.6.173<0>
+nid001388:1288198:1288198 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001388:1288198:1288198 [3] NCCL INFO Comm config Blocking set to 1
+nid001388:1288198:1288680 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001388:1288198:1288680 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001388:1288198:1288680 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288198:1288680 [3] NCCL INFO NET/IB : No device found.
+nid001388:1288198:1288680 [3] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.173<0>
+nid001388:1288198:1288680 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139568:1140046 [0] NCCL INFO ncclCommInitRankConfig comm 0x55bb1510a5b0 rank 8 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001385:1139568:1140046 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 8 nranks 16 total 0.55 (kernels 0.17, alloc 0.12, bootstrap 0.06, allgathers 0.04, topo 0.11, graphs 0.01, connections 0.01, rest 0.02)
+nid001385:1139568:1140064 [0] NCCL INFO Channel 02/0 : 8[0] -> 9[1] via P2P/CUMEM/read
+nid001385:1139568:1140064 [0] NCCL INFO Channel 03/0 : 8[0] -> 9[1] via P2P/CUMEM/read
+nid001385:1139568:1140064 [0] NCCL INFO Channel 06/0 : 8[0] -> 9[1] via P2P/CUMEM/read
+nid001385:1139568:1140064 [0] NCCL INFO Channel 07/0 : 8[0] -> 9[1] via P2P/CUMEM/read
+nid001385:1139568:1140064 [0] NCCL INFO Channel 00/0 : 8[0] -> 11[3] via P2P/CUMEM/read
+nid001385:1139568:1140064 [0] NCCL INFO Channel 04/0 : 8[0] -> 11[3] via P2P/CUMEM/read
+nid001385:1139568:1140068 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 59
+nid001381:1394393:1394885 [2] NCCL INFO comm 0x55dc80999840 rank 2 nRanks 16 nNodes 4 localRanks 4 localRank 2 MNNVL 0
+nid001381:1394393:1394885 [2] NCCL INFO Trees [0] 1/-1/-1->2->3 [1] -1/-1/-1->2->0 [2] 0/10/-1->2->-1 [3] 3/-1/-1->2->1 [4] 1/-1/-1->2->3 [5] -1/-1/-1->2->0 [6] 0/-1/-1->2->6 [7] 3/-1/-1->2->1
+nid001381:1394393:1394885 [2] NCCL INFO P2P Chunksize set to 131072
+nid001381:1394393:1394885 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001381:1394393:1394899 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 82
+nid001381:1394393:1394898 [2] NCCL INFO [Proxy Service] Device 2 CPU core 30
+nid001381:1394393:1394885 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001381:1394393:1394885 [2] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001381:1394393:1394885 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001388:1288198:1288680 [3] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.173<0> [1]hsn0:chn:128.55.69.33<0> [2]hsn1:10.249.6.174<0> [3]hsn2:10.249.26.74<0> [4]hsn3:10.249.24.74<0>
+nid001388:1288198:1288680 [3] NCCL INFO Initialized NET plugin Socket
+nid001388:1288198:1288680 [3] NCCL INFO Assigned NET plugin Socket to comm
+nid001388:1288198:1288680 [3] NCCL INFO Using network Socket
+nid001388:1288198:1288680 [3] NCCL INFO ncclCommInitRankConfig comm 0x5641e2de4d20 rank 15 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001388:1288198:1288680 [3] NCCL INFO RAS client listening socket at ::1<28028>
+nid001388:1288198:1288680 [3] NCCL INFO Bootstrap timings total 0.217000 (create 0.000025, send 0.000576, recv 0.012617, ring 0.203204, delay 0.000002)
+nid001388:1288198:1288680 [3] NCCL INFO Setting affinity for GPU 3 to 0-15,64-79
+nid001388:1288198:1288680 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+nid001385:1139568:1140064 [0] NCCL INFO Channel 00/0 : 4[0] -> 8[0] [receive] via NET/Socket/4
+nid001385:1139568:1140064 [0] NCCL INFO Channel 04/0 : 4[0] -> 8[0] [receive] via NET/Socket/4
+nid001385:1139568:1140064 [0] NCCL INFO Channel 01/0 : 8[0] -> 12[0] [send] via NET/Socket/4
+nid001381:1394393:1394885 [2] NCCL INFO ncclCommInitRankConfig comm 0x55dc80999840 rank 2 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001381:1394393:1394885 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 16 total 0.72 (kernels 0.21, alloc 0.10, bootstrap 0.21, allgathers 0.01, topo 0.15, graphs 0.01, connections 0.01, rest 0.02)
+nid001381:1394393:1394902 [2] NCCL INFO Channel 01/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+nid001381:1394393:1394902 [2] NCCL INFO Channel 05/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+nid001381:1394393:1394904 [2] NCCL INFO [Proxy Progress] Device 2 CPU core 93
+nid001381:1394393:1394902 [2] NCCL INFO Channel 02/0 : 14[2] -> 2[2] [receive] via NET/Socket/2
+nid001381:1394393:1394902 [2] NCCL INFO Channel 06/0 : 14[2] -> 2[2] [receive] via NET/Socket/2
+nid001381:1394393:1394902 [2] NCCL INFO Channel 03/0 : 2[2] -> 6[2] [send] via NET/Socket/2
+nid001381:1394393:1394902 [2] NCCL INFO Channel 07/0 : 2[2] -> 6[2] [send] via NET/Socket/2
+nid001388:1288198:1288680 [3] NCCL INFO comm 0x5641e2de4d20 rank 15 nRanks 16 nNodes 4 localRanks 4 localRank 3 MNNVL 0
+nid001388:1288198:1288680 [3] NCCL INFO Trees [0] 14/-1/-1->15->12 [1] 13/-1/-1->15->11 [2] -1/-1/-1->15->13 [3] 12/-1/-1->15->14 [4] 14/-1/-1->15->12 [5] 13/7/-1->15->-1 [6] -1/-1/-1->15->13 [7] 12/-1/-1->15->14
+nid001388:1288198:1288680 [3] NCCL INFO P2P Chunksize set to 131072
+nid001388:1288198:1288680 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001388:1288198:1288691 [3] NCCL INFO [Proxy Service] Device 3 CPU core 79
+nid001388:1288198:1288692 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 66
+nid001388:1288198:1288680 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001388:1288198:1288680 [3] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001388:1288198:1288680 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001385:1139573:1139573 [3] NCCL INFO cudaDriverVersion 12040
+nid001385:1139573:1139573 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139573:1139573 [3] NCCL INFO Bootstrap: Using hsn0:10.249.6.203<0>
+nid001385:1139573:1139573 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001385:1139573:1139573 [3] NCCL INFO Comm config Blocking set to 1
+nid001385:1139573:1140048 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001385:1139573:1140048 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001385:1139573:1140048 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139573:1140048 [3] NCCL INFO NET/IB : No device found.
+nid001385:1139573:1140048 [3] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.203<0>
+nid001385:1139573:1140048 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394393:1394902 [2] NCCL INFO Channel 02/0 : 2[2] -> 0[0] via P2P/CUMEM/read
+nid001381:1394393:1394902 [2] NCCL INFO Channel 06/0 : 2[2] -> 0[0] via P2P/CUMEM/read
+nid001381:1394393:1394902 [2] NCCL INFO Channel 00/0 : 2[2] -> 1[1] via P2P/CUMEM/read
+nid001388:1288198:1288680 [3] NCCL INFO ncclCommInitRankConfig comm 0x5641e2de4d20 rank 15 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001388:1288198:1288680 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 15 nranks 16 total 0.70 (kernels 0.18, alloc 0.11, bootstrap 0.22, allgathers 0.04, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001388:1288198:1288701 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 12
+nid001388:1288198:1288696 [3] NCCL INFO Channel 02/0 : 11[3] -> 15[3] [receive] via NET/Socket/0
+nid001388:1288198:1288696 [3] NCCL INFO Channel 06/0 : 11[3] -> 15[3] [receive] via NET/Socket/0
+nid001388:1288198:1288696 [3] NCCL INFO Channel 03/0 : 15[3] -> 3[3] [send] via NET/Socket/0
+nid001388:1288198:1288696 [3] NCCL INFO Channel 07/0 : 15[3] -> 3[3] [send] via NET/Socket/0
+nid001388:1288198:1288696 [3] NCCL INFO Channel 00/0 : 15[3] -> 12[0] via P2P/CUMEM/read
+nid001385:1139573:1140048 [3] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.203<0> [1]hsn0:chn:128.55.67.105<0> [2]hsn1:10.249.6.204<0> [3]hsn2:10.249.26.97<0> [4]hsn3:10.249.24.97<0>
+nid001385:1139573:1140048 [3] NCCL INFO Initialized NET plugin Socket
+nid001385:1139573:1140048 [3] NCCL INFO Assigned NET plugin Socket to comm
+nid001385:1139573:1140048 [3] NCCL INFO Using network Socket
+nid001385:1139573:1140048 [3] NCCL INFO ncclCommInitRankConfig comm 0x562accfb0e80 rank 11 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001385:1139573:1140048 [3] NCCL INFO RAS client listening socket at ::1<28028>
+nid001385:1139573:1140048 [3] NCCL INFO Bootstrap timings total 0.067024 (create 0.000026, send 0.000207, recv 0.000319, ring 0.059905, delay 0.000002)
+nid001385:1139573:1140048 [3] NCCL INFO Setting affinity for GPU 3 to 0-15,64-79
+nid001385:1139573:1140048 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+nid001381:1394390:1394390 [1] NCCL INFO cudaDriverVersion 12040
+nid001381:1394390:1394390 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394390:1394390 [1] NCCL INFO Bootstrap: Using hsn0:10.249.6.154<0>
+nid001381:1394390:1394390 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001381:1394390:1394390 [1] NCCL INFO Comm config Blocking set to 1
+nid001381:1394390:1394886 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001381:1394390:1394886 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001381:1394390:1394886 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394390:1394886 [1] NCCL INFO NET/IB : No device found.
+nid001381:1394390:1394886 [1] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.154<0>
+nid001381:1394390:1394886 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288198:1288696 [3] NCCL INFO Channel 02/0 : 15[3] -> 12[0] via P2P/CUMEM/read
+nid001388:1288198:1288696 [3] NCCL INFO Channel 04/0 : 15[3] -> 12[0] via P2P/CUMEM/read
+nid001388:1288198:1288696 [3] NCCL INFO Channel 06/0 : 15[3] -> 12[0] via P2P/CUMEM/read
+nid001385:1139573:1140048 [3] NCCL INFO comm 0x562accfb0e80 rank 11 nRanks 16 nNodes 4 localRanks 4 localRank 3 MNNVL 0
+nid001385:1139573:1140048 [3] NCCL INFO Trees [0] 10/4/-1->11->8 [1] 9/15/-1->11->3 [2] -1/-1/-1->11->9 [3] 8/-1/-1->11->10 [4] 10/-1/-1->11->8 [5] 9/-1/-1->11->5 [6] -1/-1/-1->11->9 [7] 8/-1/-1->11->10
+nid001385:1139573:1140048 [3] NCCL INFO P2P Chunksize set to 131072
+nid001385:1139573:1140048 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001385:1139573:1140056 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 66
+nid001385:1139573:1140055 [3] NCCL INFO [Proxy Service] Device 3 CPU core 72
+nid001385:1139573:1140048 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001385:1139573:1140048 [3] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001385:1139573:1140048 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001381:1394390:1394886 [1] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.154<0> [1]hsn0:chn:128.55.65.230<0> [2]hsn1:10.249.6.153<0> [3]hsn2:10.249.26.72<0> [4]hsn3:10.249.24.72<0>
+nid001381:1394390:1394886 [1] NCCL INFO Initialized NET plugin Socket
+nid001381:1394390:1394886 [1] NCCL INFO Assigned NET plugin Socket to comm
+nid001381:1394390:1394886 [1] NCCL INFO Using network Socket
+nid001381:1394390:1394886 [1] NCCL INFO ncclCommInitRankConfig comm 0x55bb08de6e20 rank 1 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001381:1394390:1394886 [1] NCCL INFO RAS client listening socket at ::1<28028>
+nid001381:1394390:1394886 [1] NCCL INFO Bootstrap timings total 0.209368 (create 0.000025, send 0.000096, recv 0.000246, ring 0.203314, delay 0.000002)
+nid001381:1394390:1394886 [1] NCCL INFO Setting affinity for GPU 1 to 32-47,96-111
+nid001381:1394390:1394886 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+nid001388:1288197:1288197 [2] NCCL INFO cudaDriverVersion 12040
+nid001388:1288197:1288197 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288197:1288197 [2] NCCL INFO Bootstrap: Using hsn0:10.249.6.173<0>
+nid001388:1288197:1288197 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001388:1288197:1288197 [2] NCCL INFO Comm config Blocking set to 1
+nid001388:1288197:1288681 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001388:1288197:1288681 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001388:1288197:1288681 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001388:1288197:1288681 [2] NCCL INFO NET/IB : No device found.
+nid001388:1288197:1288681 [2] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.173<0>
+nid001388:1288197:1288681 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139573:1140048 [3] NCCL INFO ncclCommInitRankConfig comm 0x562accfb0e80 rank 11 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001385:1139573:1140048 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 11 nranks 16 total 0.53 (kernels 0.13, alloc 0.14, bootstrap 0.07, allgathers 0.04, topo 0.11, graphs 0.01, connections 0.01, rest 0.02)
+nid001385:1139573:1140067 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 78
+nid001385:1139573:1140061 [3] NCCL INFO Channel 03/0 : 7[3] -> 11[3] [receive] via NET/Socket/0
+nid001385:1139573:1140061 [3] NCCL INFO Channel 07/0 : 7[3] -> 11[3] [receive] via NET/Socket/0
+nid001385:1139573:1140061 [3] NCCL INFO Channel 02/0 : 11[3] -> 15[3] [send] via NET/Socket/0
+nid001385:1139573:1140061 [3] NCCL INFO Channel 06/0 : 11[3] -> 15[3] [send] via NET/Socket/0
+nid001385:1139573:1140061 [3] NCCL INFO Channel 01/0 : 11[3] -> 8[0] via P2P/CUMEM/read
+nid001381:1394390:1394886 [1] NCCL INFO comm 0x55bb08de6e20 rank 1 nRanks 16 nNodes 4 localRanks 4 localRank 1 MNNVL 0
+nid001381:1394390:1394886 [1] NCCL INFO Trees [0] -1/-1/-1->1->2 [1] 0/-1/-1->1->3 [2] 3/-1/-1->1->0 [3] 2/9/-1->1->-1 [4] -1/-1/-1->1->2 [5] 0/-1/-1->1->3 [6] 3/-1/-1->1->0 [7] 2/-1/-1->1->5
+nid001381:1394390:1394886 [1] NCCL INFO P2P Chunksize set to 131072
+nid001381:1394390:1394886 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001381:1394390:1394897 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 33
+nid001381:1394390:1394896 [1] NCCL INFO [Proxy Service] Device 1 CPU core 110
+nid001381:1394390:1394886 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001381:1394390:1394886 [1] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001381:1394390:1394886 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001388:1288197:1288681 [2] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.173<0> [1]hsn0:chn:128.55.69.33<0> [2]hsn1:10.249.6.174<0> [3]hsn2:10.249.26.74<0> [4]hsn3:10.249.24.74<0>
+nid001388:1288197:1288681 [2] NCCL INFO Initialized NET plugin Socket
+nid001388:1288197:1288681 [2] NCCL INFO Assigned NET plugin Socket to comm
+nid001388:1288197:1288681 [2] NCCL INFO Using network Socket
+nid001388:1288197:1288681 [2] NCCL INFO ncclCommInitRankConfig comm 0x5593043dc390 rank 14 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001388:1288197:1288681 [2] NCCL INFO RAS client listening socket at ::1<28028>
+nid001388:1288197:1288681 [2] NCCL INFO Bootstrap timings total 0.216977 (create 0.000019, send 0.000137, recv 0.001143, ring 0.214316, delay 0.000001)
+nid001388:1288197:1288681 [2] NCCL INFO Setting affinity for GPU 2 to 16-31,80-95
+nid001388:1288197:1288681 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+nid001385:1139573:1140061 [3] NCCL INFO Channel 03/0 : 11[3] -> 8[0] via P2P/CUMEM/read
+nid001385:1139573:1140061 [3] NCCL INFO Channel 05/0 : 11[3] -> 8[0] via P2P/CUMEM/read
+nid001385:1139573:1140061 [3] NCCL INFO Channel 07/0 : 11[3] -> 8[0] via P2P/CUMEM/read
+nid001381:1394390:1394886 [1] NCCL INFO ncclCommInitRankConfig comm 0x55bb08de6e20 rank 1 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001381:1394390:1394886 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 16 total 0.72 (kernels 0.21, alloc 0.10, bootstrap 0.21, allgathers 0.01, topo 0.15, graphs 0.01, connections 0.01, rest 0.02)
+nid001381:1394390:1394901 [1] NCCL INFO Channel 01/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+nid001381:1394390:1394901 [1] NCCL INFO Channel 03/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+nid001381:1394390:1394901 [1] NCCL INFO Channel 05/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+nid001381:1394390:1394901 [1] NCCL INFO Channel 07/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+nid001381:1394390:1394901 [1] NCCL INFO Channel 02/0 : 1[1] -> 3[3] via P2P/CUMEM/read
+nid001381:1394390:1394901 [1] NCCL INFO Channel 06/0 : 1[1] -> 3[3] via P2P/CUMEM/read
+nid001381:1394390:1394907 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 109
+nid001388:1288197:1288681 [2] NCCL INFO comm 0x5593043dc390 rank 14 nRanks 16 nNodes 4 localRanks 4 localRank 2 MNNVL 0
+nid001388:1288197:1288681 [2] NCCL INFO Trees [0] 13/-1/-1->14->15 [1] -1/-1/-1->14->12 [2] 12/-1/-1->14->10 [3] 15/-1/-1->14->13 [4] 13/-1/-1->14->15 [5] -1/-1/-1->14->12 [6] 12/6/-1->14->-1 [7] 15/-1/-1->14->13
+nid001388:1288197:1288681 [2] NCCL INFO P2P Chunksize set to 131072
+nid001388:1288197:1288681 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001388:1288197:1288687 [2] NCCL INFO [Proxy Service] Device 2 CPU core 20
+nid001388:1288197:1288688 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 88
+nid001388:1288197:1288681 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001388:1288197:1288681 [2] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001388:1288197:1288681 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001385:1139572:1139572 [2] NCCL INFO cudaDriverVersion 12040
+nid001385:1139572:1139572 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139572:1139572 [2] NCCL INFO Bootstrap: Using hsn0:10.249.6.203<0>
+nid001385:1139572:1139572 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001385:1139572:1139572 [2] NCCL INFO Comm config Blocking set to 1
+nid001385:1139572:1140047 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001385:1139572:1140047 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001385:1139572:1140047 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001385:1139572:1140047 [2] NCCL INFO NET/IB : No device found.
+nid001385:1139572:1140047 [2] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.203<0>
+nid001385:1139572:1140047 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001381:1394390:1394901 [1] NCCL INFO Channel 01/0 : 13[1] -> 1[1] [receive] via NET/Socket/3
+nid001381:1394390:1394901 [1] NCCL INFO Channel 05/0 : 13[1] -> 1[1] [receive] via NET/Socket/3
+nid001381:1394390:1394901 [1] NCCL INFO Channel 00/0 : 1[1] -> 5[1] [send] via NET/Socket/3
+nid001388:1288197:1288681 [2] NCCL INFO ncclCommInitRankConfig comm 0x5593043dc390 rank 14 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001388:1288197:1288681 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 14 nranks 16 total 0.70 (kernels 0.17, alloc 0.11, bootstrap 0.22, allgathers 0.04, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001388:1288197:1288695 [2] NCCL INFO Channel 00/0 : 14[2] -> 15[3] via P2P/CUMEM/read
+nid001388:1288197:1288695 [2] NCCL INFO Channel 04/0 : 14[2] -> 15[3] via P2P/CUMEM/read
+nid001388:1288197:1288699 [2] NCCL INFO [Proxy Progress] Device 2 CPU core 89
+nid001388:1288197:1288695 [2] NCCL INFO Channel 03/0 : 10[2] -> 14[2] [receive] via NET/Socket/2
+nid001388:1288197:1288695 [2] NCCL INFO Channel 07/0 : 10[2] -> 14[2] [receive] via NET/Socket/2
+nid001388:1288197:1288695 [2] NCCL INFO Channel 02/0 : 14[2] -> 2[2] [send] via NET/Socket/2
+nid001385:1139572:1140047 [2] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.203<0> [1]hsn0:chn:128.55.67.105<0> [2]hsn1:10.249.6.204<0> [3]hsn2:10.249.26.97<0> [4]hsn3:10.249.24.97<0>
+nid001385:1139572:1140047 [2] NCCL INFO Initialized NET plugin Socket
+nid001385:1139572:1140047 [2] NCCL INFO Assigned NET plugin Socket to comm
+nid001385:1139572:1140047 [2] NCCL INFO Using network Socket
+nid001385:1139572:1140047 [2] NCCL INFO ncclCommInitRankConfig comm 0x55a4cf9c56c0 rank 10 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001385:1139572:1140047 [2] NCCL INFO RAS client listening socket at ::1<28028>
+nid001385:1139572:1140047 [2] NCCL INFO Bootstrap timings total 0.061971 (create 0.000022, send 0.000209, recv 0.000631, ring 0.059470, delay 0.000002)
+nid001385:1139572:1140047 [2] NCCL INFO Setting affinity for GPU 2 to 16-31,80-95
+nid001385:1139572:1140047 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+nid001388:1288197:1288695 [2] NCCL INFO Channel 06/0 : 14[2] -> 2[2] [send] via NET/Socket/2
+nid001388:1288197:1288695 [2] NCCL INFO Channel 03/0 : 14[2] -> 12[0] via P2P/CUMEM/read
+nid001388:1288197:1288695 [2] NCCL INFO Channel 07/0 : 14[2] -> 12[0] via P2P/CUMEM/read
+nid001385:1139572:1140047 [2] NCCL INFO comm 0x55a4cf9c56c0 rank 10 nRanks 16 nNodes 4 localRanks 4 localRank 2 MNNVL 0
+nid001385:1139572:1140047 [2] NCCL INFO Trees [0] 9/-1/-1->10->11 [1] -1/-1/-1->10->8 [2] 8/14/-1->10->2 [3] 11/5/-1->10->9 [4] 9/-1/-1->10->11 [5] -1/-1/-1->10->8 [6] 8/-1/-1->10->4 [7] 11/-1/-1->10->9
+nid001385:1139572:1140047 [2] NCCL INFO P2P Chunksize set to 131072
+nid001385:1139572:1140047 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001385:1139572:1140060 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 18
+nid001385:1139572:1140059 [2] NCCL INFO [Proxy Service] Device 2 CPU core 88
+nid001385:1139572:1140047 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001385:1139572:1140047 [2] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001385:1139572:1140047 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001385:1139572:1140047 [2] NCCL INFO ncclCommInitRankConfig comm 0x55a4cf9c56c0 rank 10 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001385:1139572:1140047 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 10 nranks 16 total 0.55 (kernels 0.17, alloc 0.12, bootstrap 0.06, allgathers 0.04, topo 0.11, graphs 0.01, connections 0.01, rest 0.02)
+nid001385:1139572:1140063 [2] NCCL INFO Channel 01/0 : 10[2] -> 11[3] via P2P/CUMEM/read
+nid001385:1139572:1140063 [2] NCCL INFO Channel 05/0 : 10[2] -> 11[3] via P2P/CUMEM/read
+nid001385:1139572:1140066 [2] NCCL INFO [Proxy Progress] Device 2 CPU core 89
+nid001385:1139572:1140063 [2] NCCL INFO Channel 02/0 : 6[2] -> 10[2] [receive] via NET/Socket/2
+nid001385:1139572:1140063 [2] NCCL INFO Channel 06/0 : 6[2] -> 10[2] [receive] via NET/Socket/2
+nid001385:1139572:1140063 [2] NCCL INFO Channel 03/0 : 10[2] -> 14[2] [send] via NET/Socket/2
+nid001385:1139572:1140063 [2] NCCL INFO Channel 07/0 : 10[2] -> 14[2] [send] via NET/Socket/2
+nid001385:1139572:1140063 [2] NCCL INFO Channel 02/0 : 10[2] -> 8[0] via P2P/CUMEM/read
+nid001385:1139572:1140063 [2] NCCL INFO Channel 06/0 : 10[2] -> 8[0] via P2P/CUMEM/read
+nid001384:706797:706797 [0] NCCL INFO cudaDriverVersion 12040
+nid001384:706797:706797 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706797:706797 [0] NCCL INFO Bootstrap: Using hsn0:10.249.6.171<0>
+nid001384:706797:706797 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001384:706797:706797 [0] NCCL INFO Comm config Blocking set to 1
+nid001384:706797:707284 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001384:706797:707284 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001384:706797:707284 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706797:707284 [0] NCCL INFO NET/IB : No device found.
+nid001384:706797:707284 [0] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.171<0>
+nid001384:706797:707284 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706797:707284 [0] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.171<0> [1]hsn0:chn:128.55.70.48<0> [2]hsn1:10.249.6.172<0> [3]hsn2:10.249.26.73<0> [4]hsn3:10.249.24.73<0>
+nid001384:706797:707284 [0] NCCL INFO Initialized NET plugin Socket
+nid001384:706797:707284 [0] NCCL INFO Assigned NET plugin Socket to comm
+nid001384:706797:707284 [0] NCCL INFO Using network Socket
+nid001384:706797:707284 [0] NCCL INFO ncclCommInitRankConfig comm 0x55e784f94160 rank 4 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001384:706797:707284 [0] NCCL INFO RAS client listening socket at ::1<28028>
+nid001384:706797:707284 [0] NCCL INFO Bootstrap timings total 0.008355 (create 0.000022, send 0.000209, recv 0.000755, ring 0.006186, delay 0.000002)
+nid001384:706797:707284 [0] NCCL INFO Setting affinity for GPU 0 to 48-63,112-127
+nid001384:706797:707284 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+nid001384:706797:707284 [0] NCCL INFO comm 0x55e784f94160 rank 4 nRanks 16 nNodes 4 localRanks 4 localRank 0 MNNVL 0
+nid001384:706797:707284 [0] NCCL INFO Trees [0] 7/-1/-1->4->11 [1] 6/-1/-1->4->5 [2] 5/-1/-1->4->6 [3] -1/-1/-1->4->7 [4] 7/0/-1->4->12 [5] 6/-1/-1->4->5 [6] 5/10/-1->4->6 [7] -1/-1/-1->4->7
+nid001384:706797:707284 [0] NCCL INFO P2P Chunksize set to 131072
+nid001384:706797:707284 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001384:706797:707296 [0] NCCL INFO [Proxy Service] Device 0 CPU core 50
+nid001384:706797:707297 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 52
+nid001384:706797:707284 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001384:706797:707284 [0] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001384:706797:707284 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001384:706797:707284 [0] NCCL INFO ncclCommInitRankConfig comm 0x55e784f94160 rank 4 nranks 16 cudaDev 0 nvmlDev 0 busId 3000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001384:706797:707284 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 4 nranks 16 total 0.45 (kernels 0.14, alloc 0.11, bootstrap 0.01, allgathers 0.03, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001384:706797:707300 [0] NCCL INFO Channel 02/0 : 4[0] -> 5[1] via P2P/CUMEM/read
+nid001384:706797:707300 [0] NCCL INFO Channel 03/0 : 4[0] -> 5[1] via P2P/CUMEM/read
+nid001384:706797:707300 [0] NCCL INFO Channel 06/0 : 4[0] -> 5[1] via P2P/CUMEM/read
+nid001384:706797:707300 [0] NCCL INFO Channel 07/0 : 4[0] -> 5[1] via P2P/CUMEM/read
+nid001384:706797:707300 [0] NCCL INFO Channel 01/0 : 4[0] -> 7[3] via P2P/CUMEM/read
+nid001384:706797:707300 [0] NCCL INFO Channel 05/0 : 4[0] -> 7[3] via P2P/CUMEM/read
+nid001384:706797:707305 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 50
+nid001384:706797:707300 [0] NCCL INFO Channel 01/0 : 0[0] -> 4[0] [receive] via NET/Socket/4
+nid001384:706797:707300 [0] NCCL INFO Channel 05/0 : 0[0] -> 4[0] [receive] via NET/Socket/4
+nid001384:706797:707300 [0] NCCL INFO Channel 00/0 : 4[0] -> 8[0] [send] via NET/Socket/4
+nid001384:706797:707300 [0] NCCL INFO Channel 04/0 : 4[0] -> 8[0] [send] via NET/Socket/4
+nid001384:706798:706798 [1] NCCL INFO cudaDriverVersion 12040
+nid001384:706798:706798 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706798:706798 [1] NCCL INFO Bootstrap: Using hsn0:10.249.6.171<0>
+nid001384:706798:706798 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001384:706798:706798 [1] NCCL INFO Comm config Blocking set to 1
+nid001384:706798:707287 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001384:706798:707287 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001384:706798:707287 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706798:707287 [1] NCCL INFO NET/IB : No device found.
+nid001384:706798:707287 [1] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.171<0>
+nid001384:706798:707287 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706798:707287 [1] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.171<0> [1]hsn0:chn:128.55.70.48<0> [2]hsn1:10.249.6.172<0> [3]hsn2:10.249.26.73<0> [4]hsn3:10.249.24.73<0>
+nid001384:706798:707287 [1] NCCL INFO Initialized NET plugin Socket
+nid001384:706798:707287 [1] NCCL INFO Assigned NET plugin Socket to comm
+nid001384:706798:707287 [1] NCCL INFO Using network Socket
+nid001384:706798:707287 [1] NCCL INFO ncclCommInitRankConfig comm 0x55651a072300 rank 5 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001384:706798:707287 [1] NCCL INFO RAS client listening socket at ::1<28028>
+nid001384:706798:707287 [1] NCCL INFO Bootstrap timings total 0.008373 (create 0.000022, send 0.000200, recv 0.000949, ring 0.005954, delay 0.000002)
+nid001384:706798:707287 [1] NCCL INFO Setting affinity for GPU 1 to 32-47,96-111
+nid001384:706798:707287 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+nid001384:706798:707287 [1] NCCL INFO comm 0x55651a072300 rank 5 nRanks 16 nNodes 4 localRanks 4 localRank 1 MNNVL 0
+nid001384:706798:707287 [1] NCCL INFO Trees [0] -1/-1/-1->5->6 [1] 4/-1/-1->5->7 [2] 7/-1/-1->5->4 [3] 6/-1/-1->5->10 [4] -1/-1/-1->5->6 [5] 4/11/-1->5->7 [6] 7/-1/-1->5->4 [7] 6/1/-1->5->13
+nid001384:706798:707287 [1] NCCL INFO P2P Chunksize set to 131072
+nid001384:706798:707287 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001384:706798:707293 [1] NCCL INFO [Proxy Service] Device 1 CPU core 106
+nid001384:706798:707295 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 34
+nid001384:706798:707287 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001384:706798:707287 [1] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001384:706798:707287 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001384:706798:707287 [1] NCCL INFO ncclCommInitRankConfig comm 0x55651a072300 rank 5 nranks 16 cudaDev 1 nvmlDev 1 busId 41000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001384:706798:707287 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 5 nranks 16 total 0.42 (kernels 0.12, alloc 0.11, bootstrap 0.01, allgathers 0.03, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001384:706798:707302 [1] NCCL INFO Channel 00/0 : 5[1] -> 6[2] via P2P/CUMEM/read
+nid001384:706798:707302 [1] NCCL INFO Channel 02/0 : 5[1] -> 6[2] via P2P/CUMEM/read
+nid001384:706798:707302 [1] NCCL INFO Channel 04/0 : 5[1] -> 6[2] via P2P/CUMEM/read
+nid001384:706798:707302 [1] NCCL INFO Channel 06/0 : 5[1] -> 6[2] via P2P/CUMEM/read
+nid001384:706798:707302 [1] NCCL INFO Channel 03/0 : 5[1] -> 7[3] via P2P/CUMEM/read
+nid001384:706798:707302 [1] NCCL INFO Channel 07/0 : 5[1] -> 7[3] via P2P/CUMEM/read
+nid001384:706798:707306 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 110
+nid001384:706798:707302 [1] NCCL INFO Channel 00/0 : 1[1] -> 5[1] [receive] via NET/Socket/3
+nid001384:706798:707302 [1] NCCL INFO Channel 04/0 : 1[1] -> 5[1] [receive] via NET/Socket/3
+nid001384:706798:707302 [1] NCCL INFO Channel 01/0 : 5[1] -> 9[1] [send] via NET/Socket/3
+nid001384:706798:707302 [1] NCCL INFO Channel 05/0 : 5[1] -> 9[1] [send] via NET/Socket/3
+nid001384:706801:706801 [2] NCCL INFO cudaDriverVersion 12040
+nid001384:706801:706801 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706801:706801 [2] NCCL INFO Bootstrap: Using hsn0:10.249.6.171<0>
+nid001384:706801:706801 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001384:706801:706801 [2] NCCL INFO Comm config Blocking set to 1
+nid001384:706801:707286 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001384:706801:707286 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001384:706801:707286 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706801:707286 [2] NCCL INFO NET/IB : No device found.
+nid001384:706801:707286 [2] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.171<0>
+nid001384:706801:707286 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706801:707286 [2] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.171<0> [1]hsn0:chn:128.55.70.48<0> [2]hsn1:10.249.6.172<0> [3]hsn2:10.249.26.73<0> [4]hsn3:10.249.24.73<0>
+nid001384:706801:707286 [2] NCCL INFO Initialized NET plugin Socket
+nid001384:706801:707286 [2] NCCL INFO Assigned NET plugin Socket to comm
+nid001384:706801:707286 [2] NCCL INFO Using network Socket
+nid001384:706801:707286 [2] NCCL INFO ncclCommInitRankConfig comm 0x5633a953b380 rank 6 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001384:706801:707286 [2] NCCL INFO RAS client listening socket at ::1<28028>
+nid001384:706801:707286 [2] NCCL INFO Bootstrap timings total 0.008322 (create 0.000032, send 0.000166, recv 0.000469, ring 0.005833, delay 0.000002)
+nid001384:706801:707286 [2] NCCL INFO Setting affinity for GPU 2 to 16-31,80-95
+nid001384:706801:707286 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+nid001384:706801:707286 [2] NCCL INFO comm 0x5633a953b380 rank 6 nRanks 16 nNodes 4 localRanks 4 localRank 2 MNNVL 0
+nid001384:706801:707286 [2] NCCL INFO Trees [0] 5/-1/-1->6->7 [1] -1/-1/-1->6->4 [2] 4/-1/-1->6->8 [3] 7/-1/-1->6->5 [4] 5/-1/-1->6->7 [5] -1/-1/-1->6->4 [6] 4/2/-1->6->14 [7] 7/9/-1->6->5
+nid001384:706801:707286 [2] NCCL INFO P2P Chunksize set to 131072
+nid001384:706801:707286 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001384:706801:707294 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 18
+nid001384:706801:707292 [2] NCCL INFO [Proxy Service] Device 2 CPU core 30
+nid001384:706801:707286 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001384:706801:707286 [2] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001384:706801:707286 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001384:706801:707286 [2] NCCL INFO ncclCommInitRankConfig comm 0x5633a953b380 rank 6 nranks 16 cudaDev 2 nvmlDev 2 busId 82000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001384:706801:707286 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 6 nranks 16 total 0.45 (kernels 0.17, alloc 0.08, bootstrap 0.01, allgathers 0.03, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001384:706801:707303 [2] NCCL INFO Channel 00/0 : 6[2] -> 7[3] via P2P/CUMEM/read
+nid001384:706801:707303 [2] NCCL INFO Channel 04/0 : 6[2] -> 7[3] via P2P/CUMEM/read
+nid001384:706801:707304 [2] NCCL INFO [Proxy Progress] Device 2 CPU core 30
+nid001384:706801:707303 [2] NCCL INFO Channel 03/0 : 2[2] -> 6[2] [receive] via NET/Socket/2
+nid001384:706801:707303 [2] NCCL INFO Channel 07/0 : 2[2] -> 6[2] [receive] via NET/Socket/2
+nid001384:706801:707303 [2] NCCL INFO Channel 02/0 : 6[2] -> 10[2] [send] via NET/Socket/2
+nid001384:706801:707303 [2] NCCL INFO Channel 06/0 : 6[2] -> 10[2] [send] via NET/Socket/2
+nid001384:706801:707303 [2] NCCL INFO Channel 03/0 : 6[2] -> 4[0] via P2P/CUMEM/read
+nid001384:706801:707303 [2] NCCL INFO Channel 07/0 : 6[2] -> 4[0] via P2P/CUMEM/read
+nid001384:706801:707303 [2] NCCL INFO Channel 01/0 : 6[2] -> 5[1] via P2P/CUMEM/read
+nid001384:706801:707303 [2] NCCL INFO Channel 05/0 : 6[2] -> 5[1] via P2P/CUMEM/read
+nid001384:706802:706802 [3] NCCL INFO cudaDriverVersion 12040
+nid001384:706802:706802 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706802:706802 [3] NCCL INFO Bootstrap: Using hsn0:10.249.6.171<0>
+nid001384:706802:706802 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+nid001384:706802:706802 [3] NCCL INFO Comm config Blocking set to 1
+nid001384:706802:707285 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+nid001384:706802:707285 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+nid001384:706802:707285 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706802:707285 [3] NCCL INFO NET/IB : No device found.
+nid001384:706802:707285 [3] NCCL INFO NET/IB : Using [RO]; OOB hsn0:10.249.6.171<0>
+nid001384:706802:707285 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001384:706802:707285 [3] NCCL INFO NET/Socket : Using [0]hsn0:10.249.6.171<0> [1]hsn0:chn:128.55.70.48<0> [2]hsn1:10.249.6.172<0> [3]hsn2:10.249.26.73<0> [4]hsn3:10.249.24.73<0>
+nid001384:706802:707285 [3] NCCL INFO Initialized NET plugin Socket
+nid001384:706802:707285 [3] NCCL INFO Assigned NET plugin Socket to comm
+nid001384:706802:707285 [3] NCCL INFO Using network Socket
+nid001384:706802:707285 [3] NCCL INFO ncclCommInitRankConfig comm 0x556e2b8faec0 rank 7 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init START
+nid001384:706802:707285 [3] NCCL INFO RAS client listening socket at ::1<28028>
+nid001384:706802:707285 [3] NCCL INFO Bootstrap timings total 0.008418 (create 0.000027, send 0.000176, recv 0.000372, ring 0.006249, delay 0.000002)
+nid001384:706802:707285 [3] NCCL INFO Setting affinity for GPU 3 to 0-15,64-79
+nid001384:706802:707285 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+nid001384:706802:707285 [3] NCCL INFO comm 0x556e2b8faec0 rank 7 nRanks 16 nNodes 4 localRanks 4 localRank 3 MNNVL 0
+nid001384:706802:707285 [3] NCCL INFO Trees [0] 6/-1/-1->7->4 [1] 5/-1/-1->7->9 [2] -1/-1/-1->7->5 [3] 4/-1/-1->7->6 [4] 6/8/-1->7->4 [5] 5/3/-1->7->15 [6] -1/-1/-1->7->5 [7] 4/-1/-1->7->6
+nid001384:706802:707285 [3] NCCL INFO P2P Chunksize set to 131072
+nid001384:706802:707285 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid001384:706802:707298 [3] NCCL INFO [Proxy Service] Device 3 CPU core 77
+nid001384:706802:707299 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 1
+nid001384:706802:707285 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+nid001384:706802:707285 [3] NCCL INFO 8 coll channels, 8 collnet channels, 0 nvls channels, 8 p2p channels, 2 p2p channels per peer
+nid001384:706802:707285 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid001384:706802:707285 [3] NCCL INFO ncclCommInitRankConfig comm 0x556e2b8faec0 rank 7 nranks 16 cudaDev 3 nvmlDev 3 busId c1000 commId 0x9ddb2e8615ad3c89 - Init COMPLETE
+nid001384:706802:707285 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 7 nranks 16 total 0.45 (kernels 0.17, alloc 0.07, bootstrap 0.01, allgathers 0.03, topo 0.12, graphs 0.01, connections 0.01, rest 0.02)
+nid001384:706802:707307 [3] NCCL INFO [Proxy Progress] Device 3 CPU core 78
+nid001384:706802:707301 [3] NCCL INFO Channel 02/0 : 3[3] -> 7[3] [receive] via NET/Socket/0
+nid001384:706802:707301 [3] NCCL INFO Channel 06/0 : 3[3] -> 7[3] [receive] via NET/Socket/0
+nid001384:706802:707301 [3] NCCL INFO Channel 03/0 : 7[3] -> 11[3] [send] via NET/Socket/0
+nid001384:706802:707301 [3] NCCL INFO Channel 07/0 : 7[3] -> 11[3] [send] via NET/Socket/0
+nid001384:706802:707301 [3] NCCL INFO Channel 00/0 : 7[3] -> 4[0] via P2P/CUMEM/read
+nid001384:706802:707301 [3] NCCL INFO Channel 02/0 : 7[3] -> 4[0] via P2P/CUMEM/read
+nid001384:706802:707301 [3] NCCL INFO Channel 04/0 : 7[3] -> 4[0] via P2P/CUMEM/read
+nid001384:706802:707301 [3] NCCL INFO Channel 06/0 : 7[3] -> 4[0] via P2P/CUMEM/read
+nid001384:706802:707301 [3] NCCL INFO Channel 01/0 : 7[3] -> 6[2] via P2P/CUMEM/read
+nid001384:706802:707301 [3] NCCL INFO Channel 05/0 : 7[3] -> 6[2] via P2P/CUMEM/read
+nid001381:1394389:1394884 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 16 total 0.74 (kernels 0.28, allModel wrapped with DistributedDataParallel
+nid001381:1394394:1394903 [3] NCCL INFO Channel 04/0 : 3[3] -> 2[2] via P2P/CUMEM/read
+nid001381:1394394:1394903 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001381:1394390:1394901 [1] NCCL INFO Channel 04/0 : 1[1] -> 5[1] [send] via NET/Socket/3
+nid001381:1394390:1394901 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001385:1139572:1140063 [2] NCCL INFO Channel 00/0 : 10[2] -> 9[1] via P2P/CUMEM/read
+nid001385:1139572:1140063 [2] NCCL INFO Channel 04/0 : 10[2] -> 9[1] via P2P/CUMEM/read
+nid001385:1139572:1140063 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001388:1288198:1288696 [3] NCCL INFO Channel 01/0 : 15[3] -> 14[2] via P2P/CUMEM/read
+nid001388:1288198:1288696 [3] NCCL INFO Channel 05/0 : 15[3] -> 14[2] via P2P/CUMEM/read
+nid001388:1288198:1288696 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001388:1288197:1288695 [2] NCCL INFO Channel 01/0 : 14[2] -> 13[1] via P2P/CUMEM/read
+nid001388:1288197:1288695 [2] NCCL INFO Channel 05/0 : 14[2] -> 13[1] via P2P/CUMEM/read
+nid001388:1288197:1288695 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001388:1288194:1288698 [1] NCCL INFO Channel 01/0 : 13[1] -> 1[1] [send] via NET/Socket/3
+nid001388:1288194:1288698 [1] NCCL INFO Channel 05/0 : 13[1] -> 1[1] [send] via NET/Socket/3
+nid001388:1288194:1288698 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+Using DistributedSampler: each process sees 42503 train samples
+nid001384:706797:707300 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+oc 0.06, bootstrap 0.20, allgathers 0.01, topo 0.15, graphs 0.01, connections 0.01, rest 0.02)
+nid001381:1394389:1394900 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+nid001381:1394389:1394900 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+nid001381:1394389:1394900 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+nid001381:1394389:1394900 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+nid001381:1394389:1394900 [0] NCCL INFO Channel 00/0 : 0[0] -> 3[3] via P2P/CUMEM/read
+nid001381:1394389:1394900 [0] NCCL INFO Channel 04/0 : 0[0] -> 3[3] via P2P/CUMEM/read
+nid001381:1394389:1394905 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 50
+nid001381:1394389:1394900 [0] NCCL INFO Channel 00/0 : 12[0] -> 0[0] [receive] via NET/Socket/4
+nid001381:1394389:1394900 [0] NCCL INFO Channel 04/0 : 12[0] -> 0[0] [receive] via NET/Socket/4
+nid001381:1394389:1394900 [0] NCCL INFO Channel 01/0 : 0[0] -> 4[0] [send] via NET/Socket/4
+nid001384:706802:707301 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001381:1394389:1394900 [0] NCCL INFO Channel 05/0 : 0[0] -> 4[0] [send] via NET/Socket/4
+nid001381:1394389:1394900 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001385:1139569:1140062 [1] NCCL INFO Channel 00/0 : 9[1] -> 13[1] [send] via NET/Socket/3
+nid001385:1139569:1140062 [1] NCCL INFO Channel 04/0 : 9[1] -> 13[1] [send] via NET/Socket/3
+nid001385:1139569:1140062 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001384:706798:707302 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001385:1139568:1140064 [0] NCCL INFO Channel 05/0 : 8[0] -> 12[0] [send] via NET/Socket/4
+nid001385:1139568:1140064 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001381:1394393:1394902 [2] NCCL INFO Channel 04/0 : 2[2] -> 1[1] via P2P/CUMEM/read
+nid001381:1394393:1394902 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001385:1139573:1140061 [3] NCCL INFO Channel 00/0 : 11[3] -> 10[2] via P2P/CUMEM/read
+nid001385:1139573:1140061 [3] NCCL INFO Channel 04/0 : 11[3] -> 10[2] via P2P/CUMEM/read
+nid001385:1139573:1140061 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001388:1288193:1288697 [0] NCCL INFO Channel 00/0 : 12[0] -> 0[0] [send] via NET/Socket/4
+nid001388:1288193:1288697 [0] NCCL INFO Channel 04/0 : 12[0] -> 0[0] [send] via NET/Socket/4
+nid001388:1288193:1288697 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001384:706801:707303 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288193:1288689 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706797:707296 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706797:707313 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706797:707296 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706802:707309 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706802:707298 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706802:707298 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706802:707298 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706802:707298 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706802:707309 [3] NCCL INFO comm 0x556e2b8faec0 rank 7 nranks 16 cudaDev 3 busId c1000 - Abort COMPLETE
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706798:707293 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706798:707311 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706798:707293 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001384:706798:707293 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288194:1288693 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288194:1288693 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288194:1288693 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288194:1288693 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288194:1288705 [1] NCCL INFO comm 0x5645ff396ae0 rank 13 nranks 16 cudaDev 1 busId 41000 - Abort COMPLETE
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288198:1288691 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288198:1288691 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288198:1288691 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288198:1288691 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288198:1288706 [3] NCCL INFO comm 0x5641e2de4d20 rank 15 nranks 16 cudaDev 3 busId c1000 - Abort COMPLETE
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288197:1288687 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001388:1288197:1288687 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288197:1288708 [2] NCCL INFO comm 0x5593043dc390 rank 14 nranks 16 cudaDev 2 busId 82000 - Abort COMPLETE
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394390:1394896 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394390:1394896 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394390:1394896 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394390:1394896 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394390:1394910 [1] NCCL INFO comm 0x55bb08de6e20 rank 1 nranks 16 cudaDev 1 busId 41000 - Abort COMPLETE
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394389:1394892 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394389:1394892 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394389:1394892 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394389:1394912 [0] NCCL INFO comm 0x562d20c73700 rank 0 nranks 16 cudaDev 0 busId 3000 - Abort COMPLETE
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394393:1394898 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394393:1394898 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394393:1394914 [2] NCCL INFO comm 0x55dc80999840 rank 2 nranks 16 cudaDev 2 busId 82000 - Abort COMPLETE
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139568:1140057 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139568:1140057 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139568:1140057 [0] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139568:1140072 [0] NCCL INFO comm 0x55bb1510a5b0 rank 8 nranks 16 cudaDev 0 busId 3000 - Abort COMPLETE
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139569:1140053 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139569:1140053 [1] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139569:1140074 [1] NCCL INFO comm 0x558cc136f5e0 rank 9 nranks 16 cudaDev 1 busId 41000 - Abort COMPLETE
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139572:1140059 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139572:1140059 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139572:1140059 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139572:1140059 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139572:1140070 [2] NCCL INFO comm 0x55a4cf9c56c0 rank 10 nranks 16 cudaDev 2 busId 82000 - Abort COMPLETE
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:64 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:81 -> 3
+nid001384:706801:707315 [2] NCCL INFO misc/socket.cc:863 -> 3
+nid001384:706801:707292 [2] NCCL INFO misc/socket.cc:915 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001385:1139573:1140076 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001385:1139573:1140055 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001388:1288193:1288710 [0] NCCL INFO comm 0x55b5d6a5a5f0 rank 12 nranks 16 cudaDev 0 busId 3000 - Abort COMPLETE
+nid001384:706798:707311 [1] NCCL INFO comm 0x55651a072300 rank 5 nranks 16 cudaDev 1 busId 41000 - Abort COMPLETE
+nid001384:706797:707313 [0] NCCL INFO comm 0x55e784f94160 rank 4 nranks 16 cudaDev 0 busId 3000 - Abort COMPLETE
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:64 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:81 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO misc/socket.cc:863 -> 3
+nid001381:1394394:1394893 [3] NCCL INFO misc/socket.cc:915 -> 3
+nid001381:1394394:1394916 [3] NCCL INFO comm 0x5635cb9becc0 rank 3 nranks 16 cudaDev 3 busId c1000 - Abort COMPLETE
+nid001385:1139573:1140076 [3] NCCL INFO comm 0x562accfb0e80 rank 11 nranks 16 cudaDev 3 busId c1000 - Abort COMPLETE
+nid001384:706801:707315 [2] NCCL INFO comm 0x5633a953b380 rank 6 nranks 16 cudaDev 2 busId 82000 - Abort COMPLETE

@@ -1,0 +1,238 @@
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank3]:     main(args)
+[rank3]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank3]:     train_model(
+[rank3]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank3]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank1]:     main(args)
+[rank1]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank1]:     train_model(
+[rank1]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank1]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank15]: Traceback (most recent call last):
+[rank15]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank15]:     main(args)
+[rank15]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank15]:     train_model(
+[rank15]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank15]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank15]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank15]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank10]: Traceback (most recent call last):
+[rank10]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank10]:     main(args)
+[rank10]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank10]:     train_model(
+[rank10]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank10]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank10]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank10]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank14]: Traceback (most recent call last):
+[rank14]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank14]:     main(args)
+[rank14]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank14]:     train_model(
+[rank14]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank14]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank14]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank14]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank13]: Traceback (most recent call last):
+[rank13]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank13]:     main(args)
+[rank13]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank13]:     train_model(
+[rank13]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank13]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank13]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank13]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank4]:     main(args)
+[rank4]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank4]:     train_model(
+[rank4]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank4]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank4]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank7]:     main(args)
+[rank7]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank7]:     train_model(
+[rank7]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank7]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank7]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank0]:     train_model(
+[rank0]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank0]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank9]: Traceback (most recent call last):
+[rank9]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank9]:     main(args)
+[rank9]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank9]:     train_model(
+[rank9]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank9]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank9]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank9]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank2]:     main(args)
+[rank2]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank2]:     train_model(
+[rank2]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank2]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank5]:     main(args)
+[rank5]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank5]:     train_model(
+[rank5]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank5]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank5]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank8]: Traceback (most recent call last):
+[rank8]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank8]:     main(args)
+[rank8]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank8]:     train_model(
+[rank8]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank8]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank8]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank8]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank11]: Traceback (most recent call last):
+[rank11]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank11]:     main(args)
+[rank11]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank11]:     train_model(
+[rank11]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank11]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank11]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank11]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank12]: Traceback (most recent call last):
+[rank12]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank12]:     main(args)
+[rank12]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank12]:     train_model(
+[rank12]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank12]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank12]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank12]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 846, in <module>
+[rank6]:     main(args)
+[rank6]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 695, in main
+[rank6]:     train_model(
+[rank6]:   File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 326, in train_model
+[rank6]:     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+[rank6]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+[rank12]:[W1206 11:23:49.859540472 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W1206 11:23:49.334084923 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank8]:[W1206 11:23:49.570565625 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank4]:[W1206 11:23:49.663226512 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank12]:[W1206 11:23:49.987032511 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=70, addr=[nid001388-hsn0]:49312, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7efbbb55eb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7efbfd8bc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7efbfd8bd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7efbfd8be55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7efbfd8b927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7efbbc437868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7efcca5d5e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7efccd1ed6ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7efcccfad53f in /lib64/libc.so.6)
+
+[rank12]:[W1206 11:23:49.000058415 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 12] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank4]:[W1206 11:23:49.720216539 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=70, addr=[nid001384-hsn0]:53548, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f0846b7cb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f0829ebc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f0829ebd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f0829ebe55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f0829eb927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f07e8a37868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f08f6c7de95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f08f98956ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f08f965553f in /lib64/libc.so.6)
+
+[rank7]:[W1206 11:23:49.720220516 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=70, addr=[nid001384-hsn0]:53542, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f4f63b7cb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f4f46ebc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f4f46ebd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f4f46ebe55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f4f46eb927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f4f05a37868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f5013b72e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f501678a6ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f501654a53f in /lib64/libc.so.6)
+
+[rank4]:[W1206 11:23:49.730882343 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 4] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank7]:[W1206 11:23:49.730932420 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 7] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank5]:[W1206 11:23:49.765581675 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=70, addr=[nid001384-hsn0]:53558, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f28b3b7cb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f2896ebc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f2896ebd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f2896ebe55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f2896eb927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f2855a37868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f2963d14e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f296692c6ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f29666ec53f in /lib64/libc.so.6)
+
+[rank5]:[W1206 11:23:49.768581411 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 5] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank6]:[W1206 11:23:49.908026633 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=69, addr=[nid001384-hsn0]:53570, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f92bff5eb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f93022bc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f93022bd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f93022be55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f93022b927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f92c0e37868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f93cef58e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f93d1b706ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f93d193053f in /lib64/libc.so.6)
+
+[rank6]:[W1206 11:23:49.911237027 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 6] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank11]:[W1206 11:23:49.928745492 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=69, addr=[nid001385-hsn0]:59966, remote=[nid001381-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7fd2d3b5eb80 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7fd315ebc5b1 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7fd315ebd9ad in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7fd315ebe55a in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7fd315eb927e in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7fd2d4a37868 in /global/u1/a/amanp23/ece534-finance-project/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7fd3e2ba7e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7fd3e57bf6ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7fd3e557f53f in /lib64/libc.so.6)
+
+[rank11]:[W1206 11:23:49.939279900 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 11] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+srun: error: nid001384: task 5: Exited with exit code 1
+srun: Terminating StepId=46121975.0
+slurmstepd: error: *** STEP 46121975.0 ON nid001381 CANCELLED AT 2025-12-06T19:23:50 ***
+srun: error: nid001381: task 2: Exited with exit code 1
+srun: error: nid001388: tasks 12-13,15: Exited with exit code 1
+srun: error: nid001384: tasks 4,7: Exited with exit code 1
+srun: error: nid001381: tasks 0,3: Exited with exit code 1
+srun: error: nid001384: task 6: Exited with exit code 1
+srun: error: nid001381: task 1: Exited with exit code 1
+srun: error: nid001385: tasks 8,10-11: Exited with exit code 1
+srun: error: nid001388: task 14: Exited with exit code 1
+srun: error: nid001385: task 9: Exited with exit code 1

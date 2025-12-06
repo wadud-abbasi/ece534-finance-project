@@ -1,0 +1,192 @@
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Loading data from: ../data/data/labeled_headlines.parquet (ext=.parquet)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Raw data shape: (850048, 6)
+Loading model and tokenizer from 'ProsusAI/finbert'
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Cleaned data shape: (850048, 4)
+Train size: 680039  |  Val size: 170009
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'

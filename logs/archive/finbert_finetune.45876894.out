@@ -1,0 +1,48 @@
+Loading Parquet data from: ../data/data/labeled_headlines.parquet
+Loading Parquet data from: ../data/data/labeled_headlines.parquet
+Loading Parquet data from: ../data/data/labeled_headlines.parquet
+Loading Parquet data from: ../data/data/labeled_headlines.parquet
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Raw data shape: (850048, 6)
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Cleaned data shape: (850048, 4)
+Label distribution:
+label_id
+decreasing    302973
+stable        221540
+increasing    325535
+Name: count, dtype: int64
+Using time-based split on column 'Date'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'
+Loading model and tokenizer from 'ProsusAI/finbert'
+Train size: 680039  |  Val size: 170009
+Loading model and tokenizer from 'ProsusAI/finbert'

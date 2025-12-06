@@ -1,0 +1,502 @@
+/var/spool/slurmd/job46104778/slurm_script: line 14: .venv/bin/activate: No such file or directory
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+srun: error: nid003884: tasks 8-11: Exited with exit code 1
+srun: Terminating StepId=46104778.0
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+    model_class = _get_model_class(config, cls._model_mapping)
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+Traceback (most recent call last):
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 741, in getattribute_from_module
+    return getattribute_from_module(transformers_module, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 745, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 572, in <module>
+    main(args)
+  File "/global/u1/a/amanp23/ece534-finance-project/scripts/../fine_tune.py", line 407, in main
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 601, in from_pretrained
+    model_class = _get_model_class(config, cls._model_mapping)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 394, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 807, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 821, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 743, in getattribute_from_module
+    raise ValueError(f"Could not find {attr} neither in {module} nor in {transformers_module}!")
+ValueError: Could not find BertForSequenceClassification neither in <module 'transformers.models.bert' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/models/bert/__init__.py'> nor in <module 'transformers' from '/global/homes/a/amanp23/.local/perlmutter/python-3.11/lib/python3.11/site-packages/transformers/__init__.py'>!
+srun: error: nid003716: tasks 4-7: Exited with exit code 1
+srun: error: nid002892: tasks 0-3: Exited with exit code 1
+srun: error: nid003901: tasks 12-15: Exited with exit code 1
