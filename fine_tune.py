@@ -336,8 +336,6 @@ def train_model(
     # Early stopping setup
     best_val_loss = float('inf')
     patience_counter = 0
-    best_model_state = None
-    best_epoch = 0
 
     for epoch in range(1, epochs + 1):
         # Set epoch for DistributedSampler to ensure different shuffling each epoch
@@ -451,13 +449,7 @@ def train_model(
             # Check if validation loss improved
             if avg_val_loss < best_val_loss:
                 best_val_loss = avg_val_loss
-                best_epoch = epoch
                 patience_counter = 0
-                # Save best model state (unwrap DDP if needed)
-                if world_size > 1:
-                    best_model_state = model.module.state_dict().copy()
-                else:
-                    best_model_state = model.state_dict().copy()
                 improved = True
             else:
                 patience_counter += 1
@@ -481,11 +473,6 @@ def train_model(
                     f"Best validation loss: {best_val_loss:.4f}",
                     flush=True,
                 )
-                # Load best model state
-                if world_size > 1:
-                    model.module.load_state_dict(best_model_state)
-                else:
-                    model.load_state_dict(best_model_state)
                 break
         
         # Synchronize all processes before continuing (for distributed training)
@@ -500,23 +487,9 @@ def train_model(
                 # All processes break together
                 break
     
-    # Restore best model at the end (if we have one and didn't already restore it)
-    # Only rank 0 needs to restore since only rank 0 saves the model
-    if rank == 0 and best_model_state is not None:
-        # Check if we need to restore (only if we didn't stop early)
-        # We know we stopped early if patience > 0 and we broke out of the loop
-        # For simplicity, always restore the best model before saving
-        if world_size > 1:
-            model.module.load_state_dict(best_model_state)
-        else:
-            model.load_state_dict(best_model_state)
-        if patience == 0 or patience_counter < patience:
-            # We completed all epochs, so print that we're using the best model
-            print(
-                f"\nTraining completed. Using best model from epoch {best_epoch} "
-                f"(val_loss={best_val_loss:.4f})",
-                flush=True,
-            )
+    # Training completed - model state is already at the final epoch
+    if rank == 0:
+        print(f"\nTraining completed. Final model state saved.", flush=True)
 
 
 # ---------------------------------------------------------------------------
