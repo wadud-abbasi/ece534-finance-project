@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -A m4431_g              # your NERSC account
 #SBATCH -C gpu                  # GPU nodes on Perlmutter
-#SBATCH -q debug                # debug queue
-#SBATCH -t 00:05:00             # walltime for embedding + merge
+#SBATCH -q debug              # queue
+#SBATCH -t 00:20:00             # walltime for embedding + merge
 #SBATCH -N 1                    # 1 node
 #SBATCH -G 4                    # 4 GPUs total
 #SBATCH -J finbert-merge-4g
@@ -13,9 +13,8 @@
 module load python
 source $SCRATCH/ece534-envs/.venv/bin/activate
 
-# optional: keep HF cache off $HOME
+# keep HF cache off $HOME (no TRANSFORMERS_CACHE to avoid warning)
 export HF_HOME=$SCRATCH/hf_cache
-export TRANSFORMERS_CACHE=$SCRATCH/hf_cache
 
 cd ~/ece534-finance-project
 

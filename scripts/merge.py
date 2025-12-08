@@ -205,11 +205,10 @@ def load_indexes(path: str) -> pd.DataFrame:
 
 class FinBertEmbedder:
     """
-    Wraps a (fine-tuned) FinBERT model to produce:
-      - CLS/pooled embeddings
-      - sentiment probabilities (3-way softmax)
-
-    Assumes the fine-tuned weights are compatible with ProsusAI/finbert.
+    Wraps a fine-tuned FinBERT sequence classifier and exposes an encode()
+    method that returns:
+      - pooled embeddings (CLS from last hidden layer)
+      - sentiment probabilities (softmax over logits)
     """
 
     def __init__(
@@ -223,24 +222,23 @@ class FinBertEmbedder:
         )
 
         self.tokenizer = AutoTokenizer.from_pretrained(base_model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(base_model_name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            base_model_name
+        )
 
-        # Optionally load a safetensors state dict with fine-tuned weights
+        # Make sure we get hidden states and a dict-style output
+        self.model.config.output_hidden_states = True
+        self.model.config.return_dict = True
+
         if finetuned_weights is not None and os.path.exists(finetuned_weights):
-            try:
-                from safetensors.torch import load_file
-            except ImportError as e:
-                raise RuntimeError(
-                    "safetensors is required to load finetuned weights. "
-                    "Install with: pip install safetensors"
-                ) from e
+            from safetensors.torch import load_file
 
             print(
                 f"[FinBERT] Loading fine-tuned weights from {finetuned_weights} ...",
                 flush=True,
             )
             state_dict = load_file(finetuned_weights)
-            # strict=False to tolerate minor key mismatches
+            # strict=False in case classifier head or keys differ slightly
             self.model.load_state_dict(state_dict, strict=False)
         elif finetuned_weights:
             print(
@@ -263,8 +261,8 @@ class FinBertEmbedder:
     ):
         """
         Encode a list of texts into:
-          - pooled embeddings: shape (N, H)
-          - sentiment probs:   shape (N, 3)
+          - pooled embeddings: CLS from last hidden layer, shape (N, H)
+          - sentiment probs:   from logits, shape (N, 3)
         """
         all_pooled = []
         all_probs = []
@@ -283,14 +281,22 @@ class FinBertEmbedder:
             )
             enc = {k: v.to(self.device) for k, v in enc.items()}
 
-            ctx = autocast(enabled=amp and self.device.type == "cuda")
+            # torch.cuda.amp.autocast is deprecated; use torch.amp.autocast("cuda", ...)
+            ctx = torch.amp.autocast(
+                "cuda", enabled=amp and self.device.type == "cuda"
+            )
             with ctx:
-                outputs = self.model(**enc)
+                outputs = self.model(
+                    **enc, output_hidden_states=True, return_dict=True
+                )
 
-            # Use pooler_output if available, otherwise CLS token from last_hidden_state
-            pooled = outputs.pooler_output
-            if pooled is None:
-                pooled = outputs.last_hidden_state[:, 0, :]
+            # CLS from last hidden layer as embedding
+            if outputs.hidden_states is not None:
+                last_hidden = outputs.hidden_states[-1]  # (B, T, H)
+                pooled = last_hidden[:, 0, :]            # CLS token
+            else:
+                # Fallback (very unlikely): use logits as tiny embedding
+                pooled = outputs.logits
 
             # Sentiment probabilities from logits
             probs = torch.softmax(outputs.logits, dim=-1)
@@ -298,7 +304,6 @@ class FinBertEmbedder:
             all_pooled.append(pooled.cpu())
             all_probs.append(probs.cpu())
 
-            # Occasional progress print (per rank)
             if (start // batch_size) % 50 == 0:
                 print(
                     f"[Rank {rank}] Encoded {end}/{total} headlines...",
@@ -306,15 +311,16 @@ class FinBertEmbedder:
                 )
 
         if not all_pooled:
-            # No data on this rank
+            hidden_size = self.model.config.hidden_size
             return (
-                np.zeros((0, self.model.config.hidden_size), dtype=np.float32),
+                np.zeros((0, hidden_size), dtype=np.float32),
                 np.zeros((0, 3), dtype=np.float32),
             )
 
         pooled_arr = torch.cat(all_pooled, dim=0).numpy()
         probs_arr = torch.cat(all_probs, dim=0).numpy()
         return pooled_arr, probs_arr
+
 
 
 def compute_daily_news_embeddings(
