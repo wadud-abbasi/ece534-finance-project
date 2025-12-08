@@ -1,3 +1,0 @@
-/pscratch/sd/w/wa176/ece534-envs/.venv/bin/python: can't open file '/global/u2/w/wa176/ece534-finance-project/merge.py': [Errno 2] No such file or directory
-/pscratch/sd/w/wa176/ece534-envs/.venv/bin/python: can't open file '/global/u2/w/wa176/ece534-finance-project/merge.py': [Errno 2] No such file or directory
-srun: error: nid001816: task 0: Exited with exit code 1
