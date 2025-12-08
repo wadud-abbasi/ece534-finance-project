@@ -1,0 +1,120 @@
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank1]:     main()
+[rank1]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank1]:     train_sampler.set_outdirepoch(epoch)
+[rank1]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank2]:     main()
+[rank2]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank2]:     train_sampler.set_outdirepoch(epoch)
+[rank2]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank3]:     main()
+[rank3]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank3]:     train_sampler.set_outdirepoch(epoch)
+[rank3]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank0]:     main()
+[rank0]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank0]:     train_sampler.set_outdirepoch(epoch)
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank7]:     main()
+[rank7]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank7]:     train_sampler.set_outdirepoch(epoch)
+[rank7]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank4]:     main()
+[rank4]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank4]:     train_sampler.set_outdirepoch(epoch)
+[rank4]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank5]:     main()
+[rank5]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank5]:     train_sampler.set_outdirepoch(epoch)
+[rank5]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 567, in <module>
+[rank6]:     main()
+[rank6]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 386, in main
+[rank6]:     train_sampler.set_outdirepoch(epoch)
+[rank6]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: AttributeError: 'DistributedSampler' object has no attribute 'set_outdirepoch'
+[rank4]:[W1208 02:55:15.091849861 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W1208 02:55:15.676924904 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank6]:[W1208 02:55:16.449245613 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid008464-hsn0]:52384, remote=[nid003533-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f0a3617cb80 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f0a194bc5b1 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f0a194bd9ad in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f0a194be55a in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f0a194b927e in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f09d8037868 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f0a5a141e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f0a5cc216ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f0a5c9e153f in /lib64/libc.so.6)
+
+[rank5]:[W1208 02:55:16.449245533 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid008464-hsn0]:52400, remote=[nid003533-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f8c8237cb80 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7f8c656bc5b1 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7f8c656bd9ad in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7f8c656be55a in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f8c656b927e in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f8c24237868 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7f8ca6422e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7f8ca8f026ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7f8ca8cc253f in /lib64/libc.so.6)
+
+[rank5]:[W1208 02:55:16.457579639 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 5] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank6]:[W1208 02:55:16.457577214 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 6] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+[rank7]:[W1208 02:55:16.459646486 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid008464-hsn0]:52392, remote=[nid003533-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7fd025f5eb80 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ffc5b1 (0x7fd0682bc5b1 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5ffd9ad (0x7fd0682bd9ad in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5ffe55a (0x7fd0682be55a in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7fd0682b927e in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7fd026e37868 in /pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd3e95 (0x7fd0a8f40e95 in /global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0xa6ea (0x7fd0aba206ea in /lib64/libpthread.so.0)
+frame #8: clone + 0x41 (0x7fd0ab7e053f in /lib64/libc.so.6)
+
+[rank7]:[W1208 02:55:16.462797754 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 7] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+srun: error: nid003533: task 2: Exited with exit code 1
+srun: Terminating StepId=46169503.0
+slurmstepd: error: *** STEP 46169503.0 ON nid003533 CANCELLED AT 2025-12-08T10:55:17 ***
+srun: error: nid003533: tasks 1,3: Exited with exit code 1
+srun: error: nid008464: task 5: Exited with exit code 1
+srun: error: nid003533: task 0: Exited with exit code 1
+srun: error: nid008464: tasks 4,6-7: Exited with exit code 1
