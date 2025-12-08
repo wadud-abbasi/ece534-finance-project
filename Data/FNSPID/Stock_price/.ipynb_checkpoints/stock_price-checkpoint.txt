@@ -1,1 +1,0 @@
-run wget https://huggingface.co/datasets/Zihan1004/FNSPID/resolve/main/Stock_price/full_history.zip in the Data/FNSPID/Stock_price folder, then extract to get raw data (too big to keep)

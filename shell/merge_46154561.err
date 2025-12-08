@@ -1,0 +1,4 @@
+/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+srun: error: nid008208: task 0: Exited with exit code 1
+srun: Terminating StepId=46154561.0

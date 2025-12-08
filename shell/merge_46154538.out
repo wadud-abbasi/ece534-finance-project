@@ -1,0 +1,7 @@
+[merge.py] dist_mode=ddp, is_distributed=True, world_size=4, device=cuda:0
+[Rank 3] headlines shard: 1436168 rows (start=4308504, end=5744672)
+Prices:   (29677722, 11)
+News:     (5744672, 3)
+Indexes:  (14280, 4)
+[merge.py] Total headlines: 5744672, world_size=4, per_rank≈1436168
+[Rank 0] headlines shard: 1436168 rows (start=0, end=1436168)
