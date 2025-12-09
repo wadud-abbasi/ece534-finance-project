@@ -1,0 +1,2 @@
+val_best_mse,test_mse,test_mae,world_size,dist_mode,emb_dim_cap,max_tickers
+0.027610674308865598,0.006169914894621146,0.022291209342209146,32,fsdp,128,0
