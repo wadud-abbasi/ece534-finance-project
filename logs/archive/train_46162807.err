@@ -1,0 +1,39 @@
+W1207 22:43:14.398000 517104 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 517159 closing signal SIGTERM
+W1207 22:43:14.408000 517104 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 517160 closing signal SIGTERM
+W1207 22:43:14.409000 517104 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 517161 closing signal SIGTERM
+E1207 22:43:15.853000 517104 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -9) local_rank: 3 (pid: 517162) of binary: /pscratch/sd/w/wa176/ece534-envs/.venv/bin/python
+Traceback (most recent call last):
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+scripts/train.py FAILED
+-------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-07_22:43:14
+  host      : nid008320-hsn0
+  rank      : 3 (local_rank: 3)
+  exitcode  : -9 (pid: 517162)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 517162
+=======================================================
+slurmstepd: error: Detected 1 oom_kill event in StepId=46162807.0. Some of the step tasks have been OOM Killed.
+srun: error: nid008320: task 0: Out Of Memory
+srun: Terminating StepId=46162807.0

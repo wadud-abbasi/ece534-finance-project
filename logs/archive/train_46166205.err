@@ -1,0 +1,35 @@
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:350: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:375: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 46166205.0 ON nid004005 CANCELLED AT 2025-12-08T10:34:31 ***
+slurmstepd: error: *** JOB 46166205 ON nid004005 CANCELLED AT 2025-12-08T10:34:31 ***

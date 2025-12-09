@@ -1,0 +1,256 @@
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:367: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=args.amp and device.type == "cuda")
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:398: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:433: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):
+/global/u2/w/wa176/ece534-finance-project/scripts/train.py:540: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp and device.type == "cuda"):

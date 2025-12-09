@@ -1,0 +1,100 @@
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 470, in <module>
+[rank2]:     main()
+[rank2]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 159, in main
+[rank2]:     is_distributed, rank, world_size, is_main, device = ddp_setup(enable_distributed)
+[rank2]:                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 76, in ddp_setup
+[rank2]:     torch.cuda.set_device(device)
+[rank2]:   File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 567, in set_device
+[rank2]:     torch._C._cuda_setDevice(device)
+[rank2]: torch.AcceleratorError: CUDA error: invalid device ordinal
+[rank2]: GPU device may be out of range, do you have enough GPUs?
+[rank2]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank2]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank2]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 470, in <module>
+[rank1]:     main()
+[rank1]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 159, in main
+[rank1]:     is_distributed, rank, world_size, is_main, device = ddp_setup(enable_distributed)
+[rank1]:                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 76, in ddp_setup
+[rank1]:     torch.cuda.set_device(device)
+[rank1]:   File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 567, in set_device
+[rank1]:     torch._C._cuda_setDevice(device)
+[rank1]: torch.AcceleratorError: CUDA error: invalid device ordinal
+[rank1]: GPU device may be out of range, do you have enough GPUs?
+[rank1]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank1]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank1]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 470, in <module>
+[rank3]:     main()
+[rank3]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 159, in main
+[rank3]:     is_distributed, rank, world_size, is_main, device = ddp_setup(enable_distributed)
+[rank3]:                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 76, in ddp_setup
+[rank3]:     torch.cuda.set_device(device)
+[rank3]:   File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 567, in set_device
+[rank3]:     torch._C._cuda_setDevice(device)
+[rank3]: torch.AcceleratorError: CUDA error: invalid device ordinal
+[rank3]: GPU device may be out of range, do you have enough GPUs?
+[rank3]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank3]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank3]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank1]:[W1207 22:52:02.227183641 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank2]:[W1207 22:52:02.248710165 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank3]:[W1207 22:52:02.311426252 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W1207 22:52:03.641000 204348 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 204371 closing signal SIGTERM
+E1207 22:52:03.855000 204348 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 1 (pid: 204372) of binary: /pscratch/sd/w/wa176/ece534-envs/.venv/bin/python
+Traceback (most recent call last):
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-12-07_22:52:03
+  host      : nid001440-hsn0
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 204373)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2025-12-07_22:52:03
+  host      : nid001440-hsn0
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 204374)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-07_22:52:03
+  host      : nid001440-hsn0
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 204372)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: nid001440: task 0: Exited with exit code 1
+srun: Terminating StepId=46163299.0
