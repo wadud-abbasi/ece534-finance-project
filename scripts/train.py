@@ -7,26 +7,32 @@ with support for:
   - Data parallelism via DistributedDataParallel (DDP)
   - Optional model sharding via FullyShardedDataParallel (FSDP)
 
+Memory-friendly version:
+  - Reads only a subset of FinBERT embeddings (default: emb_0..emb_127)
+  - Keeps only the columns actually used for modeling
+  - Stores numerics as float16 in the DataFrame to reduce RAM
+  - Optional ticker cap via --max_tickers
+
+Example (single node, 1 GPU, no distributed):
+
+  python scripts/train.py \
+    --merged_path data/data/merged_lstm_dataset_half.parquet \
+    --outdir outputs/lstm_1g_1n \
+    --lookback 30 \
+    --epochs 20 \
+    --batch_size 64 \
+    --dist_mode none \
+    --amp
+
 Example (single node, 4 GPUs, DDP):
 
-  torchrun --nproc_per_node=4 train.py \
-    --merged_path Data/data/merged_lstm_dataset.parquet \
-    --outdir runs/lstm_finbert_seq \
+  torchrun --nproc_per_node=4 scripts/train.py \
+    --merged_path data/data/merged_lstm_dataset_half.parquet \
+    --outdir outputs/lstm_ddp_4g \
     --lookback 30 \
     --epochs 20 \
     --batch_size 64 \
     --dist_mode ddp \
-    --amp
-
-Example (single node, 4 GPUs, FSDP):
-
-  torchrun --nproc_per_node=4 train.py \
-    --merged_path Data/data/merged_lstm_dataset.parquet \
-    --outdir runs/lstm_finbert_seq_fsdp \
-    --lookback 30 \
-    --epochs 20 \
-    --batch_size 64 \
-    --dist_mode fsdp \
     --amp
 """
 
@@ -48,6 +54,7 @@ from model import SequenceConfig, NewsPriceSequenceDataset, LSTMRegressorWithLN
 
 # ----------------- utilities -----------------
 
+
 def set_seed(s: int = 1337):
     random.seed(s)
     np.random.seed(s)
@@ -58,7 +65,8 @@ def set_seed(s: int = 1337):
 
 def ddp_setup(enable_distributed: bool):
     """
-    Initialize torch.distributed if launched with torchrun and distributed is enabled.
+    Initialize torch.distributed if launched under torchrun OR Slurm (srun),
+    when distributed is enabled.
 
     Returns:
         is_distributed: bool
@@ -67,15 +75,24 @@ def ddp_setup(enable_distributed: bool):
         is_main: bool
         device: torch.device
     """
-    if enable_distributed and "RANK" in os.environ and "WORLD_SIZE" in os.environ:
-        dist.init_process_group(backend="nccl")
-        rank = int(os.environ["RANK"])
-        world_size = int(os.environ["WORLD_SIZE"])
-        local_rank = int(os.environ.get("LOCAL_RANK", rank % max(1, torch.cuda.device_count())))
-        device = torch.device(f"cuda:{local_rank}")
-        torch.cuda.set_device(device)
-        is_main = rank == 0
-        return True, rank, world_size, is_main, device
+    if enable_distributed:
+        # Try to read standard env vars first; fall back to Slurm.
+        rank = int(os.environ.get("RANK", os.environ.get("SLURM_PROCID", 0)))
+        world_size = int(os.environ.get("WORLD_SIZE", os.environ.get("SLURM_NTASKS", 1)))
+        local_rank = int(os.environ.get("LOCAL_RANK", os.environ.get("SLURM_LOCALID", rank)))
+
+        if world_size > 1:
+            # MASTER_ADDR / MASTER_PORT should be set in the sbatch script.
+            dist.init_process_group(backend="nccl", rank=rank, world_size=world_size)
+
+            if torch.cuda.is_available():
+                device = torch.device(f"cuda:{local_rank}")
+                torch.cuda.set_device(device)
+            else:
+                device = torch.device("cpu")
+
+            is_main = rank == 0
+            return True, rank, world_size, is_main, device
 
     # Fallback: single-process, single-device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -113,12 +130,15 @@ def time_splits(
     return train_df, val_df, test_df
 
 
+# ----------------- main -----------------
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--merged_path",
         type=str,
-        default="Data/data/merged_lstm_dataset.parquet",
+        default="data/data/merged_lstm_dataset.parquet",
         help="Path to merged dataset produced by merge.py",
     )
     ap.add_argument(
@@ -142,7 +162,7 @@ def main():
     ap.add_argument(
         "--dist_mode",
         type=str,
-        default="ddp",
+        default="none",
         choices=["none", "ddp", "fsdp"],
         help=(
             "Distribution mode: "
@@ -151,6 +171,25 @@ def main():
             "'fsdp' = FullyShardedDataParallel."
         ),
     )
+    ap.add_argument(
+        "--emb_dim_cap",
+        type=int,
+        default=128,
+        help="How many FinBERT embedding dimensions to keep (use emb_0..emb_{cap-1}).",
+    )
+    ap.add_argument(
+        "--max_tickers",
+        type=int,
+        default=0,
+        help="If >0, limit to this many tickers (useful for debugging / memory).",
+    )
+    ap.add_argument(
+        "--save_every",
+        type=int,
+        default=0,
+        help="If >0, save a checkpoint every this many epochs (on main rank).",
+    )
+
 
     args = ap.parse_args()
     set_seed(args.seed)
@@ -159,28 +198,75 @@ def main():
     is_distributed, rank, world_size, is_main, device = ddp_setup(enable_distributed)
 
     if is_main:
-        print(f"Using device: {device}, "
-              f"distributed={is_distributed}, "
-              f"world_size={world_size}, "
-              f"dist_mode={args.dist_mode}",
-              flush=True)
+        print(
+            f"Using device: {device}, "
+            f"distributed={is_distributed}, "
+            f"world_size={world_size}, "
+            f"dist_mode={args.dist_mode}",
+            flush=True,
+        )
 
-    # ---- load merged dataset ----
+    # ---- load merged dataset (column-limited, memory-friendly) ----
     merged_path = args.merged_path
     if not os.path.exists(merged_path):
         raise FileNotFoundError(f"Merged dataset not found: {merged_path}")
 
+    # Define which columns we WANT to keep
+    emb_dim_cap = args.emb_dim_cap
+    emb_cols = [f"emb_{i}" for i in range(emb_dim_cap)]
+
+    base_cols = [
+        "ret0",
+        "sent_neg",
+        "sent_neu",
+        "sent_pos",
+        "ret_djia",
+        "ret_nasdaqcom",
+        "ret_sp500",
+    ]
+
+    keep_cols = ["date", "ticker", "target_ret1"] + emb_cols + base_cols
+
     if merged_path.lower().endswith(".parquet"):
-        df = pd.read_parquet(merged_path)
+        # Read only the columns we intend to use
+        df = pd.read_parquet(merged_path, columns=keep_cols)
     else:
+        # CSV fallback: read everything, then slice (less memory-friendly)
         df = pd.read_csv(merged_path)
+        # Only keep the columns that exist in the frame
+        existing = [c for c in keep_cols if c in df.columns]
+        df = df[existing].copy()
+        # If some expected columns are missing, we can fill them with 0.0
+        missing = [c for c in keep_cols if c not in df.columns]
+        for c in missing:
+            if c == "date" or c == "ticker":
+                continue
+            df[c] = 0.0
 
     # Ensure date column is datetime
     df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.normalize()
     df = df.dropna(subset=["date", "ticker", "target_ret1"]).reset_index(drop=True)
 
+    # Optional: limit to a subset of tickers to further reduce memory
+    if args.max_tickers > 0:
+        uniq_tickers = sorted(df["ticker"].unique())
+        keep_tickers = set(uniq_tickers[: args.max_tickers])
+        df = df[df["ticker"].isin(keep_tickers)].reset_index(drop=True)
+        if is_main:
+            print(
+                f"Applied ticker cap: max_tickers={args.max_tickers}, "
+                f"resulting shape={df.shape}",
+                flush=True,
+            )
+
+    # Downcast numeric columns to float16 to save RAM
+    numeric_cols = [c for c in df.columns if c not in ("date", "ticker")]
+    for c in numeric_cols:
+        df[c] = df[c].astype(np.float16)
+
     if is_main:
-        print(f"Loaded merged dataset: {df.shape}", flush=True)
+        print(f"Using columns: {list(df.columns)}", flush=True)
+        print(f"Loaded merged dataset (trimmed): {df.shape}", flush=True)
 
     # ---- split data by time ----
     train_df, val_df, test_df = time_splits(df, train_ratio=0.7, val_ratio=0.15)
@@ -284,13 +370,19 @@ def main():
     outdir = Path(args.outdir)
     if is_main:
         outdir.mkdir(parents=True, exist_ok=True)
+
     best_path = outdir / "lstm_best.pt"
     best_val_loss = float("inf")
 
-    # ----------------- training loop -----------------
+    # per-epoch history for curves
+    history_path = outdir / "training_history.csv"
+    if is_main and history_path.exists():
+        history_path.unlink()  # start fresh each run
+
+
     for epoch in range(1, args.epochs + 1):
         if is_distributed and train_sampler is not None:
-            train_sampler.set_epoch(epoch)
+            train_sampler.set_epoch(epoch)   # ✅ correct
 
         # ---- train ----
         model.train()
@@ -360,10 +452,45 @@ def main():
         val_mae = ae_sum / max(1, n_val_samples)
         val_loss = val_mse  # treat MSE as the validation "loss"
 
-        # ---- checkpoint on main rank ----
+        # ---- log per-epoch metrics (for curves) on main rank ----
+        if is_main:
+            row = {
+                "epoch": epoch,
+                "train_loss": float(train_loss),
+                "val_mse": float(val_mse),
+                "val_mae": float(val_mae),
+            }
+            # append one row per epoch, so if job dies you still have partial curves
+            write_header = not history_path.exists()
+            pd.DataFrame([row]).to_csv(
+                history_path,
+                mode="a",
+                header=write_header,
+                index=False,
+            )
+
+
+        # ---- periodic checkpoint on main rank ----
+        if is_main and args.save_every > 0 and epoch % args.save_every == 0:
+            if is_distributed and args.dist_mode == "ddp":
+                periodic_state = model.module.state_dict()
+            else:
+                periodic_state = model.state_dict()
+
+            ckpt_path = outdir / f"checkpoint_epoch_{epoch:03d}.pt"
+            torch.save(
+                {
+                    "model_state_dict": periodic_state,
+                    "input_dim": input_dim,
+                    "cfg": cfg.__dict__,
+                    "epoch": epoch,
+                },
+                ckpt_path,
+            )
+
+        # ---- best checkpoint on main rank ----
         if is_main and val_loss < best_val_loss:
             best_val_loss = val_loss
-            # unwrap if DDP; FSDP uses its own wrapper but state_dict() works
             if is_distributed and args.dist_mode == "ddp":
                 to_save = model.module.state_dict()
             else:
@@ -374,6 +501,7 @@ def main():
                     "model_state_dict": to_save,
                     "input_dim": input_dim,
                     "cfg": cfg.__dict__,
+                    "epoch": epoch,
                 },
                 best_path,
             )
@@ -439,6 +567,8 @@ def main():
             "test_mae": test_mae,
             "world_size": world_size,
             "dist_mode": args.dist_mode,
+            "emb_dim_cap": emb_dim_cap,
+            "max_tickers": args.max_tickers,
         }
         outdir.mkdir(parents=True, exist_ok=True)
         metrics_path = outdir / "metrics.csv"

@@ -1,0 +1,51 @@
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:545: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  daily_news = daily_news.groupby(["date", "ticker"], as_index=False).mean()
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:545: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  daily_news = daily_news.groupby(["date", "ticker"], as_index=False).mean()
+W1207 20:01:50.992000 345461 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 345494 closing signal SIGTERM
+W1207 20:01:50.997000 345461 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 345495 closing signal SIGTERM
+W1207 20:01:50.998000 345461 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 345496 closing signal SIGTERM
+E1207 20:01:52.220000 345461 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -9) local_rank: 0 (pid: 345493) of binary: /pscratch/sd/w/wa176/ece534-envs/.venv/bin/python
+Traceback (most recent call last):
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+scripts/merge.py FAILED
+-------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-07_20:01:50
+  host      : nid003764-hsn0
+  rank      : 0 (local_rank: 0)
+  exitcode  : -9 (pid: 345493)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 345493
+=======================================================
+slurmstepd: error: Detected 1 oom_kill event in StepId=46159588.0. Some of the step tasks have been OOM Killed.
+srun: error: nid003764: task 0: Out Of Memory
+srun: Terminating StepId=46159588.0

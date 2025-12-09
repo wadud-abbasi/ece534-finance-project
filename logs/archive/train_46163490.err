@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 470, in <module>
+    main()
+  File "/global/u2/w/wa176/ece534-finance-project/scripts/train.py", line 171, in main
+    raise FileNotFoundError(f"Merged dataset not found: {merged_path}")
+FileNotFoundError: Merged dataset not found: Data/data/merged_lstm_dataset_half.parquet
+srun: error: nid002436: task 0: Exited with exit code 1
+srun: Terminating StepId=46163490.0

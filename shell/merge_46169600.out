@@ -1,0 +1,1 @@
+[merge.py] dist_mode=ddp, is_distributed=True, world_size=4, device=cuda:0

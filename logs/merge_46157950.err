@@ -1,0 +1,47 @@
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:163: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:163: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:163: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u2/w/wa176/ece534-finance-project/scripts/merge.py:163: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+W1207 18:49:18.023000 940886 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 940945 closing signal SIGTERM
+W1207 18:49:18.039000 940886 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 940946 closing signal SIGTERM
+W1207 18:49:18.041000 940886 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 940947 closing signal SIGTERM
+E1207 18:49:19.109000 940886 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -9) local_rank: 0 (pid: 940944) of binary: /pscratch/sd/w/wa176/ece534-envs/.venv/bin/python
+Traceback (most recent call last):
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/w/wa176/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+scripts/merge.py FAILED
+-------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-07_18:49:18
+  host      : nid001508-hsn0
+  rank      : 0 (local_rank: 0)
+  exitcode  : -9 (pid: 940944)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 940944
+=======================================================
+slurmstepd: error: Detected 1 oom_kill event in StepId=46157950.0. Some of the step tasks have been OOM Killed.
+srun: error: nid001508: task 0: Out Of Memory
+srun: Terminating StepId=46157950.0

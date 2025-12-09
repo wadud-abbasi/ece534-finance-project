@@ -18,31 +18,6 @@ Benchmark timings (in seconds) are printed on rank 0:
 - embed_global_max (max over all ranks)
 - merge
 - total
-
-Example (single GPU):
-
-  python merge.py \
-    --headlines_csv Data/data/processed_headlines_subset.csv \
-    --prices_csv    Data/data/processed_stock_prices.csv \
-    --indexes_csv   Data/data/processed_indexes.csv \
-    --finetuned_weights models/model.safetensor \
-    --output_path   Data/data/merged_lstm_dataset.parquet \
-    --max_len 128 \
-    --batch_size 256 \
-    --amp
-
-Example (4 GPUs on one node):
-
-  torchrun --nproc_per_node=4 merge.py \
-    --dist_mode ddp \
-    --headlines_csv Data/data/processed_headlines_subset.csv \
-    --prices_csv    Data/data/processed_stock_prices.csv \
-    --indexes_csv   Data/data/processed_indexes.csv \
-    --finetuned_weights models/model.safetensor \
-    --output_path   Data/data/merged_lstm_dataset.parquet \
-    --max_len 128 \
-    --batch_size 256 \
-    --amp
 """
 
 import argparse
@@ -50,14 +25,12 @@ import os
 import sys
 import types
 import importlib.machinery
-from contextlib import nullcontext
 from typing import List, Optional
 
 import numpy as np
 import pandas as pd
 import torch
 import torch.distributed as dist
-from torch.cuda.amp import autocast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # ---- Environment tweaks so Transformers ignores torchvision/image stack ----
@@ -144,6 +117,7 @@ def load_prices(path: str) -> pd.DataFrame:
     # Expected columns: date, volume, open, high, low, close, adj_close, ticker
     df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.normalize()
     df = df.dropna(subset=["date", "ticker"])
+    df["ticker"] = df["ticker"].astype(str)
     df = df.sort_values(["ticker", "date"]).reset_index(drop=True)
 
     df["log_close"] = np.log(df["close"].clip(1e-6))
@@ -174,6 +148,7 @@ def load_headlines(path: str) -> pd.DataFrame:
     dt = pd.to_datetime(raw, errors="coerce", utc=True)
     dt = dt.dt.tz_convert("UTC").dt.tz_localize(None)  # drop tz info
     df["date"] = dt.dt.normalize()
+    df["ticker"] = df["ticker"].astype(str)
 
     df = df.dropna(subset=["date", "headline", "ticker"])
     return df[["date", "ticker", "headline"]]
@@ -205,11 +180,10 @@ def load_indexes(path: str) -> pd.DataFrame:
 
 class FinBertEmbedder:
     """
-    Wraps a (fine-tuned) FinBERT model to produce:
-      - CLS/pooled embeddings
-      - sentiment probabilities (3-way softmax)
-
-    Assumes the fine-tuned weights are compatible with ProsusAI/finbert.
+    Wraps a fine-tuned FinBERT sequence classifier and exposes an encode()
+    method that returns:
+      - pooled embeddings (CLS from last hidden layer)
+      - sentiment probabilities (softmax over logits)
     """
 
     def __init__(
@@ -223,24 +197,23 @@ class FinBertEmbedder:
         )
 
         self.tokenizer = AutoTokenizer.from_pretrained(base_model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(base_model_name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            base_model_name
+        )
 
-        # Optionally load a safetensors state dict with fine-tuned weights
+        # Make sure we get hidden states and a dict-style output
+        self.model.config.output_hidden_states = True
+        self.model.config.return_dict = True
+
         if finetuned_weights is not None and os.path.exists(finetuned_weights):
-            try:
-                from safetensors.torch import load_file
-            except ImportError as e:
-                raise RuntimeError(
-                    "safetensors is required to load finetuned weights. "
-                    "Install with: pip install safetensors"
-                ) from e
+            from safetensors.torch import load_file
 
             print(
                 f"[FinBERT] Loading fine-tuned weights from {finetuned_weights} ...",
                 flush=True,
             )
             state_dict = load_file(finetuned_weights)
-            # strict=False to tolerate minor key mismatches
+            # strict=False in case classifier head or keys differ slightly
             self.model.load_state_dict(state_dict, strict=False)
         elif finetuned_weights:
             print(
@@ -263,8 +236,10 @@ class FinBertEmbedder:
     ):
         """
         Encode a list of texts into:
-          - pooled embeddings: shape (N, H)
-          - sentiment probs:   shape (N, 3)
+          - pooled embeddings: CLS from last hidden layer, shape (N, H)
+          - sentiment probs:   from logits, shape (N, 3)
+
+        NOTE: we downcast to float16 before returning to save memory.
         """
         all_pooled = []
         all_probs = []
@@ -283,22 +258,30 @@ class FinBertEmbedder:
             )
             enc = {k: v.to(self.device) for k, v in enc.items()}
 
-            ctx = autocast(enabled=amp and self.device.type == "cuda")
+            # torch.cuda.amp.autocast is deprecated; use torch.amp.autocast("cuda", ...)
+            ctx = torch.amp.autocast(
+                "cuda", enabled=amp and self.device.type == "cuda"
+            )
             with ctx:
-                outputs = self.model(**enc)
+                outputs = self.model(
+                    **enc, output_hidden_states=True, return_dict=True
+                )
 
-            # Use pooler_output if available, otherwise CLS token from last_hidden_state
-            pooled = outputs.pooler_output
-            if pooled is None:
-                pooled = outputs.last_hidden_state[:, 0, :]
+            # CLS from last hidden layer as embedding
+            if outputs.hidden_states is not None:
+                last_hidden = outputs.hidden_states[-1]  # (B, T, H)
+                pooled = last_hidden[:, 0, :]            # CLS token
+            else:
+                # Fallback (very unlikely): use logits as tiny embedding
+                pooled = outputs.logits
 
             # Sentiment probabilities from logits
             probs = torch.softmax(outputs.logits, dim=-1)
 
-            all_pooled.append(pooled.cpu())
-            all_probs.append(probs.cpu())
+            # Downcast to float16 BEFORE moving to CPU to save RAM
+            all_pooled.append(pooled.to(torch.float16).cpu())
+            all_probs.append(probs.to(torch.float16).cpu())
 
-            # Occasional progress print (per rank)
             if (start // batch_size) % 50 == 0:
                 print(
                     f"[Rank {rank}] Encoded {end}/{total} headlines...",
@@ -306,14 +289,14 @@ class FinBertEmbedder:
                 )
 
         if not all_pooled:
-            # No data on this rank
+            hidden_size = self.model.config.hidden_size
             return (
-                np.zeros((0, self.model.config.hidden_size), dtype=np.float32),
-                np.zeros((0, 3), dtype=np.float32),
+                np.zeros((0, hidden_size), dtype=np.float16),
+                np.zeros((0, 3), dtype=np.float16),
             )
 
-        pooled_arr = torch.cat(all_pooled, dim=0).numpy()
-        probs_arr = torch.cat(all_probs, dim=0).numpy()
+        pooled_arr = torch.cat(all_pooled, dim=0).numpy().astype("float16")
+        probs_arr = torch.cat(all_probs, dim=0).numpy().astype("float16")
         return pooled_arr, probs_arr
 
 
@@ -355,6 +338,13 @@ def compute_daily_news_embeddings(
 
     # Daily mean per (date, ticker) within this rank's shard
     grouped = out.groupby(["date", "ticker"], as_index=False).mean()
+
+    # Downcast FinBERT features back to float16 (groupby.mean() upcasts to float64)
+    emb_cols = [c for c in grouped.columns if c.startswith("emb_")]
+    snt_cols = [c for c in ["sent_neg", "sent_neu", "sent_pos"] if c in grouped.columns]
+    for c in emb_cols + snt_cols:
+        grouped[c] = grouped[c].astype("float16")
+
     return grouped
 
 
@@ -375,13 +365,12 @@ def merge_all(
     snt_cols = [c for c in ["sent_neg", "sent_neu", "sent_pos"] if c in df.columns]
     feat_cols = emb_cols + snt_cols
 
+    # Ensure sorted by ticker/date for ffill
+    df = df.sort_values(["ticker", "date"])
+
     if feat_cols:
-        # Forward-fill news features per ticker; initial NaNs -> 0
-        df[feat_cols] = (
-            df.groupby("ticker")[feat_cols]
-              .apply(lambda g: g.ffill())
-              .reset_index(level=0, drop=True)
-        )
+        # Forward-fill news features per ticker without .apply (more memory-friendly)
+        df[feat_cols] = df.groupby("ticker", sort=False)[feat_cols].ffill()
         df[feat_cols] = df[feat_cols].fillna(0.0)
 
     # Merge index returns on date and ffill
@@ -449,6 +438,12 @@ def main():
         choices=["none", "ddp"],
         help="Distribution mode: 'none' = single process, 'ddp' = multi-GPU via torch.distributed.",
     )
+    ap.add_argument(
+        "--subset_fraction",
+        type=float,
+        default=1.0,
+        help="Fraction of tickers to keep for debugging (0 < subset_fraction ≤ 1.0).",
+    )
 
     args = ap.parse_args()
     set_seed(args.seed)
@@ -471,6 +466,25 @@ def main():
     prices = load_prices(args.prices_csv)
     news = load_headlines(args.headlines_csv)
     idx = load_indexes(args.indexes_csv)
+
+        # ---- optional: keep only a fraction of tickers to reduce memory ----
+    if 0 < args.subset_fraction < 1.0:
+        all_tickers = np.array(sorted(prices["ticker"].unique()))
+        total_tickers = len(all_tickers)
+        keep_n = max(1, int(total_tickers * args.subset_fraction))
+
+        # deterministic choice: first keep_n tickers when sorted
+        keep_tickers = set(all_tickers[:keep_n])
+
+        if is_main:
+            print(
+                f"[merge.py] Using subset_fraction={args.subset_fraction} → "
+                f"keeping {keep_n}/{total_tickers} tickers",
+                flush=True,
+            )
+
+        prices = prices[prices["ticker"].isin(keep_tickers)].reset_index(drop=True)
+        news = news[news["ticker"].isin(keep_tickers)].reset_index(drop=True)
 
     t_after_load = _time.perf_counter()
 
@@ -529,9 +543,13 @@ def main():
 
     # ---- gather all shards to build global daily_news on rank 0 ----
     if is_distributed:
-        # all_gather_object to collect DataFrames
-        gathered = [None for _ in range(world_size)]
-        dist.all_gather_object(gathered, daily_news_shard)
+        # Gather DataFrames ONLY to rank 0 to avoid replicating the whole dataset on every rank
+        if is_main:
+            gathered = [None for _ in range(world_size)]
+            dist.gather_object(daily_news_shard, gathered, dst=0)
+        else:
+            dist.gather_object(daily_news_shard, None, dst=0)
+            gathered = None
 
         # Reduce embedding time: take max across ranks (rough idea of critical path)
         t_embed = torch.tensor(
@@ -549,9 +567,15 @@ def main():
         # Concatenate & group again to be safe (if (date,ticker) spanned multiple ranks)
         daily_news = pd.concat(gathered, ignore_index=True)
         if not daily_news.empty:
-            daily_news = (
-                daily_news.groupby(["date", "ticker"], as_index=False).mean()
-            )
+            daily_news = daily_news.groupby(["date", "ticker"], as_index=False).mean()
+
+            # Downcast FinBERT features back to float16 after this global groupby
+            emb_cols = [c for c in daily_news.columns if c.startswith("emb_")]
+            snt_cols = [
+                c for c in ["sent_neg", "sent_neu", "sent_pos"] if c in daily_news.columns
+            ]
+            for c in emb_cols + snt_cols:
+                daily_news[c] = daily_news[c].astype("float16")
         else:
             daily_news = pd.DataFrame(columns=["date", "ticker"])
 
