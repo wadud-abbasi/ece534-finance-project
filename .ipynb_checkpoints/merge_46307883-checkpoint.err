@@ -1,0 +1,14 @@
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:137: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(path)
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:570: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  daily_news = daily_news.groupby(["date", "ticker"], as_index=False).mean()
+/global/u1/s/sp2160/ece534-finance-project/scripts/merge.py:570: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  daily_news = daily_news.groupby(["date", "ticker"], as_index=False).mean()
+/pscratch/sd/s/sp2160/ece534-envs/.venv/lib/python3.11/site-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once

@@ -1,7 +1,0 @@
-slurmstepd: error: *** STEP 46169600.0 ON nid003464 CANCELLED AT 2025-12-08T10:45:35 ***
-slurmstepd: error: *** JOB 46169600 ON nid003464 CANCELLED AT 2025-12-08T10:45:35 ***
-srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-W1208 02:45:35.366000 1115970 torch/distributed/elastic/agent/server/api.py:725] Received 15 death signal, shutting down workers
-W1208 02:45:35.367000 1115970 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1116003 closing signal SIGTERM
-W1208 02:45:35.367000 1115970 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1116004 closing signal SIGTERM
-W1208 02:45:35.368000 1115970 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1116005 closing signal SIGTERM
