@@ -36,7 +36,7 @@ srun --ntasks-per-node=1 --gpus-per-task=4 torchrun \
     --headlines_csv data/data/processed_headlines_subset.csv \
     --prices_csv    data/data/processed_stock_prices.csv \
     --indexes_csv   data/data/processed_indexes.csv \
-    --finetuned_weights models/run3.safetensors \
+    --finetuned_weights models/model.safetensors \
     --output_path   data/data/merged_lstm_dataset_nickel.parquet \
     --max_len 128 \
     --batch_size 256 \
