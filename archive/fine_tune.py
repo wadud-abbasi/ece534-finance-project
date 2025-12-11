@@ -1,349 +1,314 @@
-#!/usr/bin/env python
-"""
-Fine-tune FinBERT/BERT to predict stock price direction
-('decreasing', 'stable', 'increasing') from news headlines.
-
-Assumptions:
-- Headlines CSV has columns:
-    Date, Article_title, Stock_symbol
-- Prices CSV has columns:
-    date, adj_close, ticker
-- The full data files are:
-    processed_headlines_subset.csv
-    processed_stock_prices.csv
-  (same schema as the *_HEAD previews you uploaded, just without "_HEAD").
-"""
-
-import argparse
-import os
-
-# Force Transformers to ignore torchvision/image stack
-os.environ["TRANSFORMERS_NO_TORCHVISION"] = "1"
-os.environ["DISABLE_TRANSFORMERS_AV"] = "1"
-
-import sys
 import types
 import importlib.machinery
 
-# ---- Torchvision stub to satisfy Transformers checks ----
-# We don't use vision/video features; this just keeps imports from breaking.
-
-# Create a fake torchvision module
+# Root torchvision module (as a "package")
 torchvision_stub = types.ModuleType("torchvision")
 torchvision_stub.__spec__ = importlib.machinery.ModuleSpec("torchvision", None)
+torchvision_stub.__path__ = []
 
-# Fake torchvision.transforms submodule
+# torchvision.transforms (package)
 transforms_stub = types.ModuleType("torchvision.transforms")
 transforms_stub.__spec__ = importlib.machinery.ModuleSpec("torchvision.transforms", None)
+transforms_stub.__path__ = []
+
 
 class _DummyInterpolationMode:
-    NEAREST = 0
-    BILINEAR = 1
-    BICUBIC = 2
-    LANCZOS = 3
-    BOX = 4
-    HAMMING = 5
+NEAREST = 0
+@@ -45,17 +50,36 @@ class _DummyInterpolationMode:
+BOX = 4
+HAMMING = 5
+
 
 transforms_stub.InterpolationMode = _DummyInterpolationMode
 
-# Fake torchvision.io submodule
+# torchvision.io stub
 io_stub = types.ModuleType("torchvision.io")
 io_stub.__spec__ = importlib.machinery.ModuleSpec("torchvision.io", None)
 
-# Wire stubs onto the root module
+# torchvision.transforms.v2 (package)
+v2_stub = types.ModuleType("torchvision.transforms.v2")
+v2_stub.__spec__ = importlib.machinery.ModuleSpec("torchvision.transforms.v2", None)
+v2_stub.__path__ = []
+
+# torchvision.transforms.v2.functional stub
+functional_stub = types.ModuleType("torchvision.transforms.v2.functional")
+functional_stub.__spec__ = importlib.machinery.ModuleSpec(
+    "torchvision.transforms.v2.functional", None
+)
+
+# Wire things together
+v2_stub.functional = functional_stub
+
 torchvision_stub.transforms = transforms_stub
 torchvision_stub.io = io_stub
 
-# Register everything in sys.modules so imports see them as real
+# Register in sys.modules so imports succeed
 sys.modules["torchvision"] = torchvision_stub
 sys.modules["torchvision.transforms"] = transforms_stub
 sys.modules["torchvision.io"] = io_stub
+sys.modules["torchvision.transforms.v2"] = v2_stub
+sys.modules["torchvision.transforms.v2.functional"] = functional_stub
 
-from typing import Tuple
-
+# ---------------------------------------------------------------------------
+# Imports
+@@ -66,13 +90,11 @@ class _DummyInterpolationMode:
 import numpy as np
 import pandas as pd
 import torch
 from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 from transformers import (
-    AutoModelForSequenceClassification,
-    AutoTokenizer,
-    DataCollatorWithPadding,
+AutoModelForSequenceClassification,
+AutoTokenizer,
+DataCollatorWithPadding,
     Trainer,
     TrainingArguments,
 )
 
-
-# Ordered label list so IDs are consistent everywhere
-LABELS = ["decreasing", "stable", "increasing"]
-LABEL2ID = {name: i for i, name in enumerate(LABELS)}
-ID2LABEL = {i: name for name, i in LABEL2ID.items()}
-
-
 # ---------------------------------------------------------------------------
-# 1. Label construction from prices
+@@ -88,6 +110,7 @@ class _DummyInterpolationMode:
+# Splitting utilities
 # ---------------------------------------------------------------------------
 
-def build_label_df(
-    price_df: pd.DataFrame,
-    horizon_trading_days: int = 1,
-    stable_threshold: float = 0.005,
-) -> pd.DataFrame:
-    """
-    For a single ticker, create daily labels based on future returns
-    over `horizon_trading_days` *trading* days.
-
-    r_t = (adj_close_{t+h} - adj_close_t) / adj_close_t
-
-    - r_t < -stable_threshold      -> 'decreasing'
-    - |r_t| <= stable_threshold    -> 'stable'
-    - r_t > stable_threshold       -> 'increasing'
-
-    Returns DataFrame with columns: ["date", "label", "ret"].
-    """
-    df = price_df.sort_values("date").reset_index(drop=True).copy()
-    if df.empty:
-        return pd.DataFrame(columns=["date", "label", "ret"])
-
-    # Price at t + h
-    df["target_adj_close"] = df["adj_close"].shift(-horizon_trading_days)
-
-    # Drop trailing rows without a future price
-    df = df.iloc[:-horizon_trading_days].copy()
-
-    # Future return
-    df["ret"] = (df["target_adj_close"] - df["adj_close"]) / df["adj_close"]
-
-    # Map returns to labels
-    conditions = [
-        df["ret"] < -stable_threshold,
-        df["ret"].abs() <= stable_threshold,
-    ]
-    choices = ["decreasing", "stable"]
-    df["label"] = np.select(conditions, choices, default="increasing")
-
-    return df[["date", "label", "ret"]]
-
-
-def build_labeled_dataset(
-    headlines_csv: str,
-    prices_csv: str,
-    horizon_trading_days: int = 1,
-    stable_threshold: float = 0.005,
-) -> pd.DataFrame:
-    """
-    Join news headlines with price-direction labels per ticker.
-
-    Logic:
-    - For each ticker, compute per-day labels using `build_label_df`.
-    - For each headline, find the last trading day STRICTLY BEFORE the
-      headline timestamp, and use that day’s label (future move from that day).
-
-    This approximates:
-      "Given this headline at time T, what happens to price over the next
-       `horizon_trading_days` trading days, measured from the last close
-       before T?"
-
-    Returns a DataFrame with original headline columns plus:
-        label (string), ret (float)
-    """
-    headlines_df = pd.read_csv(headlines_csv, low_memory=False)
-    print("Loaded headlines:", headlines_df.shape, flush=True)
-
-    prices_df = pd.read_csv(prices_csv, low_memory=False)
-    print("Loaded prices:", prices_df.shape, flush=True)
-
-    # Parse datetimes
-    # Headlines often look like "2023-12-16 23:00:00 UTC"
-    headlines_df["Date"] = pd.to_datetime(
-        headlines_df["Date"].astype(str).str.replace(" UTC", ""),
-        errors="coerce",
-    )
-    prices_df["date"] = pd.to_datetime(prices_df["date"], errors="coerce")
-
-    all_records = []
-
-    for sym in sorted(headlines_df["Stock_symbol"].dropna().unique()):
-        hsym = headlines_df[headlines_df["Stock_symbol"] == sym].copy()
-        psym = prices_df[prices_df["ticker"] == sym].copy()
-
-        if psym.empty:
-            continue
-
-        label_df = build_label_df(
-            psym,
-            horizon_trading_days=horizon_trading_days,
-            stable_threshold=stable_threshold,
-        )
-        label_df = label_df.sort_values("date").reset_index(drop=True)
-        if label_df.empty:
-            continue
-
-        # Normalize to date-only for mapping
-        label_dates = label_df["date"].dt.normalize().values
-        headline_dates = hsym["Date"].dt.normalize().values
-
-        # For each headline date, map to the last trading day STRICTLY BEFORE it
-        # (so we don't peek at same-day close that happens after the headline).
-        idx = np.searchsorted(label_dates, headline_dates, side="left") - 1
-        valid_mask = idx >= 0
-        if not valid_mask.any():
-            continue
-
-        hsym_valid = hsym.loc[valid_mask].copy()
-        mapped_idx = idx[valid_mask]
-
-        hsym_valid["label"] = label_df["label"].values[mapped_idx]
-        hsym_valid["ret"] = label_df["ret"].values[mapped_idx]
-
-        all_records.append(hsym_valid)
-
-    if not all_records:
-        # No joinable rows
-        return pd.DataFrame(
-            columns=list(headlines_df.columns) + ["label", "ret"]
-        )
-
-    ds = pd.concat(all_records, ignore_index=True)
-    return ds
-
-
-# ---------------------------------------------------------------------------
-# 2. Train/val split (time-based)
-# ---------------------------------------------------------------------------
 
 def split_dataset_time_order(
-    df: pd.DataFrame,
-    val_fraction: float = 0.2,
-) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Time-based split: earliest -> train, latest -> val.
-    Avoids training on future data and validating on the past.
-    """
-    df_sorted = df.sort_values("Date").reset_index(drop=True)
-    n = len(df_sorted)
-    if n == 0:
-        return df_sorted, df_sorted  # both empty
-
-    n_val = max(1, int(n * val_fraction))
-    n_train = max(0, n - n_val)
-
-    train_df = df_sorted.iloc[:n_train].reset_index(drop=True)
-    val_df = df_sorted.iloc[n_train:].reset_index(drop=True)
-    return train_df, val_df
-
-
+df: pd.DataFrame,
+date_column: str,
+@@ -138,6 +161,7 @@ def split_dataset_random(
+# Dataset + metrics
 # ---------------------------------------------------------------------------
-# 3. Dataset + metrics
-# ---------------------------------------------------------------------------
+
 
 class NewsDataset(Dataset):
-    """
-    Simple PyTorch dataset that holds headlines and label IDs.
-    """
-
-    def __init__(
-        self,
-        texts: pd.Series,
-        labels: pd.Series,
-        tokenizer,
-        max_length: int = 128,
-    ):
-        self.texts = texts.reset_index(drop=True)
-        self.labels = labels.reset_index(drop=True).astype(int)
-        self.tokenizer = tokenizer
-        self.max_length = max_length
-
-    def __len__(self):
-        return len(self.texts)
-
-    def __getitem__(self, idx):
-        text = str(self.texts.iloc[idx])
-        label = int(self.labels.iloc[idx])
-
-        enc = self.tokenizer(
-            text,
-            truncation=True,
-            max_length=self.max_length,
-        )
-        enc["labels"] = label
-        return enc
+"""
+   PyTorch dataset that holds text + label IDs and tokenizes on the fly.
+@@ -171,17 +195,16 @@ def __getitem__(self, idx):
+return enc
 
 
 def compute_metrics(eval_pred):
-    """
-    Simple accuracy metric.
-    """
     logits, labels = eval_pred
-    preds = np.argmax(logits, axis=-1)
+def compute_accuracy_from_logits(logits: np.ndarray, labels: np.ndarray) -> float:
+preds = np.argmax(logits, axis=-1)
     acc = (preds == labels).mean().item()
     return {"accuracy": acc}
+    return float((preds == labels).mean())
 
 
 # ---------------------------------------------------------------------------
-# 4. Main training entrypoint
+# Main training logic
+# Data loading / preparation
 # ---------------------------------------------------------------------------
 
-def main(args):
-    os.makedirs(args.output_dir, exist_ok=True)
 
-    # ---- Build labeled (headline, label) dataset ----
-    df = build_labeled_dataset(
-        headlines_csv=args.headlines_csv,
-        prices_csv=args.prices_csv,
-        horizon_trading_days=args.horizon_days,
-        stable_threshold=args.stable_threshold,
-    )
+def load_and_prepare_data(
+data_path: str,
+text_column: str,
+@@ -199,15 +222,29 @@ def load_and_prepare_data(
+if not os.path.exists(data_path):
+raise FileNotFoundError(f"Data file not found: {data_path}")
 
-    # Drop rows without needed fields
-    df = df.dropna(subset=["Article_title", "label"]).copy()
-    df = df[df["label"].isin(LABEL2ID.keys())].copy()
-
-    if df.empty:
-        raise RuntimeError(
-            "No rows left after labeling & cleanup. "
-            "Check your CSV paths and labeling parameters."
+    print(f"Loading Parquet data from: {data_path}", flush=True)
+    df = pd.read_parquet(data_path)
+    # Support both parquet and csv just in case
+    ext = os.path.splitext(data_path)[1].lower()
+    print(f"Loading data from: {data_path} (ext={ext})", flush=True)
+    if ext == ".parquet":
+        df = pd.read_parquet(data_path)
+    elif ext == ".csv":
+        df = pd.read_csv(data_path)
+    else:
+        raise ValueError(
+            f"Unsupported file extension {ext!r}. Use a .parquet or .csv file."
         )
 
-    # Map string labels to numeric IDs
-    df["label_id"] = df["label"].map(LABEL2ID)
+print("Raw data shape:", df.shape, flush=True)
 
-    # Time-based split to avoid look-ahead bias
-    train_df, val_df = split_dataset_time_order(df, val_fraction=args.val_fraction)
+# Check required columns
+if text_column not in df.columns:
+        raise ValueError(f"text_column '{text_column}' not found in columns: {list(df.columns)}")
+        raise ValueError(
+            f"text_column '{text_column}' not found in columns: {list(df.columns)}"
+        )
+if label_column not in df.columns:
+        raise ValueError(f"label_column '{label_column}' not found in columns: {list(df.columns)}")
+        raise ValueError(
+            f"label_column '{label_column}' not found in columns: {list(df.columns)}"
+        )
 
-    print(f"Total labeled headlines: {len(df)}")
-    print(f"Train: {len(train_df)}  |  Val: {len(val_df)}")
-    print("Label distribution (total):")
-    print(df["label"].value_counts())
+# Keep only necessary columns plus date if present
+keep_cols = {text_column, label_column}
+@@ -220,13 +257,10 @@ def load_and_prepare_data(
 
-    # ---- Hugging Face model + tokenizer ----
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
-    model = AutoModelForSequenceClassification.from_pretrained(
-        args.model_name,
-        num_labels=len(LABELS),
-        id2label=ID2LABEL,
-        label2id=LABEL2ID,
+# Normalize / map labels
+if pd.api.types.is_numeric_dtype(df[label_column]):
+        # Assume labels are already integer-encoded (0..2).
+        # If there are out-of-range values, this will drop them.
+df["label_id"] = df[label_column].astype(int)
+valid_ids = set(ID2LABEL.keys())
+df = df[df["label_id"].isin(valid_ids)]
+else:
+        # String labels -> map via LABEL2ID
+df[label_column] = df[label_column].astype(str).str.lower().str.strip()
+df = df[df[label_column].isin(LABEL2ID.keys())].copy()
+df["label_id"] = df[label_column].map(LABEL2ID)
+@@ -253,17 +287,112 @@ def load_and_prepare_data(
+print(f"Train size: {len(train_df)}  |  Val size: {len(val_df)}", flush=True)
+
+if len(train_df) == 0 or len(val_df) == 0:
+        raise RuntimeError("Train or val set ended up empty. Check your data and val_fraction.")
+        raise RuntimeError(
+            "Train or val set ended up empty. Check your data and val_fraction."
+        )
+
+return train_df, val_df
+
+
+# ---------------------------------------------------------------------------
+# Training loop (manual, no Trainer)
+# ---------------------------------------------------------------------------
+
+
+def train_model(
+    model,
+    train_loader: DataLoader,
+    val_loader: DataLoader,
+    device: torch.device,
+    epochs: int,
+    lr: float,
+    weight_decay: float,
+):
+    optimizer = torch.optim.AdamW(
+        model.parameters(),
+        lr=lr,
+        weight_decay=weight_decay,
     )
 
-    train_dataset = NewsDataset(
-        texts=train_df["Article_title"],
-        labels=train_df["label_id"],
-        tokenizer=tokenizer,
-        max_length=args.max_length,
-    )
-    val_dataset = NewsDataset(
-        texts=val_df["Article_title"],
-        labels=val_df["label_id"],
-        tokenizer=tokenizer,
-        max_length=args.max_length,
-    )
+    for epoch in range(1, epochs + 1):
+        # --------------------
+        # Train
+        # --------------------
+        model.train()
+        train_loss = 0.0
+        train_correct = 0
+        train_total = 0
 
-    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+        for batch in train_loader:
+            labels = batch["labels"].to(device)
+            inputs = {
+                k: v.to(device)
+                for k, v in batch.items()
+                if k != "labels"
+            }
 
-    # FSDP config (optional)
+            optimizer.zero_grad()
+            outputs = model(**inputs, labels=labels)
+            loss = outputs.loss
+            logits = outputs.logits
+
+            loss.backward()
+            optimizer.step()
+
+            train_loss += loss.item() * labels.size(0)
+            preds = torch.argmax(logits, dim=-1)
+            train_correct += (preds == labels).sum().item()
+            train_total += labels.size(0)
+
+        avg_train_loss = train_loss / max(1, train_total)
+        train_acc = train_correct / max(1, train_total)
+
+        # --------------------
+        # Validation
+        # --------------------
+        model.eval()
+        val_loss = 0.0
+        val_correct = 0
+        val_total = 0
+
+        with torch.no_grad():
+            for batch in val_loader:
+                labels = batch["labels"].to(device)
+                inputs = {
+                    k: v.to(device)
+                    for k, v in batch.items()
+                    if k != "labels"
+                }
+
+                outputs = model(**inputs, labels=labels)
+                loss = outputs.loss
+                logits = outputs.logits
+
+                val_loss += loss.item() * labels.size(0)
+                preds = torch.argmax(logits, dim=-1)
+                val_correct += (preds == labels).sum().item()
+                val_total += labels.size(0)
+
+        avg_val_loss = val_loss / max(1, val_total)
+        val_acc = val_correct / max(1, val_total)
+
+        print(
+            f"Epoch {epoch}: "
+            f"train_loss={avg_train_loss:.4f}, train_acc={train_acc:.4f}, "
+            f"val_loss={avg_val_loss:.4f}, val_acc={val_acc:.4f}",
+            flush=True,
+        )
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+
+def main(args):
+os.makedirs(args.output_dir, exist_ok=True)
+
+    # -----------------------------------------------------------------------
+# 1. Load data
+    # -----------------------------------------------------------------------
+train_df, val_df = load_and_prepare_data(
+data_path=args.data_path,
+text_column=args.text_column,
+@@ -272,9 +401,7 @@ def main(args):
+val_fraction=args.val_fraction,
+)
+
+    # -----------------------------------------------------------------------
+    # 2. Hugging Face model + tokenizer
+    # -----------------------------------------------------------------------
+    # 2. Load model & tokenizer
+print(f"Loading model and tokenizer from '{args.model_name}'", flush=True)
+tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+model = AutoModelForSequenceClassification.from_pretrained(
+@@ -284,6 +411,14 @@ def main(args):
+label2id=LABEL2ID,
+)
+
+    if args.gradient_checkpointing:
+        model.gradient_checkpointing_enable()
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}", flush=True)
+    model.to(device)
+
+    # 3. Datasets & loaders
+train_dataset = NewsDataset(
+texts=train_df["text"],
+labels=train_df["label_id"],
+@@ -297,54 +432,37 @@ def main(args):
+max_length=args.max_length,
+)
+
+    if len(train_dataset) == 0:
+        raise RuntimeError("Training set is empty after all filtering.")
+
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+
     fsdp_config = args.fsdp if args.fsdp else None
     fsdp_wrap_cls = "BertLayer" if args.fsdp else None
 
+    # -----------------------------------------------------------------------
+    # 3. TrainingArguments + Trainer
+    # -----------------------------------------------------------------------
     training_args = TrainingArguments(
         output_dir=args.output_dir,
         num_train_epochs=args.epochs,
@@ -361,127 +326,98 @@ def main(args):
         report_to="none",  # disable wandb, etc.
 
         # Multi-GPU / FSDP
-        fsdp=fsdp_config,  # e.g. "full_shard" or "" (disabled)
+        fsdp=fsdp_config,
         fsdp_transformer_layer_cls_to_wrap=fsdp_wrap_cls,
         gradient_checkpointing=args.gradient_checkpointing,
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=args.batch_size,
+        shuffle=True,
+        collate_fn=data_collator,
     )
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=args.batch_size,
+        shuffle=False,
+        collate_fn=data_collator,
+)
 
     trainer = Trainer(
-        model=model,
+    # 4. Train
+    train_model(
+model=model,
         args=training_args,
         train_dataset=train_dataset if len(train_dataset) > 0 else None,
         eval_dataset=val_dataset if len(val_dataset) > 0 else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
-    )
+        train_loader=train_loader,
+        val_loader=val_loader,
+        device=device,
+        epochs=args.epochs,
+        lr=args.lr,
+        weight_decay=args.weight_decay,
+)
 
     if len(train_dataset) == 0:
-        raise RuntimeError("Training set is empty. Check your val_fraction or data size.")
+        raise RuntimeError("Training set is empty after all filtering.")
 
+    # -----------------------------------------------------------------------
+    # 4. Train and save
+    # -----------------------------------------------------------------------
     trainer.train()
-
-    # Save final model and tokenizer
     trainer.save_model(args.output_dir)
-    tokenizer.save_pretrained(args.output_dir)
-    print(f"Model and tokenizer saved to {args.output_dir}")
+    # 5. Save model & tokenizer
+    model.save_pretrained(args.output_dir)
+tokenizer.save_pretrained(args.output_dir)
+print(f"Model and tokenizer saved to {args.output_dir}", flush=True)
 
+@@ -368,20 +486,20 @@ def main(args):
+"--text_column",
+type=str,
+default="Article_title",
+        help="Name of the text column in the Parquet file.",
+        help="Name of the text column in the Parquet/CSV file.",
+)
+parser.add_argument(
+"--label_column",
+type=str,
+default="label",
+        help="Name of the label column in the Parquet file.",
+        help="Name of the label column in the Parquet/CSV file.",
+)
+parser.add_argument(
+"--date_column",
+type=str,
+default="Date",
+help="Name of the date column for time-based splitting. "
+             "If not present or empty, random splitting is used.",
+        "If not present or empty, random splitting is used.",
+)
 
-# ---------------------------------------------------------------------------
-# 5. CLI
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Fine-tune BERT/FinBERT to predict price direction from headlines."
-    )
-
-    parser.add_argument(
-        "--headlines_csv",
-        type=str,
-        required=True,
-        help="Path to headlines CSV (e.g., processed_headlines_subset.csv).",
-    )
-    parser.add_argument(
-        "--prices_csv",
-        type=str,
-        required=True,
-        help="Path to stock prices CSV (e.g., processed_stock_prices.csv).",
-    )
-    parser.add_argument(
-        "--model_name",
-        type=str,
-        default="ProsusAI/finbert",
-        help="HF model name or local path (e.g., ProsusAI/finbert, bert-base-uncased).",
-    )
-    parser.add_argument(
-        "--output_dir",
-        type=str,
-        default="./finbert_price_direction",
-        help="Where to save checkpoints and final model.",
-    )
-    parser.add_argument(
-        "--horizon_days",
-        type=int,
-        default=1,
-        help="Number of TRADING days ahead to measure return over.",
-    )
-    parser.add_argument(
-        "--stable_threshold",
-        type=float,
-        default=0.005,
-        help="Abs(return) below this is 'stable' (0.005 = ±0.5%).",
-    )
-    parser.add_argument(
-        "--val_fraction",
-        type=float,
-        default=0.2,
-        help="Fraction of data used for validation (time-based split).",
-    )
-    parser.add_argument(
-        "--max_length",
-        type=int,
-        default=96,
-        help="Maximum tokenized sequence length.",
-    )
-    parser.add_argument(
-        "--batch_size",
-        type=int,
-        default=16,
+parser.add_argument(
+@@ -412,7 +530,7 @@ def main(args):
+"--batch_size",
+type=int,
+default=16,
         help="Per-device batch size.",
-    )
-    parser.add_argument(
-        "--epochs",
-        type=int,
-        default=3,
-        help="Number of training epochs.",
-    )
-    parser.add_argument(
-        "--lr",
-        type=float,
-        default=2e-5,
-        help="Learning rate.",
-    )
-    parser.add_argument(
-        "--weight_decay",
-        type=float,
-        default=0.01,
-        help="Weight decay.",
-    )
+        help="Batch size.",
+)
+parser.add_argument(
+"--epochs",
+@@ -433,13 +551,11 @@ def main(args):
+help="Weight decay.",
+)
 
     # FSDP / parallelism flags
-    parser.add_argument(
-        "--fsdp",
-        type=str,
-        default="",
+parser.add_argument(
+"--fsdp",
+type=str,
+default="",
         help='FSDP config string passed to TrainingArguments.fsdp '
              '(e.g. "full_shard" or "" to disable).',
-    )
-    parser.add_argument(
-        "--gradient_checkpointing",
-        action="store_true",
-        help="Enable gradient checkpointing (helps memory at some speed cost).",
-    )
-
-    args = parser.parse_args()
-    main(args)
+        help="(Ignored in this script) kept for CLI compatibility.",
+)
+parser.add_argument(
+"--gradient_checkpointing",
