@@ -1,0 +1,183 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+
+\title{A temporal diffusion model pre-weighted by a fine-tuned encoder BERT demonstrates comparative performance to LSTM + Transformer architecture}
+
+\author{
+    \IEEEauthorblockN{Abdul Wadud Abbasi}
+    \IEEEauthorblockA{
+        Rutgers University\\
+        wa176@rutgers.edu
+    }
+    \and
+    \IEEEauthorblockN{Aman Patel}
+    \IEEEauthorblockA{
+        Rutgers University\\
+        anp181@rutgers.edu
+    }
+    \and
+    \IEEEauthorblockN{Vir Vaidya}
+    \IEEEauthorblockA{
+        Rutgers University\\
+        vv275@rutgers.edu
+    }
+    \and
+    \IEEEauthorblockN{Sohom Pal}
+    \IEEEauthorblockA{
+        Rutgers University\\
+        sp2160@rutgers.edu
+    }
+}
+
+
+\begin{document}
+\maketitle
+
+\section{Project Goal}
+
+Financial markets are reactive systems influenced by historical price movements and external events such as earnings reports, political decisions, macroeconomic policy changes, and unexpected corporate developments. Traditional quantitative models rely on structured data (open, high, low, and close prices) but lack mechanisms to incorporate contextual information from news sources. Headlines often carry sentiment, uncertainty, expectations, or hype that directly affect investor behavior and short-term price movements, especially when they convey fear, uncertainty, or long-term value signals that price-only models cannot capture.
+
+This project aimed to design and train a machine learning system to predict short term stock market movements using real time financial news and historical market data, focusing on major indices, including the NASDAQ, DJIA, and S\&P 500. The motivation stemmed from two observations: stock prices are often heavily influenced by news cycles and shocks, and traditional models effectively capture price patterns but largely overlook context and sentiment. Our objective was to merge structured numeric data (prices, returns, index performance) with unstructured text (news headlines) into a single predictive pipeline that can learn how events, earnings, policy changes, and innovations drive market movements over time.
+
+We hypothesized that FinBERT-based sentiment embeddings, when paired with a sequence model such as an LSTM or Temporal Fusion Transformer, could capture temporal sentiment effects more effectively than stock prices alone. More specifically we proposed that a temporal diffusion model preweighted by a finetuned sentiment encoder would outperform a standard LSTM combined with a FinBERT MLP. The overarching goal was to test whether a deep learning model enriched by sentiment encoding can beat a baseline LSTM market predictor by leveraging both structured market prices and unstructured news text for more accurate short-term movement forecasts.
+
+\section{Technical Approach}
+
+\subsection{Datasets}
+
+The dataset combines multiple sources. The primary source is the FNSPID dataset which includes daily stock price data and financial news headlines. Stock price data covers 7,693 tickers from 1962-01-02 to 2023-12-28, totaling approximately 29.7 million records. Each record includes date, ticker, open, high, low, close, adjusted close, and volume. Headline data spans 1914-09-16 to 2024-01-09, with over 15.5 million headlines across 8,552 unique stock symbols. Headlines include article titles, publication dates, and associated stock symbols.
+
+Index data comes from the St. Louis Federal Reserve Economic Data and includes daily values for the Dow Jones Industrial Average (DJIA), NASDAQ Composite, and S\&P 500. The DJIA and S\&P 500 cover the period from 2015-10-30 to 2025-10-29 (2,514 records each), while the NASDAQ Composite spans the period from 1971-02-05 to 2025-10-29 (13,801 records). After merging, 2,513 dates (17.60\%) have all three indices present, forming the overlapping period used for analysis.
+
+
+\subsection{Data Preprocessing}
+
+Stock price preprocessing standardized raw CSVs by normalizing column names, converting dates to datetime, and casting price and volume columns to numeric types. Duplicates were removed, rows missing dates or tickers were dropped, and the data was sorted by ticker and date, then aggregated into a single file. For headlines, only date, article title, and stock symbol were kept; dates were converted to datetime, and the cleaned subset was saved. Index CSVs for the three major indices were similarly normalized, dates were converted, and the series were merged on date via outer joins to retain all available dates.
+
+Labels were generated from next day returns and bucketed into three classes based on a half percent threshold of decreasing, increasing, or stable. To avoid lookahead bias, each headline was aligned to the last trading day strictly before its timestamp, and that day’s label (reflecting the following day’s move) was assigned. This setup ensures headlines are used to predict future movements rather than explain past ones.
+
+Headlines were encoded using the ProsusAI FinBERT model, which produced a 768 dimensional CLS embedding and sentiment probabilities (negative, neutral, and positive). Headlines were processed in batches with a sequence length cap; when multiple headlines existed for a ticker on a day, embeddings and sentiment scores were averaged into daily aggregates. The final dataset was merged combining cleaned prices, daily FinBERT features, and index series. Index values were converted to daily log returns and merged on date; missing news features and index returns were forward filled. The resulting Parquet file contains date, ticker, price features, FinBERT embeddings, sentiment scores, index returns, and the target label, suitable for sequence models over historical windows.
+
+\section{Features}
+
+The feature set used in our forecasting model combines numerical market indicators, sentiment probabilities, and dense semantic embeddings extracted from FinBERT. Numerical features include daily stock returns and the returns of major indices such as the S\&P 500, NASDAQ, and Dow Jones Industrial Average. These values capture immediate market momentum and broad economic influences that affect individual stock behavior. The sentiment features FinBERT’s positive, neutral, and negative probability scores that provide a quantified representation of how financial news headlines reflect market emotions and investor expectations. Finally the 732-dimensional embedding vector from FinBERT encapsulates deep contextual meaning from news text, encoding linguistic patterns that sentiment scores alone cannot capture. When combined, these features create a rich, high dimensional representation of both market conditions and investor sentiment. This unified feature vector serves as the input to the LSTM, enabling the model to learn how textual signals and price dynamics jointly influence next-day stock movements.
+
+\subsection{Feature Meaning}
+
+\begin{table}[H]
+\centering
+\caption{Feature Meaning}
+\begin{tabular}{ll}
+\toprule
+Feature & Meaning \\
+\midrule
+senti\_pos & Positive sentiment score \\
+senti\_neg & Negative sentiment score \\
+senti\_neu & Neutral weighting \\
+ret0 & closetoday - closeyesterday / closeyesterday \\
+ret\_djia & market index sentiment (DJIA) \\
+ret\_nasdaqcom & Market index sentiment (NASDAQ COM) \\
+ret\_sp500 & Market index sentiment (S\&P 500) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These features were concatenated with market-based values, such as price, 1-day return, and correlations between the DJIA/SPX/NASDAQ index correlations, as well as rolling history windows (10-day and 30-day lookback experiments).
+
+\section{FinBERT Fine-Tuning}
+
+The first major model trained was a finetuned FinBERT for classifying headlines into increasing, decreasing, or stable next-day price movements. Training utilized distributed data parallelism across 4 nodes with 4 A100 GPUs each and 16 GPUs in total, achieving over 97\% utilization. The dataset contained 850,048 labeled headlines (680,039 training, 170,009 validation) with a roughly balanced distribution across the three classes. Data was sharded across ranks for parallel processing, with each process handling a subset of headlines. Despite efficient distributed execution, performance gains over the pretrained FinBERT were modest.
+
+Training curves showed the best validation loss (1.1552) and accuracy (34.13\%) at epoch 1, followed by overfitting: the training loss decreased from 1.0382 to 0.9595 over 10 epochs, while the validation loss increased to 1.2723. Learning rate reductions did not prevent this. This suggests headline sentiment may not map cleanly to next day price movements, or that price movements depend on many nontextual factors. Although the finetuned model did not significantly outperform the base model in classification, it produced slightly more task relevant embeddings that were later used in the LSTM forecasting models.
+
+\section{LSTM Architecture}
+
+The second major model was a sequence based predictor built with a two layer LSTM. Each day is represented by a 739 dimensional feature vector, and the model processes sliding windows of past observations using either a 10 day or 30 day lookback period. The final hidden state from the LSTM is passed through Layer Normalization and then an MLP head to predict the next day’s return or direction. The two lookback lengths were chosen to explore a tradeoff: a 10-day window emphasizes short term momentum and recent sentiment, while a 30-day window allows the model to learn longer range dynamics, such as delayed responses to major news or slowly shifting market regimes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{lstm.JPG}
+    \caption{LSTM Architecture.}
+\end{figure}
+
+
+Training the LSTM required explicit safeguards against data leakage and temporal inconsistencies. The dataset was split into training, validation, and test sets strictly by time, ensuring that no future information could influence earlier predictions. Models were optimized with AdamW, chosen for its stable convergence and decoupled weight decay, which is particularly well suited for deep sequence models. On Perlmutter, training used Distributed Data Parallel across multiple GPUs, substantially speeding up both embedding extraction and LSTM training; GPU utilization consistently exceeded 97\%, confirming that the distributed setup scaled efficiently.
+
+\section{LayerNorm}
+
+Layer Normalization is used in our LSTM forecasting model to improve training stability and to enhance the quality of learned representations. After the LSTM processes the input sequence and produces a final hidden state vector, the values within this vector can vary significantly in scale due to the accumulation of temporal information across many time steps. Such variation can make optimization more difficult, especially when the model operates on high dimensional embeddings like the 732-dimensional FinBERT representation. LayerNorm normalizes the hidden state's activations by adjusting them to have zero mean and unit variance across the feature dimension. This normalization reduces internal covariate shift, encourages smoother gradients, and allows the downstream MLP to operate on a more consistent input distribution. In the context of financial forecasting where input features originate from diverse sources such as textual embeddings, price dynamics, and market indices. LayerNorm helps harmonize these heterogeneous signals and supports more stable training behavior.
+
+\section{Multi-Layer Perceptron}
+
+Following the LSTM layers and the LayerNorm block, the model uses a Multi Layer Perceptron as the final prediction head. The MLP serves as a flexible nonlinear function approximator that transforms the normalized LSTM output into a next day return prediction or directional classification. In our architecture the MLP typically consists of a fully connected layer, a nonlinear activation function, and a second linear layer that maps the hidden representation to a single output value. This structure allows the model to learn higher level interactions between temporal patterns encoded by the LSTM and the distributed semantic information contained in FinBERT embeddings. Because financial time series often exhibit nonlinear relationships where the impact of sentiment, short-term momentum, and macroeconomic factors interact in complex ways, the MLP provides the model with additional expressive power beyond what a purely recurrent or linear model could achieve. The MLP thus acts as a crucial bridge between the time aware LSTM representation and the final numerical prediction produced by the system.
+
+The full model architecture consisted of:
+FinBERT Encoder $\rightarrow$ 2-Layer LSTM $\rightarrow$ LayerNorm $\rightarrow$ Multi-Layer Perceptron (MLP)
+
+Optimizer: AdamW
+
+Train/Val/Test Split: 70/15/15 (date-segmented)
+
+Loss Objective: Cross-entropy for directional prediction
+
+\section{Use of Computing Resources}
+
+The project made extensive use of the NERSC Perlmutter supercomputing system to support large scale data processing, embedding extraction, and distributed training. Perlmutter’s A100 GPUs were accessed through both Jupyter and SSH, with code and configuration managed via GitHub for version control and reproducibility. The team ran experiments across multiple nodes, scaling up to 4 nodes $\times$ 4 A100 GPUs for FinBERT fine-tuning and up to 32 GPUs across 8 nodes for the MLP and LSTM experiments, enabling efficient parallelization of both NLP and sequence modeling workloads.
+
+GPU utilization during training was consistently high, with monitoring showing over 97\% utilization during FinBERT finetuning and LSTM training runs. This indicated that the data loading, batching, and model parallelism were well-balanced and that Perlmutter’s hardware was being used effectively. Distributed Data Parallel was employed to synchronize gradients across GPUs, which significantly accelerated convergence on a Pandas dataset of roughly 228 GB, allowing the team to iterate on model variants.
+
+Overall, the project consumed approximately 145 GPU hours when accounting for debugging, data preprocessing, and training/validation runs. Debugging and initial setup accounted for about 25 hours, data preprocessing for roughly 52 hours, and training and validation for approximately 67 hours. These runs demonstrated not only the feasibility of large-scale financial modeling with transformer and LSTM architectures on HPC infrastructure but also highlighted the importance of careful resource planning and monitoring in managing long wall-time jobs and multi-node experiments effectively.
+
+
+\section{Results}
+
+In order to determine the performance of our model we wanted to backtest it across a period of 10 years, comparing our model’s predictions against real market performance. For the results in Figure 3, this was done on a subset of our dataset, containing only 5\% of the data we had merged together. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{restuleone.JPG}
+    \caption{Model Strategy Implementation.}
+\end{figure}
+
+
+Here we compare our model driven strategy to a simple market benchmark. In the Buy \& Hold strategy we start with \$5,000, allocate it equally across all unique tickers in our universe and hold that portfolio unchanged for 10 years. The LSTM strategy by contrast actively uses the model’s daily predictions: each day we select the 10 stocks with the highest predicted positive return, invest 1\% of the current bankroll in each and hold them until the model predicts a negative move for the following day, at which point the position is closed. We repeat this process over the same 10 year period.
+
+The chart shows that this LSTM‑based strategy substantially outperforms the equal‑weight Buy \& Hold benchmark. Not only does the model generate a higher terminal portfolio value, but it also demonstrates resilience during major market stress events, most notably the COVID-19 shock around 2020, where the active strategy maintains a relatively stable and elevated portfolio value, while the buy and hold portfolio experiences a sharp drawdown. This suggests that even imperfect next‑day direction forecasts can add value when translated into a disciplined, risk aware trading policy.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{resulttwo.JPG}
+    \caption{Model Strategy Implementation.}
+\end{figure}
+
+This figure compares the realized performance of our LSTM-driven trading strategy against both an equal-weight buy-and-hold portfolio across our stock universe and a passive benchmark invested in the ACWI ETF. All portfolios start with the same initial capital of \$5,000, and returns are compounded over the full backtest horizon. While the model based strategy outperforms the naive equal weight portfolio, the ACWI buy and hold benchmark delivers substantially higher terminal wealth and a steeper long run growth trajectory, particularly after the post COVID recovery.
+
+From a risk adjusted perspective the ACWI effectively captures broad global equity exposure and benefits from structural market trends that our active strategy fails to consistently exploit. The LSTM strategy remains relatively flat in later years, suggesting that predictive edge decays over time or is insufficient to overcome trading frictions and missed rallies, whereas ACWI continues to participate fully in major bull phases. This result highlights a key limitation of the current model: even with sentiment‑aware forecasts, an actively managed strategy may underperform a simple, low‑cost, diversified ETF when evaluated over long horizons.
+
+
+
+\section{Contributions}
+
+Aman: Contributions included initial data preprocessing: standardizing stock price and headline data from FNSPID, aligning headlines with next-day price movements, and generating labeled datasets. Also fixed FinBERT fine-tuning issues and implemented distributed data parallelism (DDP) with data sharding across 16 GPUs on 4 nodes, enabling efficient parallel training of the fine-tuned model.
+
+Abdul: Contributions included the second phase of data preprocessing and training: preparing the training, validation, and testing set from the processed data that ensures the 732 embedding LSTM to merge correctly with FinBERT parameters and temporal/headline features. I was partially responsible for fine-tuning FinBERT and fully responsible for training our multiple layer perceptron (MLP) across 32 GPUs on 8 nodes. I enforced PyTorch’s fully shared data parallel (FSDP) to enable efficient parallel training of MLP models. I handled the debugging of our train.py, model.py, and finetune.py and submitted well over 30+ SLURM jobs spending approximately 150 GPU hours on training/debugging. Ensure communication between team members and divided tasks to ensure efficiency.
+
+Vir: Contributions include combining preprocessed datasets into unified merged datasets for initial FinBERT finetune debugging. Also modified and repaired hugging face trainer issues and adapted FinBERT finetuning to utilize a pure pytorch training loop in order to run correctly on perlmutter GPUs. Prepared slideshow and detailed project throughout report.
+
+Sohom: Contributions included working on dataset aggregation and parallelizing data preprocessing scripts to improve performance. Additionally, tested our completed LSTM models using different backtesting strategies to compare the model's performance against general market movements and also against generally smart investment strategies.
+
+\section{Github}
+
+\url{https://github.com/wadud-abbasi/ece534-finance-project}
+
+
+
+\end{document}
