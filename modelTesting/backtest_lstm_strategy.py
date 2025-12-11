@@ -40,17 +40,19 @@ class TinyLSTMModel(nn.Module):
 
 
 # -----------------------------
-# Build windows & prediction dataset
+# Build windows & prediction metadata
 # -----------------------------
 def build_windows_with_returns(df, feature_cols, target_col, date_col, ticker_col, lookback):
     """
     For each ticker, build rolling windows of length `lookback`.
-    Returns a DataFrame with columns:
-      date        : prediction date (window end)
-      next_date   : date whose return we realize
-      ticker
-      real_ret    : actual next-day return (from target_col)
-      features    : we'll pass separately as X array
+
+    Returns:
+      X_np   : [N, lookback, F]
+      meta_df columns:
+        - date       : prediction date (window end)
+        - next_date  : date whose return we realize (next trading day)
+        - ticker
+        - real_ret   : actual next-day return (target_col at index i)
     """
     tickers = df[ticker_col].unique()
     X_list = []
@@ -65,17 +67,16 @@ def build_windows_with_returns(df, feature_cols, target_col, date_col, ticker_co
         rets = df_t[target_col].to_numpy(dtype=np.float32)
         dates = df_t[date_col].to_numpy()
 
-        # window ends at i, realized return is at index i (ret from i->i+1),
-        # so we also record next_date = dates[i+1]
+        # window ends at i, realized return is rets[i] from dates[i] -> dates[i+1]
         for i in range(lookback - 1, len(df_t) - 1):
             window = values[i - lookback + 1 : i + 1]  # (lookback, F)
             X_list.append(window)
             rows.append(
                 {
-                    "date": dates[i],            # prediction made at end of this day
-                    "next_date": dates[i + 1],   # realized on next day
+                    "date": dates[i],           # when we make prediction
+                    "next_date": dates[i + 1],  # when return is realized
                     "ticker": tic,
-                    "real_ret": rets[i],         # actual (target_ret1)
+                    "real_ret": rets[i],
                 }
             )
 
@@ -99,14 +100,12 @@ def backtest_with_returns(preds_df, initial_capital=5000.0, top_k=10):
       pred_ret   : model-predicted return
       real_ret   : true next-day return (clipped)
     """
-
-    # Sort by prediction date
     preds_df = preds_df.sort_values(["date", "ticker"])
     trade_dates = sorted(preds_df["date"].unique())
     if len(trade_dates) < 2:
         raise ValueError("Not enough trade dates for backtest.")
 
-    # ---- Buy & Hold weights (equal-weight on first prediction date universe) ----
+    # Equal-weight buy & hold on first trade-date universe
     first_date = trade_dates[0]
     first_universe = preds_df.loc[preds_df["date"] == first_date, "ticker"].unique()
     n_assets = len(first_universe)
@@ -115,7 +114,6 @@ def backtest_with_returns(preds_df, initial_capital=5000.0, top_k=10):
 
     w_bh = {tic: 1.0 / n_assets for tic in first_universe}
 
-    # ---- Initialize capitals ----
     cap_bh = initial_capital
     cap_strat = initial_capital
 
@@ -126,43 +124,60 @@ def backtest_with_returns(preds_df, initial_capital=5000.0, top_k=10):
     for d in trade_dates:
         day = preds_df[preds_df["date"] == d]
 
-        # Map ticker -> real_ret and pred_ret
         real_map = dict(zip(day["ticker"], day["real_ret"]))
-        pred_map = dict(zip(day["ticker"], day["pred_ret"]))
-
         # ---- Buy & Hold daily return ----
         r_bh = 0.0
-        # normalize weights over tickers that actually have returns this day
         active_tics = [tic for tic in w_bh.keys() if tic in real_map]
         if active_tics:
             norm = sum(w_bh[tic] for tic in active_tics)
             for tic in active_tics:
                 wt = w_bh[tic] / norm
                 r_bh += wt * real_map[tic]
-        # else, r_bh stays 0
-
         cap_bh *= (1.0 + r_bh)
 
         # ---- LSTM strategy daily return ----
-        # Select top_k tickers by predicted return, only if pred_ret > 0
         day_sorted = day.sort_values("pred_ret", ascending=False)
+        # Only long when pred > 0
         day_sorted = day_sorted[day_sorted["pred_ret"] > 0]
         if top_k is not None:
             day_sorted = day_sorted.head(top_k)
 
         r_strat = 0.0
         for _, row in day_sorted.iterrows():
-            r_strat += 0.01 * row["real_ret"]  # 1% of capital into each
-
+            r_strat += 0.01 * row["real_ret"]  # 1% of capital per selected ticker
         cap_strat *= (1.0 + r_strat)
 
-        # Record using the *next_date* (when return is realized) for x-axis
         next_date = day["next_date"].iloc[0]
         dates_plot.append(next_date)
         bh_curve.append(cap_bh)
         strat_curve.append(cap_strat)
 
     return np.array(dates_plot), np.array(bh_curve), np.array(strat_curve)
+
+
+# -----------------------------
+# Benchmark: single-ticker buy & hold (e.g. SPY)
+# -----------------------------
+def benchmark_buy_hold(df, ticker, date_col, price_col, initial_capital):
+    df_bench = df[df["ticker"] == ticker].sort_values(date_col)
+    if len(df_bench) < 2:
+        print(f"WARNING: Benchmark ticker '{ticker}' not found or too few rows.")
+        return None, None
+
+    prices = df_bench[price_col].to_numpy(dtype=float)
+    dates_b = df_bench[date_col].to_numpy()
+
+    # Simple returns from prices
+    rets = (prices[1:] - prices[:-1]) / prices[:-1]
+    rets = np.clip(rets, -1.0, 1.0)  # avoid wild splits/bad ticks
+
+    capital = initial_capital
+    curve = [capital]
+    for r in rets:
+        capital *= (1.0 + r)
+        curve.append(capital)
+
+    return dates_b, np.array(curve)
 
 
 # -----------------------------
@@ -196,6 +211,18 @@ def main():
         help="Name of ticker column",
     )
     ap.add_argument(
+        "--price_col",
+        type=str,
+        default="adj_close",
+        help="Name of price column (for benchmark curve)",
+    )
+    ap.add_argument(
+        "--benchmark_ticker",
+        type=str,
+        default="SPY",
+        help="Ticker symbol to use as market benchmark (e.g., SPY, DIA)",
+    )
+    ap.add_argument(
         "--start_year",
         type=int,
         default=2015,
@@ -210,7 +237,7 @@ def main():
     ap.add_argument(
         "--output_png",
         type=str,
-        default="lstm_strategy_vs_buyhold.png",
+        default="lstm_strategy_vs_benchmarks.png",
         help="Output PNG filename",
     )
     args = ap.parse_args()
@@ -249,11 +276,11 @@ def main():
     df = df[(df[args.date_col] >= start_date) & (df[args.date_col] <= end_date)].reset_index(drop=True)
     print(f"Filtered rows between {start_date.date()} and {end_date.date()}: {len(df)}")
 
-    for col in [args.ticker_col, target_col]:
+    for col in [args.ticker_col, target_col, args.price_col]:
         if col not in df.columns:
             raise ValueError(f"Required column '{col}' not found in dataframe.")
 
-    # ---- Auto feature selection (same as before) ----
+    # ---- Auto feature selection ----
     num_df = df.select_dtypes(include=[np.number])
     if target_col not in num_df.columns:
         raise ValueError(f"Target column '{target_col}' must be numeric.")
@@ -275,7 +302,7 @@ def main():
     needed_from_emb = input_dim - len(non_emb_cols)
     if needed_from_emb > len(emb_cols):
         raise ValueError(
-            f"Need {needed_from_emb} emb_* cols but only {len(emb_cols)} available."
+            f"Need {needed_from_emb} emb_* columns but only {len(emb_cols)} available."
         )
 
     keep_emb = set(emb_cols[:needed_from_emb])
@@ -290,13 +317,13 @@ def main():
     print("First 10 feature cols:", feature_cols[:10])
     print("Last 10 feature cols:", feature_cols[-10:])
 
-    # ---- Build windows & meta ----
+    # ---- Build windows & meta for all tickers ----
     X_np, meta_df = build_windows_with_returns(
         df, feature_cols, target_col, args.date_col, args.ticker_col, lookback
     )
     print(f"Built windows: X shape = {X_np.shape}, meta rows = {len(meta_df)}")
 
-    # ---- Run model predictions ----
+    # ---- Model predictions ----
     X = torch.from_numpy(X_np)
     preds = []
     batch_size = 256
@@ -307,30 +334,38 @@ def main():
             preds.append(yb.cpu().numpy())
     preds = np.concatenate(preds, axis=0)
 
-    # ---- Assemble prediction dataframe ----
     preds_df = meta_df.copy()
     preds_df["pred_ret"] = preds
-
-    # Clip realized returns to avoid insane outliers from bad data
-    preds_df["real_ret"] = np.clip(preds_df["real_ret"], -1.0, 1.0)
+    preds_df["real_ret"] = np.clip(preds_df["real_ret"], -1.0, 1.0)  # guard against insane outliers
 
     print("Sample of preds_df:")
     print(preds_df.head())
 
-    # ---- Backtest ----
-    dates, bh_curve, strat_curve = backtest_with_returns(preds_df, initial_capital=5000.0, top_k=10)
+    # ---- Backtest: equal-weight vs LSTM strategy ----
+    dates, bh_curve, strat_curve = backtest_with_returns(
+        preds_df, initial_capital=5000.0, top_k=10
+    )
 
     print("First 5 dates:", dates[:5])
     print("First 5 Buy&Hold values:", bh_curve[:5])
     print("First 5 Strategy values:", strat_curve[:5])
 
+    # ---- Benchmark curve: single-ticker buy & hold ----
+    bench_dates, bench_curve = benchmark_buy_hold(
+        df, args.benchmark_ticker, args.date_col, args.price_col, initial_capital=5000.0
+    )
+
     # ---- Plot ----
     plt.figure(figsize=(14, 6))
-    plt.plot(dates, bh_curve, label="Buy & Hold (equal-weight)", linewidth=1.5)
+    plt.plot(dates, bh_curve, label="Buy & Hold (equal-weight universe)", linewidth=1.5)
     plt.plot(dates, strat_curve, label="LSTM Strategy (top 10, 1% each)", linewidth=1.5)
+
+    if bench_curve is not None:
+        plt.plot(bench_dates, bench_curve, label=f"{args.benchmark_ticker} Buy & Hold", linewidth=1.8)
+
     plt.xlabel("Date")
     plt.ylabel("Portfolio value ($)")
-    plt.title("LSTM Strategy vs Buy & Hold (starting at $5000)")
+    plt.title("LSTM Strategy vs Buy & Hold vs Benchmark (starting at $5000)")
     plt.legend()
     plt.tight_layout()
 
