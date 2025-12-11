@@ -41,7 +41,7 @@ class TinyLSTMModel(nn.Module):
 
 
 # -----------------------------
-# Backtest helpers
+# Helper: safe price lookup
 # -----------------------------
 def get_price(price_series, date, ticker):
     """Safe lookup: returns np.nan if missing."""
@@ -51,25 +51,35 @@ def get_price(price_series, date, ticker):
         return np.nan
 
 
-def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
+# -----------------------------
+# Backtest: buy & hold vs LSTM strategy
+# -----------------------------
+def backtest_strategies(preds_df,
+                        price_series,
+                        initial_capital=5000.0,
                         top_k=10):
     """
     preds_df columns: ['date', 'ticker', 'pred_ret', 'price_today', 'price_next']
     price_series: Series indexed by (date, ticker) -> price (adj_close)
+
+    Returns:
+      dates: np.array of dates
+      bh_curve: np.array of buy & hold equity
+      strat_curve: np.array of LSTM strategy equity
     """
     trade_dates = sorted(preds_df["date"].unique())
     if len(trade_dates) < 2:
         raise ValueError("Not enough trade dates for backtest.")
 
-    # --- Buy & Hold: equal-weight across all tickers on first trade date ---
+    # -------- BUY & HOLD setup --------
     first_date = trade_dates[0]
     first_universe = preds_df.loc[preds_df["date"] == first_date, "ticker"].unique()
     n_assets = len(first_universe)
     if n_assets == 0:
-        raise ValueError("No tickers on first trade date.")
+        raise ValueError("No tickers on first trade date for buy & hold.")
 
     bh_shares = {}
-    bh_cash = 0.0   # all invested
+    bh_cash = 0.0
 
     equal_invest = initial_capital / n_assets
     for tic in first_universe:
@@ -78,18 +88,26 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
             continue
         bh_shares[tic] = equal_invest / p0
 
-    # --- Model strategy: start fully in cash, no positions ---
+    # Value buy & hold on first date (should be ~ initial_capital)
+    bh_equity0 = bh_cash
+    for tic, sh in bh_shares.items():
+        p0 = get_price(price_series, first_date, tic)
+        if np.isnan(p0):
+            continue
+        bh_equity0 += sh * p0
+
+    # -------- LSTM strategy setup --------
     strat_cash = initial_capital
-    strat_shares = {}   # ticker -> shares
+    strat_shares = {}
 
-    # We'll record portfolio values at each "next day" date,
-    # starting from the second trade date.
-    bh_equity_curve = []
-    strat_equity_curve = []
-    curve_dates = []
+    strat_equity0 = strat_cash  # no positions yet
 
-    # Iterate over days where we have predictions for return to next day.
-    # For date d_i, the realized P&L is from d_i -> d_{i+1}.
+    # Record curves (start at first date with 5000)
+    curve_dates = [first_date]
+    bh_equity_curve = [bh_equity0]
+    strat_equity_curve = [strat_equity0]
+
+    # Iterate through all days where we have predictions (today) and a next day
     for i in range(len(trade_dates) - 1):
         d = trade_dates[i]
         next_d = trade_dates[i + 1]
@@ -98,16 +116,18 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
         if day_preds.empty:
             continue
 
-        # ---------- BUY & HOLD: just value holdings at next day's prices ----------
+        # ----- Buy & Hold: value at next day -----
         bh_value_next = bh_cash
         for tic, sh in bh_shares.items():
+            if sh <= 0:
+                continue
             p_next = get_price(price_series, next_d, tic)
             if np.isnan(p_next):
                 continue
             bh_value_next += sh * p_next
 
-        # ---------- MODEL STRATEGY ----------
-        # 1) Value at current date d (before trades)
+        # ----- LSTM Strategy -----
+        # 1) Value at current date (before trades)
         strat_value_d = strat_cash
         for tic, sh in strat_shares.items():
             if sh <= 0:
@@ -117,17 +137,14 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
                 continue
             strat_value_d += sh * p_d
 
-        # 2) SELL: any held ticker with predicted_ret < 0
-        # Map ticker -> pred_ret for the day
+        # 2) SELL positions with predicted_ret < 0
         day_pred_map = dict(zip(day_preds["ticker"], day_preds["pred_ret"]))
-
         to_remove = []
         for tic, sh in strat_shares.items():
             if sh <= 0:
                 continue
             pred_r = day_pred_map.get(tic, None)
             if pred_r is None:
-                # no prediction; hold
                 continue
             if pred_r < 0:
                 p_d = get_price(price_series, d, tic)
@@ -135,11 +152,10 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
                     continue
                 strat_cash += sh * p_d
                 to_remove.append(tic)
-
         for tic in to_remove:
             strat_shares[tic] = 0.0
 
-        # Recompute equity after sells
+        # 3) Recompute equity after sells
         strat_value_d_after_sells = strat_cash
         for tic, sh in strat_shares.items():
             if sh <= 0:
@@ -149,7 +165,7 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
                 continue
             strat_value_d_after_sells += sh * p_d
 
-        # 3) BUY: take top-k predicted performers, invest 1% of current equity per ticker
+        # 4) BUY top-k predicted tickers: 1% of current equity each
         day_preds_sorted = day_preds.sort_values("pred_ret", ascending=False)
         top = day_preds_sorted.head(top_k)
 
@@ -159,7 +175,6 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
             if p_d <= 0 or np.isnan(p_d):
                 continue
 
-            # 1% of equity after sells
             equity_now = strat_value_d_after_sells
             invest_amt = 0.01 * equity_now
 
@@ -171,7 +186,7 @@ def backtest_strategies(preds_df, price_series, initial_capital=5000.0,
             strat_cash -= invest_amt
             strat_shares[tic] = strat_shares.get(tic, 0.0) + sh_buy
 
-        # 4) Value strategy portfolio at next day prices
+        # 5) Value strategy at next day prices
         strat_value_next = strat_cash
         for tic, sh in strat_shares.items():
             if sh <= 0:
@@ -197,7 +212,7 @@ def main():
     ap.add_argument(
         "--model_path",
         type=str,
-        default="models/lstm_ddp_baby/lstm_best.pt",
+        default="../models/lstm_ddp_baby/lstm_best.pt",
         help="Path to LSTM checkpoint",
     )
     ap.add_argument(
@@ -245,7 +260,7 @@ def main():
 
     args = ap.parse_args()
 
-    # ---------- Load checkpoint & infer model dimensions / cfg ----------
+    # ---------- Load checkpoint & model ----------
     ckpt = torch.load(args.model_path, map_location="cpu")
     state_dict = ckpt["model_state_dict"]
     cfg = ckpt.get("cfg", {})
@@ -253,7 +268,8 @@ def main():
     input_dim = state_dict["lstm.weight_ih_l0"].shape[1]
     hidden_dim = state_dict["lstm.weight_hh_l0"].shape[1]
     num_layers = len(
-        [k for k in state_dict.keys() if k.startswith("lstm.weight_ih_l") and "reverse" not in k]
+        [k for k in state_dict.keys()
+         if k.startswith("lstm.weight_ih_l") and "reverse" not in k]
     )
     lookback = int(cfg.get("lookback", 10))
     target_col = cfg.get("target_col", "target_ret1")
@@ -261,7 +277,9 @@ def main():
     print(f"input_dim={input_dim}, hidden_dim={hidden_dim}, num_layers={num_layers}")
     print(f"lookback={lookback}, target_col={target_col}")
 
-    model = TinyLSTMModel(input_dim=input_dim, hidden_dim=hidden_dim, num_layers=num_layers)
+    model = TinyLSTMModel(input_dim=input_dim,
+                          hidden_dim=hidden_dim,
+                          num_layers=num_layers)
     model.load_state_dict(state_dict, strict=False)
     model.eval()
 
@@ -271,19 +289,20 @@ def main():
     else:
         df = pd.read_csv(args.data_path)
 
-    # Filter dates
     df[args.date_col] = pd.to_datetime(df[args.date_col])
     df = df.sort_values(args.date_col)
     start_date = dt.datetime(args.start_year, 1, 1)
     end_date = dt.datetime(args.end_year, 12, 31)
-    df = df[(df[args.date_col] >= start_date) & (df[args.date_col] <= end_date)].reset_index(drop=True)
+    df = df[(df[args.date_col] >= start_date) &
+            (df[args.date_col] <= end_date)].reset_index(drop=True)
+
     print(f"Filtered rows between {start_date.date()} and {end_date.date()}: {len(df)}")
 
     for col in [args.ticker_col, args.price_col, target_col]:
         if col not in df.columns:
             raise ValueError(f"Required column '{col}' not found in dataframe.")
 
-    # ---------- Auto feature selection (same logic as before) ----------
+    # ---------- Auto feature selection ----------
     num_df = df.select_dtypes(include=[np.number])
     if target_col not in num_df.columns:
         raise ValueError(f"Target column '{target_col}' must be numeric.")
@@ -298,7 +317,7 @@ def main():
 
     if len(non_emb_cols) > input_dim:
         raise ValueError(
-            f"{len(non_emb_cols)} non-embedding cols > model input_dim={input_dim}; "
+            f"{len(non_emb_cols)} non-emb cols > model input_dim={input_dim}; "
             "need to drop some manually."
         )
 
@@ -332,7 +351,6 @@ def main():
 
     for tic in tickers:
         df_t = df[df[args.ticker_col] == tic].sort_values(args.date_col).reset_index(drop=True)
-
         if len(df_t) <= lookback:
             continue
 
@@ -340,8 +358,7 @@ def main():
         prices = df_t[args.price_col].to_numpy(dtype=np.float32)
         dates = df_t[args.date_col].to_numpy()
 
-        # we need lookback window ending at index i (today),
-        # and realized return to i+1, so loop up to len-2.
+        # window ending at i (today), realized next-day return using i+1
         for i in range(lookback - 1, len(df_t) - 1):
             window = values[i - lookback + 1 : i + 1]  # (lookback, F)
             X_list.append(window)
@@ -384,13 +401,17 @@ def main():
         preds_df, price_series, initial_capital=5000.0, top_k=10
     )
 
+    print("First 5 dates:", dates[:5])
+    print("First 5 Buy&Hold values:", bh_curve[:5])
+    print("First 5 Strategy values:", strat_curve[:5])
+
     # ---------- Plot ----------
     plt.figure(figsize=(14, 6))
     plt.plot(dates, bh_curve, label="Buy & Hold (equal-weight)", linewidth=1.5)
     plt.plot(dates, strat_curve, label="LSTM Strategy (top 10, 1% each)", linewidth=1.5)
     plt.xlabel("Date")
     plt.ylabel("Portfolio value ($)")
-    plt.title("LSTM Strategy vs Buy & Hold")
+    plt.title("LSTM Strategy vs Buy & Hold (starting at $5000)")
     plt.legend()
     plt.tight_layout()
 
