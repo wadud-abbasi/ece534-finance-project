@@ -23,7 +23,17 @@ mkdir -p outputs
 
 HEADLINES_CSV=data/data/processed_headlines_subset.csv
 PRICES_CSV=data/data/processed_stock_prices.csv
-
+"""
+fine_tune.py \
+  --data_path data/data/labeled_headlines_baby.parquet \
+  --text_column Article_title \
+  --label_column label \
+  --date_column Date \
+  --model_name /finbert \
+  --batch_size 8 \
+  --epochs 1 \
+  --output_dir outputs/test_baby
+"""
 srun python -u fine_tune.py \
   --headlines_csv "${HEADLINES_CSV}" \
   --prices_csv "${PRICES_CSV}" \
